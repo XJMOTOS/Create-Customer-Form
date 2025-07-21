@@ -1,0 +1,30 @@
+[
+	{
+		"key": 0,
+		"text": "Tax Exempt"
+	},
+	{
+		"key": 1,
+		"text": "Liable for Taxes"
+	},
+	{
+		"key": 2,
+		"text": "IVA+REQ / Special"
+	},
+	{
+		"key": 3,
+		"text": "IGIC Taxes Exempt"
+	},
+	{
+		"key": 4,
+		"text": "Liable Taxes IGIC"
+	},
+	{
+		"key": 5,
+		"text": "UB Customer"
+	},
+	{
+		"key": 6,
+		"text": "Export NAC"
+	}
+]

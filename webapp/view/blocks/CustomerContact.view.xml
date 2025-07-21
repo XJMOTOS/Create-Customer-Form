@@ -1,0 +1,56 @@
+<mvc:View controllerName="beamsuntoryinc.createcustomerform.controller.blocks.CustomerContact"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns="sap.m">
+	<Table 
+		mode="Delete"
+		delete=".onRemoveContact"
+		items="{customerContact>/}">
+		<headerToolbar>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button
+					icon="sap-icon://add"
+					press=".onAddContact"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="{i18n>columnContactType}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnName}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnSurname}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnPhone}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnFax}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnEmail}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Select
+						selectedKey="{customerContact>contactType}"
+						forceSelection="false"
+						items="{ path: 'contactType>/', templateShareable: false }">
+						<core:Item key="{contactType>key}" text="{contactType>key}"/>
+					</Select>
+					<Input value="{customerContact>name}"/>
+					<Input value="{customerContact>surname}"/>
+					<Input value="{customerContact>phone}"/>
+					<Input value="{customerContact>fax}"/>
+					<Input value="{customerContact>email}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</mvc:View>

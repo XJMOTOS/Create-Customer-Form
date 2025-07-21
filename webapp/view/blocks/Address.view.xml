@@ -1,0 +1,67 @@
+<mvc:View controllerName="beamsuntoryinc.createcustomerform.controller.blocks.Address"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns="sap.m">
+	<forms:SimpleForm
+		labelSpanL="3" labelSpanM="3" labelSpanS="3"
+		emptySpanL="0" emptySpanM="0" emptySpanS="0"
+		editable="false"
+		maxContainerCols="3"
+		layout="ResponsiveGridLayout"
+		width="100%">
+		<Label text="{i18n>lblName} 2"/>
+		<Input/>
+		<Label text="{i18n>lblCity}" required="true"/>
+		<Input/>
+		<Label text="{i18n>lblTelephone}"/>
+		<Input/>
+		<Label text="{i18n>lblName} 3"/>
+		<Input/>
+		<Label text="{i18n>lblPOBox}"/>
+		<Input/>
+		<Label text="{i18n>lblStreet} 2"/>
+		<Input/>
+		<Label text="{i18n>lblStreet} 5"/>
+		<Input/>
+		<Label text="{i18n>lblRoom}"/>
+		<Input/>
+
+		<Label text="{i18n>lblCountry}" required="true"/>
+		<Select forceSelection="false">
+		</Select>
+		<Label text="{i18n>lblStreetAndHouseNumber}" required="true"/>
+		<Input/>
+		<Label text="{i18n>lblFax}"/>
+		<Input/>
+		<Label text="{i18n>lblName} 4"/>
+		<Input/>
+		<Label text="{i18n>lblHouseNumber}"/>
+		<Input/>
+		<Label text="{i18n>lblStreet} 3"/>
+		<Input/>
+		<Label text="{i18n>lblBuilding}"/>
+		<Input/>
+		<Label text=""/>
+		<Text/>
+
+		<Label text="{i18n>lblRegion}"/>
+		<Select forceSelection="false">
+		</Select>
+		<Label text="{i18n>lblTransportationZone}" required="true"/>
+		<Select forceSelection="false">
+		</Select>
+		<Label text="{i18n>lblPostalCode}" required="true"/>
+		<Input/>
+		<Label text="{i18n>lblEmail}"/>
+		<Input/>
+		<Label text="{i18n>lblDistrict}"/>
+		<Input/>
+		<Label text="{i18n>lblStreet}"/>
+		<Input/>
+		<Label text="{i18n>lblStreet} 4"/>
+		<Input/>
+		<Label text="{i18n>lblFloor}"/>
+		<Input/>
+	</forms:SimpleForm>
+</mvc:View>

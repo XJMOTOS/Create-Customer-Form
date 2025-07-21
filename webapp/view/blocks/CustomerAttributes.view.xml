@@ -1,0 +1,38 @@
+<mvc:View controllerName="beamsuntoryinc.createcustomerform.controller.blocks.CustomerAttributes"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns="sap.m">
+	<forms:SimpleForm
+		labelSpanL="3" labelSpanM="3" labelSpanS="3"
+		emptySpanL="0" emptySpanM="0" emptySpanS="0"
+		editable="false"
+		maxContainerCols="3"
+		layout="ResponsiveGridLayout"
+		width="100%">
+		<Label text="{i18n>lblAttribute} 1"/>
+		<Select forceSelection="true"></Select>
+		<Label text="{i18n>lblAttribute} 4"/>
+		<Select forceSelection="true"></Select>
+		<Label text="{i18n>lblAttribute} 7"/>
+		<Select forceSelection="true"></Select>
+		<Label text="{i18n>lblAttribute} 10"/>
+		<Select forceSelection="true"></Select>
+
+		<Label text="{i18n>lblAttribute} 2"/>
+		<Select forceSelection="true"></Select>
+		<Label text="{i18n>lblAttribute} 5"/>
+		<Select forceSelection="true"></Select>
+		<Label text="{i18n>lblAttribute} 8"/>
+		<Select forceSelection="true"></Select>
+		<Label text=""/>
+		<Text />
+
+		<Label text="{i18n>lblAttribute} 3"/>
+		<Select forceSelection="true"></Select>
+		<Label text="{i18n>lblAttribute} 6"/>
+		<Select forceSelection="true"></Select>
+		<Label text="{i18n>lblAttribute} 9"/>
+		<Select forceSelection="true"></Select>
+	</forms:SimpleForm>
+</mvc:View>

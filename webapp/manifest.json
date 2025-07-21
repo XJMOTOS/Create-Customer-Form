@@ -34,11 +34,20 @@
 			"id": "app"
 		},
 
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+
 		"dependencies": {
 			"minUI5Version": "1.138.0",
 			"libs": {
 				"sap.ui.core": {},
-				"sap.m": {}
+				"sap.m": {},
+				"sap.uxap": {}
 			}
 		},
 
@@ -54,7 +63,6 @@
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
 					"bundleName": "beamsuntoryinc.createcustomerform.i18n.i18n",
-					"supportedLocales": ["en", "de"],
 					"fallbackLocale": "en",
 					"async": true
 				}

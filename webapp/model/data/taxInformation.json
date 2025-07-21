@@ -1,0 +1,188 @@
+[
+	{
+		"taxCountry": "AT",
+		"taxCategory": "MWST",
+		"taxClassification": 0
+	},
+	{
+		"taxCountry": "AU",
+		"taxCategory": "ATX1",
+		"taxClassification": 
+1
+	},
+	{
+		"taxCountry": "AU",
+		"taxCategory": "MWST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "CA",
+		"taxCategory": "CTX1",
+		"taxClassification": 0
+	},
+	{
+		"taxCountry": "CA",
+		"taxCategory": "CTX2",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "CA",
+		"taxCategory": "CTX3",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "CN",
+		"taxCategory": "MWST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "DE",
+		"taxCategory": "MWST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "DE",
+		"taxCategory": "YVST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "ES",
+		"taxCategory": "MWST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "ES",
+		"taxCategory": "YIGR",
+		"taxClassification": 3
+	},
+	{
+		"taxCountry": "ES",
+		"taxCategory": "YIGS",
+		"taxClassification": 4
+	},
+	{
+		"taxCountry": "ES",
+		"taxCategory": "YREC",
+		"taxClassification": 0
+	},
+	{
+		"taxCountry": "ES",
+		"taxCategory": "YVST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "FR",
+		"taxCategory": "MWST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "FR",
+		"taxCategory": "YVST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "GB",
+		"taxCategory": "MWST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "GB",
+		"taxCategory": "YVST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "IN",
+		"taxCategory": "JOCG",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "IN",
+		"taxCategory": "JOIG",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "IN",
+		"taxCategory": "JOSG",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "IN",
+		"taxCategory": "JOUG",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "IN",
+		"taxCategory": "MWST",
+		"taxClassification": 0
+	},
+	{
+		"taxCountry": "IN",
+		"taxCategory": "YCST",
+		"taxClassification": 0
+	},
+	{
+		"taxCountry": "IN",
+		"taxCategory": "YLSR",
+		"taxClassification": 0
+	},
+	{
+		"taxCountry": "IN",
+		"taxCategory": "YLST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "JP",
+		"taxCategory": "MWST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "KR",
+		"taxCategory": "MWST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "MX",
+		"taxCategory": "MWST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "MX",
+		"taxCategory": "MX01",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "NL",
+		"taxCategory": "MWST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "NZ",
+		"taxCategory": "MWST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "PT",
+		"taxCategory": "MWST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "PT",
+		"taxCategory": "YVST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "SG",
+		"taxCategory": "MWST",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "US",
+		"taxCategory": "UTXJ",
+		"taxClassification": 1
+	},
+	{
+		"taxCountry": "VN",
+		"taxCategory": "MWST",
+		"taxClassification": 1
+	}
+]

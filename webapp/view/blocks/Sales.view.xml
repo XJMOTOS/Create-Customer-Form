@@ -1,0 +1,131 @@
+<mvc:View controllerName="beamsuntoryinc.createcustomerform.controller.blocks.Sales"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns="sap.m">
+	<forms:SimpleForm
+		labelSpanL="3" labelSpanM="3" labelSpanS="3"
+		emptySpanL="0" emptySpanM="0" emptySpanS="0"
+		editable="false"
+		maxContainerCols="3"
+		layout="ResponsiveGridLayout"
+		width="100%">
+		<Label text="{i18n>lblSalesGroup}"/>
+		<Select>
+		</Select>
+		<Label text="{i18n>lblAccountAssignmentGroup}" required="true"/>
+		<Select
+			forceSelection="false"
+			selectedKey="{customer>/accountAssignmentGroup}"
+			items="{ path: 'accountAssignmentGroup>/' }">
+			<core:Item key="{accountAssignmentGroup>key}" text="{accountAssignmentGroup>text}"/>
+		</Select>
+		<Label text="{i18n>lblIncoterms}"/>
+		<Input/>
+		<Label text="{i18n>lblGroup} 3"/>
+		<Select>
+		</Select>
+		<Label text="{i18n>lblShippingConditions}" required="true"/>
+		<Select forceSelection="true">
+		</Select>
+		<Label text="{i18n>lblCustomerDeliveryBlock}" required="true"/>
+		<Input/>
+		<Label text=""/>
+		<CheckBox text="{i18n>lblPartialDelivery}" selected="true" class="sapUiTinyMarginTopBottom"/>
+		<Label text="{i18n>lblAuthorizationGroup}"/>
+		<Input/>
+		<Label text="{i18n>lblCustomerClassification}"/>
+		<Input/>
+		<Label text="{i18n>lblCustomerGroup} 6"/>
+		<Input/>
+		<Label text="{i18n>lblCustomerGroup} 9"/>
+		<Input/>
+		<Label text="{i18n>lblCustomerGroup} 12"/>
+		<Input/>
+		<Label text="{i18n>lblCustomerGroup} 15"/>
+		<Input/>
+		<Label text="{i18n>lblCustomerGroup} 18"/>
+		<Input/>
+
+		<Label text="{i18n>lblSalesOffice}"/>
+		<Select></Select>
+		<Label text="{i18n>lblPaymentTerms}" required="true"/>
+		<Select></Select>
+		<Label text="{i18n>lblSalesDistrict}" required="true"/>
+		<Select></Select>
+		<Label text="{i18n>lblGroup} 1"/>
+		<Select></Select>
+		<Label text="{i18n>lblGroup} 4"/>
+		<Select></Select>
+		<Label text="{i18n>lblPriceGroup}"/>
+		<Select></Select>
+		<Label text="{i18n>lblCustomerGroup} 12"/>
+		<Select></Select>
+		<Label text=""/>
+		<CheckBox text="{i18n>lblCompleteDelivery}" selected="false" class="sapUiTinyMarginTopBottom"/>
+		<Label text=""/>
+		<CheckBox text="{i18n>lblOrderCombInd}" selected="false" class="sapUiTinyMarginTopBottom"/>
+		<Label text="{i18n>lblCustomerStatisticsGroup}"/>
+		<Input/>
+		<Label text="{i18n>lblDeliveringPlant}"/>
+		<Input/>
+		<Label text="{i18n>lblCustomerGroup} 7"/>
+		<Select></Select>
+		<Label text="{i18n>lblCustomerGroup} 10"/>
+		<Select></Select>
+		<Label text="{i18n>lblCustomerGroup} 13"/>
+		<Select></Select>
+		<Label text="{i18n>lblCustomerGroup} 16"/>
+		<Select></Select>
+		<Label text="{i18n>lblCustomerGroup} 19"/>
+		<Select></Select>
+
+		<Label text="{i18n>lblCurrency}" required="true"/>
+		<Select></Select>
+		<Label text="{i18n>lblPricingProcedure}"/>
+		<Input/>
+		<Label text="{i18n>lblIncoterms} 1"/>
+		<Select></Select>
+		<Label text="{i18n>lblGroup} 2"/>
+		<Select></Select>
+		<Label text="{i18n>lblDPUBStatus}"/>
+		<Select></Select>
+		<Label text="{i18n>lblPriceListType}"/>
+		<Select></Select>
+		<Label text="{i18n>lblNumPartialDeliveries}"/>
+		<Input/>
+		<Label text="{i18n>lblDeliveryPriority}"/>
+		<Input/>
+		<Label text="{i18n>lblOrderProbability}"/>
+		<Input/>
+		<Label text=""/>
+		<CheckBox text="{i18n>lblIndicator}" selected="false" class="sapUiTinyMarginTopBottom"/>
+		<Label text="{i18n>lblCustomerGroup} 8"/>
+		<Select></Select>
+		<Label text="{i18n>lblCustomerGroup} 11"/>
+		<Select></Select>
+		<Label text="{i18n>lblCustomerGroup} 14"/>
+		<Select></Select>
+		<Label text="{i18n>lblCustomerGroup} 17"/>
+		<Select></Select>
+		<Label text="{i18n>lblCustomerGroup} 20"/>
+		<Select></Select>
+	</forms:SimpleForm>
+
+	<VBox>
+		<forms:SimpleForm
+			labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12"
+			emptySpanL="0" emptySpanM="0" emptySpanS="0"
+			editable="false"
+			maxContainerCols="3"
+			layout="ResponsiveGridLayout"
+			width="100%">
+			<Label text="{i18n>lblShippingTexts}"/>
+			<Input/>
+			<Label text="{i18n>lblInvoinceTexts}"/>
+			<Input/>
+			<Label text="{i18n>lblGeneralComments}"/>
+			<Input/>
+		</forms:SimpleForm>
+	</VBox>
+</mvc:View>

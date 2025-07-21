@@ -1,0 +1,38 @@
+<mvc:View controllerName="beamsuntoryinc.createcustomerform.controller.blocks.General"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns="sap.m">
+	<forms:SimpleForm
+		labelSpanL="3" labelSpanM="3" labelSpanS="3"
+		emptySpanL="0" emptySpanM="0" emptySpanS="0"
+		editable="false"
+		maxContainerCols="3"
+		layout="ResponsiveGridLayout"
+		width="100%">
+		<Label text="{i18n>lblName}" required="true"/>
+		<Input/>
+		<Label text="{i18n>lblTaxNumber} 1"/>
+		<Input/>
+		<Label text="{i18n>lblVatRegNumber}"/>
+		<Input/>
+		<Label text="{i18n>lblSearchTeam}" required="true"/>
+		<Input/>
+		<Label text="{i18n>lblLanguageKey}"/>
+		<Select forceSelection="true">
+		</Select>
+		<Label text="{i18n>lblWorkingTimeCalendar}"/>
+		<Input/>
+		<Label text="{i18n>lblCustomerClasification}"/>
+		<Input/>
+		<Label text="{i18n>lblIndustry}"/>
+		<Select forceSelection="true">
+		</Select>
+		<Label text="{i18n>lblTaxNumber} 4"/>
+		<Input/>
+		<Label text="{i18n>lblWarehouseExciseN}"/>
+		<Input/>
+		<Label text="{i18n>lblTaxRegistration}"/>
+		<Input/>
+	</forms:SimpleForm>
+</mvc:View>
