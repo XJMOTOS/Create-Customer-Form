@@ -1,11 +1,23 @@
-<mvc:View controllerName="beamsuntoryinc.createcustomerform.controller.blocks.TaxInformation"
+<core:FragmentDefinition
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
 	xmlns:forms="sap.ui.layout.form"
 	xmlns="sap.m">
+	<VBox 
+		visible="{view>/show/optionalGeneralDataFields}">
+	<OverflowToolbar >
+		<content>
+			<Title text="{i18n>lblSectionTaxInformation}"/>
+			<ToolbarSpacer />
+			<Button
+				text="{= ${view>/show/table/taxInformation} ? ${i18n>buttonHide} : ${i18n>buttonShow} }"
+				press=".onToggleTaxTable"/>
+		</content>
+	</OverflowToolbar>
 	<Table 
 		mode="None"
-		items="{taxInformation>/}">
+		items="{taxInformation>/}"
+		visible="{view>/show/table/taxInformation}">
 		<columns>
 			<Column>
 				<Text text="{i18n>columnTaxCountry}"/>
@@ -32,4 +44,5 @@
 			</ColumnListItem>
 		</items>
 	</Table>
-</mvc:View>
+	</VBox>
+</core:FragmentDefinition>

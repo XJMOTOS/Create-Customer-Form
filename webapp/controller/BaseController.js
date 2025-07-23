@@ -14,6 +14,11 @@ sap.ui.define([
 			return Controller.prototype.getOwnerComponent.call(this);
 		},
 
+
+		getText: function (key) {
+			return this.getView().getModel("i18n").getResourceBundle().getText(key);
+		},
+		
 		/**
 		 * Convenience method to get the components' router instance.
 		 * @returns {sap.m.routing.Router} The router instance

@@ -1,0 +1,205 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form">
+	<forms:SimpleForm
+		labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+		emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+		columnsXL="2" columnsL="1" columnsM="1"
+		editable="false"
+		layout="ResponsiveGridLayout"
+		adjustLabelSpan="false"
+		singleContainerFullSize="false">
+		<forms:content>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button
+					text="{= ${view>/show/optionalGeneralDataFields} ? ${i18n>buttonHideOptionalFields} : ${i18n>buttonShowOptionalFields} }"
+					press=".onToggleGeneralDataOptionalFields"/>
+			</Toolbar>
+			<Label text="{i18n>lblName}" required="true" class="sapUiTinyMarginTop"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					press="onShowNameInfo"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>loremIpsum}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/AddressSet/Name}"
+					valueState="{= ${customer>/AddressSet/Name} ? 'None' : 'Error' }">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label text="{i18n>lblSearchTeam}" required="true" class="sapUiTinyMarginTop"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					press="onShowNameInfo"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="Short text to explain the search team">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/AddressSet/Sort}"
+					valueState="{= ${customer>AddressSet/Sort} ? 'None' : 'Error' }">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+			<Label
+				text="{i18n>lblCustomerClasification}"
+				required="true"
+				class="sapUiTinyMarginTop"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					press="onShowNameInfo"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/Kukla}"
+					valueState="{= ${customer>Kukla} ? 'None' : 'Error' }">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+			<Label
+				text="{i18n>lblTaxNumber} 1"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/optionalGeneralDataFields}"/>
+			<HBox visible="{view>/show/optionalGeneralDataFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					press="onShowNameInfo"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/Stcd1}">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-add"
+					press=".onShowTaxNumber($event, 1)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+			<Label
+				text="{i18n>lblTaxNumber} 2"
+				class="sapUiTinyMarginTop"
+				visible="{= ${view>/show/optionalGeneralDataFields} &amp;&amp; ${view>/show/taxNumber2} }"/>
+			<HBox visible="{= ${view>/show/optionalGeneralDataFields} &amp;&amp; ${view>/show/taxNumber2} }">
+				<core:Icon
+					src="sap-icon://hint"
+					press="onShowNameInfo"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer/AddressSet>/Stcd2}">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideTaxNumber($event, 2)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+			<Label
+				text="{i18n>lblTaxNumber} 4"
+				class="sapUiTinyMarginTop"
+				visible="{= ${view>/show/optionalGeneralDataFields} &amp;&amp; ${view>/show/taxNumber4} }"/>
+			<HBox visible="{= ${view>/show/optionalGeneralDataFields} &amp;&amp; ${view>/show/taxNumber4} }">
+				<core:Icon
+					src="sap-icon://hint"
+					press="onShowNameInfo"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideTaxNumber($event, 4)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+			
+			<Label
+				text="{i18n>lblLanguageKey}"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/optionalGeneralDataFields}"/>
+			<Select
+				forceSelection="true"
+				visible="{view>/show/optionalGeneralDataFields}"></Select>
+			<Label
+				text="{i18n>lblIndustry}"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/optionalGeneralDataFields}"/>
+			<Select
+				forceSelection="true"
+				visible="{view>/show/optionalGeneralDataFields}"></Select>
+			<Label
+				text="{i18n>lblWarehouseExciseN}"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/optionalGeneralDataFields}"/>
+			<Input visible="{view>/show/optionalGeneralDataFields}"/>
+
+			<Label
+				text="{i18n>lblVatRegNumber}"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/optionalGeneralDataFields}"/>
+			<Input visible="{view>/show/optionalGeneralDataFields}"/>
+			<Label
+				text="{i18n>lblWorkingTimeCalendar}"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/optionalGeneralDataFields}"/>
+			<Input visible="{view>/show/optionalGeneralDataFields}"/>
+		</forms:content>
+	</forms:SimpleForm>
+</core:FragmentDefinition>

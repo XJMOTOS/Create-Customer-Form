@@ -1,23 +1,25 @@
-<mvc:View controllerName="beamsuntoryinc.createcustomerform.controller.blocks.Sales"
+<core:FragmentDefinition
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
 	xmlns:forms="sap.ui.layout.form"
 	xmlns="sap.m">
 	<forms:SimpleForm
-		labelSpanL="3" labelSpanM="3" labelSpanS="3"
-		emptySpanL="0" emptySpanM="0" emptySpanS="0"
+		labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+		emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+		columnsXL="2" columnsL="1" columnsM="1"
 		editable="false"
-		maxContainerCols="3"
 		layout="ResponsiveGridLayout"
-		width="100%">
+		adjustLabelSpan="false"
+		singleContainerFullSize="false">
 		<Label text="{i18n>lblSalesGroup}"/>
 		<Select>
 		</Select>
 		<Label text="{i18n>lblAccountAssignmentGroup}" required="true"/>
 		<Select
 			forceSelection="false"
-			selectedKey="{customer>/accountAssignmentGroup}"
-			items="{ path: 'accountAssignmentGroup>/' }">
+			selectedKey="{customer>/Ktgrd}"
+			items="{ path: 'accountAssignmentGroup>/' }"
+			valueState="{= ${customer>/Ktgrd} ? 'None' : 'Error' }">
 			<core:Item key="{accountAssignmentGroup>key}" text="{accountAssignmentGroup>text}"/>
 		</Select>
 		<Label text="{i18n>lblIncoterms}"/>
@@ -26,16 +28,23 @@
 		<Select>
 		</Select>
 		<Label text="{i18n>lblShippingConditions}" required="true"/>
-		<Select forceSelection="true">
+		<Select
+			forceSelection="false"
+			selectedKey="{customer>/Vsbed}"
+			valueState="{= ${customer>/Vsbed} ? 'None' : 'Error' }">
 		</Select>
 		<Label text="{i18n>lblCustomerDeliveryBlock}" required="true"/>
-		<Input/>
+		<Input
+			value="{customer>/Lifsd}"
+			valueState="{= ${customer>/Lifsd} ? 'None' : 'Error' }"/>
 		<Label text=""/>
 		<CheckBox text="{i18n>lblPartialDelivery}" selected="true" class="sapUiTinyMarginTopBottom"/>
 		<Label text="{i18n>lblAuthorizationGroup}"/>
 		<Input/>
 		<Label text="{i18n>lblCustomerClassification}"/>
-		<Input/>
+		<Input
+			value="{customer>/Klabc}"
+			valueState="{= ${customer>/Klabc} ? 'None' : 'Error' }"/>
 		<Label text="{i18n>lblCustomerGroup} 6"/>
 		<Input/>
 		<Label text="{i18n>lblCustomerGroup} 9"/>
@@ -50,9 +59,17 @@
 		<Label text="{i18n>lblSalesOffice}"/>
 		<Select></Select>
 		<Label text="{i18n>lblPaymentTerms}" required="true"/>
-		<Select></Select>
+		<Select
+			forceSelection="false"
+			selectedKey="{customer>/Zterm}"
+			valueState="{= ${customer>/Zterm} ? 'None' : 'Error' }">
+		</Select>
 		<Label text="{i18n>lblSalesDistrict}" required="true"/>
-		<Select></Select>
+		<Select
+			forceSelection="false"
+			selectedKey="{customer>/Bzirk}"
+			valueState="{= ${customer>/Bzirk} ? 'None' : 'Error' }">
+		</Select>
 		<Label text="{i18n>lblGroup} 1"/>
 		<Select></Select>
 		<Label text="{i18n>lblGroup} 4"/>
@@ -81,9 +98,15 @@
 		<Select></Select>
 
 		<Label text="{i18n>lblCurrency}" required="true"/>
-		<Select></Select>
+		<Select
+			forceSelection="false"
+			selectedKey="{customer>/Waers}"
+			valueState="{= ${customer>/Waers} ? 'None' : 'Error' }">
+		</Select>
 		<Label text="{i18n>lblPricingProcedure}"/>
-		<Input/>
+		<Input
+			value="{customer>/Kalks}"
+			valueState="{= ${customer>/Kalks} ? 'None' : 'Error' }"/>
 		<Label text="{i18n>lblIncoterms} 1"/>
 		<Select></Select>
 		<Label text="{i18n>lblGroup} 2"/>
@@ -111,21 +134,19 @@
 		<Label text="{i18n>lblCustomerGroup} 20"/>
 		<Select></Select>
 	</forms:SimpleForm>
-
-	<VBox>
-		<forms:SimpleForm
-			labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12"
-			emptySpanL="0" emptySpanM="0" emptySpanS="0"
-			editable="false"
-			maxContainerCols="3"
-			layout="ResponsiveGridLayout"
-			width="100%">
-			<Label text="{i18n>lblShippingTexts}"/>
-			<Input/>
-			<Label text="{i18n>lblInvoinceTexts}"/>
-			<Input/>
-			<Label text="{i18n>lblGeneralComments}"/>
-			<Input/>
-		</forms:SimpleForm>
-	</VBox>
-</mvc:View>
+	<forms:SimpleForm
+		labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+		emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+		columnsXL="2" columnsL="1" columnsM="1"
+		editable="false"
+		layout="ResponsiveGridLayout"
+		adjustLabelSpan="false"
+		singleContainerFullSize="false">
+		<Label text="{i18n>lblShippingTexts}"/>
+		<Input/>
+		<Label text="{i18n>lblInvoinceTexts}"/>
+		<Input/>
+		<Label text="{i18n>lblGeneralComments}"/>
+		<Input/>
+	</forms:SimpleForm>
+</core:FragmentDefinition>

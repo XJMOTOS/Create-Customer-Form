@@ -1,20 +1,26 @@
-<mvc:View controllerName="beamsuntoryinc.createcustomerform.controller.blocks.CustomerContact"
+<core:FragmentDefinition
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
 	xmlns:forms="sap.ui.layout.form"
 	xmlns="sap.m">
+	<OverflowToolbar>
+		<content>
+			<Title text="{i18n>lblSectionTaxInformation}"/>
+			<ToolbarSpacer />
+			<Button
+				icon="sap-icon://add"
+				press=".onAddContact"
+				visible="{view>/show/table/customerContact}"/>
+			<Button
+				text="{= ${view>/show/table/customerContact} ? ${i18n>buttonHide} : ${i18n>buttonShow} }"
+				press=".onToggleCustomerContactTable"/>
+		</content>
+	</OverflowToolbar>
 	<Table 
 		mode="Delete"
 		delete=".onRemoveContact"
-		items="{customerContact>/}">
-		<headerToolbar>
-			<Toolbar>
-				<ToolbarSpacer/>
-				<Button
-					icon="sap-icon://add"
-					press=".onAddContact"/>
-			</Toolbar>
-		</headerToolbar>
+		items="{customerContact>/}"
+		visible="{view>/show/table/customerContact}">
 		<columns>
 			<Column>
 				<Text text="{i18n>columnContactType}"/>
@@ -53,4 +59,4 @@
 			</ColumnListItem>
 		</items>
 	</Table>
-</mvc:View>
+</core:FragmentDefinition>

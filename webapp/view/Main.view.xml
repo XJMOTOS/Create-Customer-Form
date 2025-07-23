@@ -9,102 +9,42 @@
 	core:require="{
 		formatter: 'beamsuntoryinc/createcustomerform/model/formatter'
 	}">
-
-	<ObjectPageLayout
-		id="ObjectPageLayout"
-		showTitleInHeaderContent="true"
-		showEditHeaderButton="true"
-		headerContentPinned="true"
-		upperCaseAnchorBar="false">
-		<headerTitle>
-			<ObjectPageDynamicHeaderTitle>
-				<expandedHeading>
-					<m:HBox>
-						<m:Title text="{i18n>appTitle}" wrapping="true"/>
-					</m:HBox>
-				</expandedHeading>
-				<snappedHeading>
-					<m:FlexBox fitContainer="true" alignItems="Center">
-						<m:Title text="{i18n>appTitle}" wrapping="true"/>
-					</m:FlexBox>
-				</snappedHeading>
-			</ObjectPageDynamicHeaderTitle>
-		</headerTitle>
-
-		<sections>
-			<ObjectPageSection
-				titleUppercase="false"
-				title="{i18n>lblSectionOrganizational}">
-				<subSections>
-					<ObjectPageSubSection title="{i18n>lblSectionOrganizational}">
-						<blocks>
-							<blocks:Organizational id="organizationalBlock"/>
-						</blocks>
-					</ObjectPageSubSection>
-				</subSections>
-			</ObjectPageSection>
-			<ObjectPageSection
-				titleUppercase="false"
-				title="{i18n>lblSectionGeneral}">
-				<subSections>
-					<ObjectPageSubSection title="{i18n>lblSectionGeneral}" showTitle="false">
-						<blocks>
-							<blocks:General id="generalBlock"/>
-						</blocks>
-					</ObjectPageSubSection>
-					<ObjectPageSubSection title="{i18n>lblSectionCustomerAttributes}">
-						<blocks>
-							<blocks:CustomerAttributes id="customerAttributesBlock"/>
-						</blocks>
-					</ObjectPageSubSection>
-					<ObjectPageSubSection title="{i18n>lblSectionTaxInformation}" importance="Medium">
-						<blocks/>
-						<moreBlocks>
-							<blocks:TaxInformation id="taxInformationBlock"/>
-						</moreBlocks>
-					</ObjectPageSubSection>
-				</subSections>
-			</ObjectPageSection>
-			<ObjectPageSection
-				titleUppercase="false"
-				title="{i18n>lblSectionAddress}">
-				<subSections>
-					<ObjectPageSubSection title="{i18n>lblSectionAddress}" showTitle="false">
-						<blocks>
-							<blocks:Address id="addressBlock"/>
-						</blocks>
-					</ObjectPageSubSection>
-					<ObjectPageSubSection title="{i18n>lblSectionCustomerContact}" importance="Medium">
-						<blocks/>
-						<moreBlocks>
-							<blocks:CustomerContact id="customerContactBlock"/>
-						</moreBlocks>
-					</ObjectPageSubSection>
-				</subSections>
-			</ObjectPageSection>
-			<ObjectPageSection
-				titleUppercase="false"
-				title="{i18n>lblSectionSales}">
-				<subSections>
-					<ObjectPageSubSection>
-						<blocks>
-							<blocks:Sales id="salesBlock"/>
-						</blocks>
-					</ObjectPageSubSection>
-				</subSections>
-			</ObjectPageSection>
-			<ObjectPageSection
-				titleUppercase="false"
-				title="{i18n>lblSectionAccountManager}">
-				<subSections>
-					<ObjectPageSubSection>
-						<blocks>
-							<blocks:AccountManager id="accountManagerBlock"/>
-						</blocks>
-					</ObjectPageSubSection>
-				</subSections>
-			</ObjectPageSection>
-		</sections>
-	</ObjectPageLayout>
-
+	<m:Page showHeader="false">
+		<m:Wizard id="Wizard" complete="onWizardCompleted">
+			<m:WizardStep title="{i18n>lblSectionOrganizational}">
+				<core:Fragment
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Organizational"
+					type="XML"/>
+			</m:WizardStep>
+			<m:WizardStep title="{i18n>lblSectionGeneral}">
+				<core:Fragment
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.General"
+					type="XML"/>
+				<core:Fragment
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.CustomerAttributes"
+					type="XML"/>
+				<core:Fragment
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.TaxInformation"
+					type="XML"/>
+			</m:WizardStep>
+			<m:WizardStep title="{i18n>lblSectionAddress}">
+				<core:Fragment
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Address"
+					type="XML"/>
+				<core:Fragment
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.CustomerContact"
+					type="XML"/>
+			</m:WizardStep>
+			<m:WizardStep title="{i18n>lblSectionSales}">
+				<core:Fragment
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Sales"
+					type="XML"/>
+			</m:WizardStep>
+			<m:WizardStep title="{i18n>lblSectionAccountManager}">
+				<core:Fragment
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.AccountManager"
+					type="XML"/>
+			</m:WizardStep>
+		</m:Wizard>
+	</m:Page>
 </mvc:View>
