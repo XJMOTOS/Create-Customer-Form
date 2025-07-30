@@ -47,7 +47,7 @@
 			"libs": {
 				"sap.ui.core": {},
 				"sap.m": {},
-				"sap.uxap": {}
+				"sap.suite.ui.microchart": {}
 			}
 		},
 

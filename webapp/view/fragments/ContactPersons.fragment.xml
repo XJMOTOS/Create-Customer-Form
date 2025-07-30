@@ -1,0 +1,57 @@
+<core:FragmentDefinition
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns="sap.m">
+	<Toolbar>
+		<Title text="{i18n>lblSectionContactPersons}"/>
+		<ToolbarSpacer/>
+		<Button
+			icon="sap-icon://add"
+			press=".onAddContactPerson"
+			visible="{view>/show/contactPersonsTable}"/>
+		<Button
+				text="{= ${view>/show/contactPersonsTable} ? ${i18n>buttonHideContactPersonsTable} : ${i18n>buttonShowContactPersonsTable} }"
+				press=".onToggleContactPersonsTable"/>
+	</Toolbar>
+	<Table 
+		mode="Delete"
+		delete=".onRemoveContactPerson"
+		items="{customer>/contactPersons}"
+		visible="{view>/show/contactPersonsTable}">
+		<columns>
+			<Column>
+				<Text text="{i18n>columnFunction}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnFirstName}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnLastName}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnEmail}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnPhone}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Select
+						selectedKey="{customer>function}"
+						forceSelection="false"
+						items="{ path: 'function>/', templateShareable: false }"
+						width="100%">
+						<core:Item key="{function>key}" text="{function>key}"/>
+					</Select>
+					<Input value="{customer>firstName}"/>
+					<Input value="{customer>lastName}"/>
+					<Input value="{customer>email}"/>
+					<Input value="{customer>phone}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

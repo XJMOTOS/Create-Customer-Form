@@ -13,310 +13,273 @@
 		singleContainerFullSize="false">
 		<forms:toolbar>
 			<Toolbar>
+				<Title text="{i18n>lblSectionAttributes}"/>
 				<ToolbarSpacer/>
-				<microchart:HarveyBallMicroChart size="XS"
-						total="100" showFractions="true" >
-					<microchart:items>
-						<microchart:HarveyBallMicroChartItem fraction="66" color="Good" fractionScale="%"/>
-					</microchart:items>
-				</microchart:HarveyBallMicroChart>
 				<Button
-					text="{= ${view>/show/salesFields} ? ${i18n>buttonHideSalesFields} : ${i18n>buttonShowSalesFields} }"
-					press=".onToggleSalesFields"/>
+					text="{= ${view>/show/attributeFields} ? ${i18n>buttonHideAttributeFields} : ${i18n>buttonShowAttributeFields} }"
+					press=".onToggleAttributeFields"/>
 			</Toolbar>
 		</forms:toolbar>
 		<forms:content>
 			<Label
-				text="{i18n>lblSalesGroup}"
-				class="sapUiTinyMarginTop"/>
-			<HBox>
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipSalesGroup}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					forceSelection="false"
-					selectedKey="{customer>/group}"
-					items="{salesGroups>/}"
-					width="100%">
-					<core:Item key="{salesGroups>key}" text="{salesGroups>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblSalesOffice}"
-				class="sapUiTinyMarginTop"/>
-			<HBox>
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipSalesOffice}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					forceSelection="false"
-					selectedKey="{customer>/office}"
-					items="{salesOffices>/}"
-					width="100%">
-					<core:Item key="{salesOffices>key}" text="{salesOffices>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblCurrency}"
-				class="sapUiTinyMarginTop"/>
-			<HBox>
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipCurrency}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					forceSelection="false"
-					selectedKey="{customer>/currency}"
-					items="{currencies>/}"
-					width="100%">
-					<core:Item key="{currencies>key}" text="{currencies>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblAccountAssignmentGroup}"
-				class="sapUiTinyMarginTop"/>
-			<HBox>
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipAccountAssignmentGroup}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					forceSelection="false"
-					selectedKey="{customer>/accountAssignmentGroup}"
-					items="{accountAssignmentGroups>/}"
-					width="100%">
-					<core:Item key="{accountAssignmentGroups>key}" text="{accountAssignmentGroups>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblTermsOfPayment}"
-				class="sapUiTinyMarginTop"/>
-			<HBox>
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipTermsOfPayment}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					forceSelection="false"
-					selectedKey="{customer>/termsOfPayment}"
-					items="{termsOfPayments>/}"
-					width="100%">
-					<core:Item key="{termsOfPayments>key}" text="{termsOfPayments>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblPricingProcedure}"
-				class="sapUiTinyMarginTop"/>
-			<HBox>
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipPricingProcedure}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					forceSelection="false"
-					selectedKey="{customer>/pricingProcedure}"
-					items="{pricingProcedures>/}"
-					width="100%">
-					<core:Item key="{pricingProcedures>key}" text="{pricingProcedures>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblSalesDistrict}"
-				class="sapUiTinyMarginTop"/>
-			<HBox>
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipSalesDistrict}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					forceSelection="false"
-					selectedKey="{customer>/district}"
-					items="{salesDistricts>/}"
-					width="100%">
-					<core:Item key="{salesDistricts>key}" text="{salesDistricts>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblIncoterms1}"
-				class="sapUiTinyMarginTop"/>
-			<HBox>
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipIncoterms1}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					forceSelection="false"
-					selectedKey="{customer>/incoterm1}"
-					items="{incoterms>/}"
-					width="100%">
-					<core:Item key="{incoterms>key}" text="{incoterms>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblIncoterms2}"
-				class="sapUiTinyMarginTop"/>
-			<HBox>
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipIncoterms2}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Input
-					value="{customer>/incoterm2}"
-					maxLength="35">
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Input>
-			</HBox>
-
-			<Label
-				text="{i18n>lblAuthorizationGroup}"
+				text="{i18n>lblAttribute} 1"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/salesFields}"/>
-			<HBox visible="{view>/show/salesFields}">
+				visible="{view>/show/attributeFields}"/>
+			<HBox visible="{view>/show/attributeFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipAuthorizationGroup}">
+					tooltip="{i18n>tooltipAttribute1}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
-				<Input
-					value="{customer>/salesAuthorizationGroup}"
-					maxLength="4">
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/attributes/1}"
+					items="{attributes>/}"
+					width="100%">
+					<core:Item key="{attributes>key}" text="{attributes>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
-				</Input>
+				</Select>
 			</HBox>
 
 			<Label
-				text="{i18n>lblOrderProbability}"
+				text="{i18n>lblAttribute} 2"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/salesFields}"/>
-			<HBox visible="{view>/show/salesFields}">
+				visible="{view>/show/attributeFields}"/>
+			<HBox visible="{view>/show/attributeFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipOrderProbability}">
+					tooltip="{i18n>tooltipAttribute2}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
-				<Input
-					value="{customer>/orderProbability}"
-					maxLength="3">
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/attributes/2}"
+					items="{attributes>/}"
+					width="100%">
+					<core:Item key="{attributes>key}" text="{attributes>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
-				</Input>
+				</Select>
 			</HBox>
 
 			<Label
-				text="{i18n>lblCustomerClassification}"
+				text="{i18n>lblAttribute} 3"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/salesFields}"/>
-			<HBox visible="{view>/show/salesFields}">
+				visible="{view>/show/attributeFields}"/>
+			<HBox visible="{view>/show/attributeFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipCustomerClassification}">
+					tooltip="{i18n>tooltipAttribute3}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
-				<Input
-					value="{customer>/customerClassification}"
-					maxLength="2">
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/attributes/3}"
+					items="{attributes>/}"
+					width="100%">
+					<core:Item key="{attributes>key}" text="{attributes>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
-				</Input>
+				</Select>
 			</HBox>
 
+			<Label
+				text="{i18n>lblAttribute} 4"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/attributeFields}"/>
+			<HBox visible="{view>/show/attributeFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipAttribute4}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/attributes/4}"
+					items="{attributes>/}"
+					width="100%">
+					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblAttribute} 5"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/attributeFields}"/>
+			<HBox visible="{view>/show/attributeFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipAttribute5}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/attributes/5}"
+					items="{attributes>/}"
+					width="100%">
+					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblAttribute} 6"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/attributeFields}"/>
+			<HBox visible="{view>/show/attributeFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipAttribute6}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/attributes/6}"
+					items="{attributes>/}"
+					width="100%">
+					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblAttribute} 7"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/attributeFields}"/>
+			<HBox visible="{view>/show/attributeFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipAttribute7}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/attributes/7}"
+					items="{attributes>/}"
+					width="100%">
+					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblAttribute} 8"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/attributeFields}"/>
+			<HBox visible="{view>/show/attributeFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipAttribute8}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/attributes/8}"
+					items="{attributes>/}"
+					width="100%">
+					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblAttribute} 9"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/attributeFields}"/>
+			<HBox visible="{view>/show/attributeFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipAttribute9}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/attributes/9}"
+					items="{attributes>/}"
+					width="100%">
+					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblAttribute} 10"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/attributeFields}"/>
+			<HBox visible="{view>/show/attributeFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipAttribute10}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/attributes/10}"
+					items="{attributes>/}"
+					width="100%">
+					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
 		</forms:content>
 	</forms:SimpleForm>
 </core:FragmentDefinition>

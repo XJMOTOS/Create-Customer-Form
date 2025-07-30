@@ -1,9 +1,7 @@
 <mvc:View
 	controllerName="beamsuntoryinc.createcustomerform.controller.Main"
 	displayBlock="true"
-	xmlns="sap.uxap"
 	xmlns:m="sap.m"
-	xmlns:blocks="beamsuntoryinc.createcustomerform.controller.blocks"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
 	core:require="{
@@ -11,38 +9,49 @@
 	}">
 	<m:Page showHeader="false">
 		<m:Wizard id="Wizard" complete="onWizardCompleted">
-			<m:WizardStep title="{i18n>lblSectionOrganizational}">
+			<m:WizardStep title="{i18n>lblSectionMain}" icon="sap-icon://home">
 				<core:Fragment
-					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Organizational"
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Main"
 					type="XML"/>
 			</m:WizardStep>
-			<m:WizardStep title="{i18n>lblSectionGeneral}">
+			<m:WizardStep title="{i18n>lblSectionGeneral}" icon="sap-icon://person-placeholder">
 				<core:Fragment
 					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.General"
 					type="XML"/>
 				<core:Fragment
-					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.CustomerAttributes"
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.TaxDetails"
 					type="XML"/>
 				<core:Fragment
-					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.TaxInformation"
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Attributes"
+					type="XML"/>
+				<core:Fragment
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.ContactPersons"
 					type="XML"/>
 			</m:WizardStep>
-			<m:WizardStep title="{i18n>lblSectionAddress}">
+			<m:WizardStep title="{i18n>lblSectionAddress}" icon="sap-icon://letter">
 				<core:Fragment
 					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Address"
 					type="XML"/>
+			</m:WizardStep>
+			<m:WizardStep title="{i18n>lblSectionCompany}" icon="sap-icon://building">
 				<core:Fragment
-					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.CustomerContact"
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Company"
 					type="XML"/>
 			</m:WizardStep>
-			<m:WizardStep title="{i18n>lblSectionSales}">
+			<m:WizardStep title="{i18n>lblSectionSales}" icon="sap-icon://sales-order">
 				<core:Fragment
 					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Sales"
 					type="XML"/>
-			</m:WizardStep>
-			<m:WizardStep title="{i18n>lblSectionAccountManager}">
 				<core:Fragment
-					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.AccountManager"
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.CustomerGroup"
+					type="XML"/>
+				<core:Fragment
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Delivery"
+					type="XML"/>
+			</m:WizardStep>
+			<m:WizardStep title="{i18n>lblSectionHierarchy}" icon="sap-icon://tree">
+				<core:Fragment
+					fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Hierarchy"
 					type="XML"/>
 			</m:WizardStep>
 		</m:Wizard>

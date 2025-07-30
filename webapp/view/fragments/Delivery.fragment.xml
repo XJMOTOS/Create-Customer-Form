@@ -1,0 +1,217 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form">
+	<forms:SimpleForm
+		labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+		emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+		columnsXL="2" columnsL="1" columnsM="1"
+		editable="false"
+		layout="ResponsiveGridLayout"
+		adjustLabelSpan="false"
+		singleContainerFullSize="false"
+		visible="{view>/show/optionalSalesDataFields}">
+		<forms:toolbar>
+			<Toolbar>
+				<Title text="{i18n>lblSectionDelivery}"/>
+				<ToolbarSpacer/>
+				<Button
+					text="{= ${view>/show/deliveryFields} ? ${i18n>buttonHideDeliveryFields} : ${i18n>buttonShowDeliveryFields} }"
+					press=".onToggleDeliveryFields"/>
+			</Toolbar>
+		</forms:toolbar>
+		<forms:content>
+			<Label
+				text="{i18n>lblShippingCondition}"
+				class="sapUiTinyMarginTop"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipShippingConditions}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/delivery/shippingCondition}"
+					items="{shippingConditions>/}"
+					width="100%">
+					<core:Item key="{shippingConditions>key}" text="{shippingConditions>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblDeliveryBlock}"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/deliveryFields}"/>
+			<HBox visible="{view>/show/deliveryFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipDeliveryBlock}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/delivery/deliveryBlock}"
+					maxLength="2">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				text="{i18n>lblCompleteDelivery}"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/deliveryFields}"/>
+			<HBox visible="{view>/show/deliveryFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipCompleteDelivery}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/delivery/completeDelivery}"
+					maxLength="1">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				text="{i18n>lblMaxNumberOfPartialDeliveries}"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/deliveryFields}"/>
+			<HBox visible="{view>/show/deliveryFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipMaxNumberOfPartialDeliveries}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/delivery/maxNumberOfPartialDeliveries}"
+					maxLength="1">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				text="{i18n>lblPartialDelivery}"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/deliveryFields}"/>
+			<HBox visible="{view>/show/deliveryFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipPartialDelivery}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/delivery/partialDelivery}"
+					maxLength="1">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				text="{i18n>lblOrderCombinationIndicator}"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/deliveryFields}"/>
+			<HBox visible="{view>/show/deliveryFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipOrderCombinationIndicator}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/delivery/orderCombinationIndicator}"
+					maxLength="1">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				text="{i18n>lblDeliveryPriority}"
+				class="sapUiTinyMarginTop"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipDeliveryPrioritys}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/delivery/deliveryPriority}"
+					items="{deliveryPriorities>/}"
+					width="100%">
+					<core:Item key="{deliveryPriorities>key}" text="{deliveryPriorities>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblDeliveringPlant}"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/deliveryFields}"/>
+			<HBox visible="{view>/show/deliveryFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipDeliveringPlant}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/delivery/deliveringPlant}"
+					items="{deliveringPlants>/}"
+					width="100%">
+					<core:Item key="{deliveringPlants>key}" text="{deliveringPlants>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+			
+		</forms:content>
+	</forms:SimpleForm>
+</core:FragmentDefinition>

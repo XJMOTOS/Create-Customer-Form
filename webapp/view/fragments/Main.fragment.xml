@@ -1,0 +1,197 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:microchart="sap.suite.ui.microchart">
+	<forms:SimpleForm
+		labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+		emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+		columnsXL="2" columnsL="1" columnsM="1"
+		editable="false"
+		layout="ResponsiveGridLayout"
+		adjustLabelSpan="false"
+		singleContainerFullSize="false">
+		<forms:toolbar>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<microchart:HarveyBallMicroChart size="XS"
+						total="100" showFractions="true" >
+					<microchart:items>
+						<microchart:HarveyBallMicroChartItem fraction="0" color="Good" fractionScale="%"/>
+					</microchart:items>
+				</microchart:HarveyBallMicroChart>
+			</Toolbar>
+		</forms:toolbar>
+		<forms:content>
+			<Label
+				text="{i18n>lblAccountGroup}"
+				class="sapUiTinyMarginTop"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipAccountGroup}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/main/accountGroup}"
+					items="{accountGroups>/}"
+					width="100%">
+					<core:Item key="{accountGroups>key}" text="{accountGroups>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblCompanyCode}"
+				class="sapUiTinyMarginTop"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipCompanyCode}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/main/companyCode}"
+					items="{companiesCodes>/}"
+					width="100%">
+					<core:Item key="{companiesCodes>key}" text="{companiesCodes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblSalesOrganization}"
+				class="sapUiTinyMarginTop"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipSalesOrganization}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/main/salesOrganization}"
+					items="{salesOrganizations>/}"
+					width="100%">
+					<core:Item key="{salesOrganizations>key}" text="{salesOrganizations>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblDistributtionChannel}"
+				class="sapUiTinyMarginTop"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipDistributtionChannel}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/main/distributtionChannel}"
+					items="{distributtionChannels>/}"
+					width="100%">
+					<core:Item key="{distributtionChannels>key}" text="{distributtionChannels>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblDivision}"
+				class="sapUiTinyMarginTop"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipDivision}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/main/division}"
+					items="{divisions>/}"
+					width="100%">
+					<core:Item key="{divisions>key}" text="{divisions>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblTaxNumber}"
+				class="sapUiTinyMarginTop"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipTaxNumber}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/main/taxNumber}"
+					maxLength="35">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				text="{i18n>lblVatRegistrationNumber}"
+				class="sapUiTinyMarginTop"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipTaxRegistration}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/main/vatRegistrationNumber}"
+					maxLength="35">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+			
+		</forms:content>
+	</forms:SimpleForm>
+</core:FragmentDefinition>
