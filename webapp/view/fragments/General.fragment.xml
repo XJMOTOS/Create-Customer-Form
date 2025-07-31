@@ -12,7 +12,8 @@
 		adjustLabelSpan="false"
 		singleContainerFullSize="false">
 		<forms:toolbar>
-			<Toolbar>
+			<Toolbar height="100%">
+				<Image src="images/suntory_logo.jpg" width="20%"/>
 				<ToolbarSpacer/>
 				<microchart:HarveyBallMicroChart size="XS"
 						total="100" showFractions="true" >
@@ -23,7 +24,6 @@
 			</Toolbar>
 		</forms:toolbar>
 		<forms:content>
-
 			<Label
 				text="{i18n>lblName} 1"
 				class="sapUiTinyMarginTop"/>
@@ -56,7 +56,7 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblname} 2"
+				text="{i18n>lblName} 2"
 				class="sapUiTinyMarginTop"
 				visible="{view>/show/name2}"/>
 			<HBox visible="{view>/show/name2}">
@@ -88,7 +88,7 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblname} 3"
+				text="{i18n>lblName} 3"
 				class="sapUiTinyMarginTop"
 				visible="{view>/show/name3}"/>
 			<HBox visible="{view>/show/name3}">
@@ -120,7 +120,7 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblname} 4"
+				text="{i18n>lblName} 4"
 				class="sapUiTinyMarginTop"
 				visible="{view>/show/name4}"/>
 			<HBox visible="{view>/show/name4}">
@@ -296,7 +296,7 @@
 					</layoutData>
 				</Select>
 			</HBox>
-			
+
 		</forms:content>
 	</forms:SimpleForm>
 </core:FragmentDefinition>

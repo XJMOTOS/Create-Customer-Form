@@ -12,7 +12,8 @@
 		adjustLabelSpan="false"
 		singleContainerFullSize="false">
 		<forms:toolbar>
-			<Toolbar>
+			<Toolbar height="100%">
+				<Image src="images/suntory_logo.jpg" width="20%"/>
 				<ToolbarSpacer/>
 				<microchart:HarveyBallMicroChart size="XS"
 						total="100" showFractions="true" >
@@ -25,7 +26,8 @@
 		<forms:content>
 			<Label
 				text="{i18n>lblAccountGroup}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				required="true"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -40,7 +42,8 @@
 					forceSelection="false"
 					selectedKey="{customer>/main/accountGroup}"
 					items="{accountGroups>/}"
-					width="100%">
+					width="100%"
+					valueState="{= ${customer>/main/accountGroup} ? 'None' : 'Error' }">
 					<core:Item key="{accountGroups>key}" text="{accountGroups>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -50,7 +53,8 @@
 
 			<Label
 				text="{i18n>lblCompanyCode}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				required="true"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -65,7 +69,8 @@
 					forceSelection="false"
 					selectedKey="{customer>/main/companyCode}"
 					items="{companiesCodes>/}"
-					width="100%">
+					width="100%"
+					valueState="{= ${customer>/main/companyCode} ? 'None' : 'Error' }">
 					<core:Item key="{companiesCodes>key}" text="{companiesCodes>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -75,7 +80,8 @@
 
 			<Label
 				text="{i18n>lblSalesOrganization}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				required="true"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -88,9 +94,10 @@
 				</core:Icon>
 				<Select
 					forceSelection="false"
-					selectedKey="{customer>/main/salesOrganization}"
+					selectedKey="{customer>/main/companyCode}"
 					items="{salesOrganizations>/}"
-					width="100%">
+					width="100%"
+					valueState="{= ${customer>/main/companyCode} ? 'None' : 'Error' }">
 					<core:Item key="{salesOrganizations>key}" text="{salesOrganizations>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -100,7 +107,8 @@
 
 			<Label
 				text="{i18n>lblDistributtionChannel}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				required="true"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -115,7 +123,8 @@
 					forceSelection="false"
 					selectedKey="{customer>/main/distributtionChannel}"
 					items="{distributtionChannels>/}"
-					width="100%">
+					width="100%"
+					valueState="{= ${customer>/main/distributtionChannel} ? 'None' : 'Error' }">
 					<core:Item key="{distributtionChannels>key}" text="{distributtionChannels>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -125,7 +134,8 @@
 
 			<Label
 				text="{i18n>lblDivision}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				required="true"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -140,7 +150,8 @@
 					forceSelection="false"
 					selectedKey="{customer>/main/division}"
 					items="{divisions>/}"
-					width="100%">
+					width="100%"
+					valueState="{= ${customer>/main/division} ? 'None' : 'Error' }">
 					<core:Item key="{divisions>key}" text="{divisions>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -150,7 +161,8 @@
 
 			<Label
 				text="{i18n>lblTaxNumber}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				required="true"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -163,7 +175,8 @@
 				</core:Icon>
 				<Input
 					value="{customer>/main/taxNumber}"
-					maxLength="35">
+					maxLength="35"
+					valueState="{= ${customer>/main/taxNumber} ? 'None' : 'Error' }">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -172,7 +185,8 @@
 
 			<Label
 				text="{i18n>lblVatRegistrationNumber}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				required="true"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -185,13 +199,14 @@
 				</core:Icon>
 				<Input
 					value="{customer>/main/vatRegistrationNumber}"
-					maxLength="35">
+					maxLength="35"
+					valueState="{= ${customer>/main/vatRegistrationNumber} ? 'None' : 'Error' }">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
 				</Input>
 			</HBox>
-			
+
 		</forms:content>
 	</forms:SimpleForm>
 </core:FragmentDefinition>
