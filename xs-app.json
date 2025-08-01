@@ -3,10 +3,10 @@
 	"authenticationMethod": "none",
 	"routes": [
 		{
-			"source": "^/GWD_C_FORM/(.*)$",
+			"source": "^/GWD_C_FORM_UI5/(.*)$",
 			"target": "$1",
 			"authenticationType": "xsuaa",
-			"destination": "GWD_C_FORM"
+			"destination": "GWD_C_FORM_UI5"
 		},
 		{
 			"source": "^/GWD_BPA/(.*)$",

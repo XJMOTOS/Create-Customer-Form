@@ -10,8 +10,8 @@ sap.ui.define([
 		},
 
 		read: function() {
-			let model = this.getOwnerComponent().getModel("GWD_C_FORM");
-			let entity = "/ZFA1_BUS_ACC_GRPSet1";
+			let model = this.getOwnerComponent().getModel("GWD_C_FORM_UI5");
+			let entity = "/ZFA1_BRSCHSet";
 			let entity2 = "/ZFA1_SALES_ORGSet1";
 
 			model.read(entity, {

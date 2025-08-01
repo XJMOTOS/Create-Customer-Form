@@ -15,8 +15,8 @@
 			"version": "1.1.0"
 		},
 		"dataSources": {
-			"GWD_C_FORM": {
-				"uri": "/GWD_C_FORM/",
+			"GWD_C_FORM_UI5": {
+				"uri": "/GWD_C_FORM_UI5/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0"
@@ -91,14 +91,14 @@
 					"async": true
 				}
 			},
-			"GWD_C_FORM": {
+			"GWD_C_FORM_UI5": {
 				"type": "sap.ui.model.odata.v2.ODataModel",
 				"settings": {
 					"defaultBindingMode": "TwoWay",
 					"defaultCountMode": "Inline",
 					"useBatch": true
 				},
-				"dataSource": "GWD_C_FORM",
+				"dataSource": "GWD_C_FORM_UI5",
 				"preload": true
 			},
 			"GWD_BPA": {
