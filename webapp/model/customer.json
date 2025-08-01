@@ -13,6 +13,7 @@
 		"name2": "",
 		"name3": "",
 		"name4": "",
+		"country": "",
 		"searchTerm": "",
 		"language": "",
 		"accountGroup": "",
@@ -42,7 +43,6 @@
 	},
 	"contactPersons": [],
 	"address": {
-		"country": "",
 		"region": "",
 		"city": "",
 		"houseNumber": "",

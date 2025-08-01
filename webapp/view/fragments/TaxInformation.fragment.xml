@@ -1,0 +1,36 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:microchart="sap.suite.ui.microchart">
+	<Table 
+		mode="None"
+		items="{taxInformation>/}"
+		visible="{view>/show/salesFields}">
+		<columns>
+			<Column>
+				<Text text="{i18n>columnTaxCountry}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnTaxCategory}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnTaxClassification}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Input value="{taxInformation>taxCountry}"/>
+					<Input value="{taxInformation>taxCategory}"/>
+					<Select
+						selectedKey="{taxInformation>taxClassification}"
+						items="{ path: 'taxClasification>/', templateShareable: false }">
+						<core:Item key="{taxClasification>key}" text="{taxClasification>text}"/>
+					</Select>
+					<Input value="{taxInformation>taxClassification}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

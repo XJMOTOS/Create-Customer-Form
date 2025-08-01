@@ -18,14 +18,13 @@ sap.ui.define([
 		_initializeModels: function () {
 			this._loadModelFromJSONFile("view", "model/view.json");
 			this._loadModelFromJSONFile("customer", "model/customer.json");
-
-			// this._loadModelFromJSONFile("taxInformation", "model/data/taxInformation.json");
-			// this._loadModelFromJSONFile("taxClasification", "model/data/taxClassification.json");
-			// this._loadModelFromJSONFile("contactType", "model/data/contactType.json");
-			// this._loadModelFromJSONFile("distributtionChannel", "model/data/distributtionChannel.json");
-			// this._loadModelFromJSONFile("division", "model/data/division.json");
-			// this._loadModelFromJSONFile("paymentTerms", "model/data/paymentTerms.json");
-			// this._loadModelFromJSONFile("accountAssignmentGroup", "model/data/accountAssignmentGroup.json");
+			this._loadModelFromJSONFile("taxInformation", "model/data/taxInformation.json");
+			this._loadModelFromJSONFile("taxClasification", "model/data/taxClassification.json");
+			this._loadModelFromJSONFile("contactTypes", "model/data/contactType.json");
+			this._loadModelFromJSONFile("distributtionChannels", "model/data/distributtionChannel.json");
+			this._loadModelFromJSONFile("divisions", "model/data/division.json");
+			this._loadModelFromJSONFile("termsOfPayment", "model/data/paymentTerms.json");
+			this._loadModelFromJSONFile("accountAssignmentGroups", "model/data/accountAssignmentGroup.json");
 		},
 
 		_toggleVisibility: function (property) {
@@ -114,11 +113,12 @@ sap.ui.define([
 			let model = event.getSource().getModel("customer");
 			let contacts = model.getProperty("/contactPersons");
 			contacts.push({
-				function: "",
-				firstName: "",
-				lastName: "",
+				contactType: "",
+				name: "",
+				surname: "",
+				phone: "",
+				fax: "",
 				email: "",
-				phone: ""
 			});
 			model.setProperty("/contactPersons", contacts);
 		},

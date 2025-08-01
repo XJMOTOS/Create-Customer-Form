@@ -169,6 +169,11 @@
 							fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Delivery"
 							type="XML"/>
 					</ObjectPageSubSection>
+					<ObjectPageSubSection title="{i18n>lblSectionTaxInformation}">
+						<core:Fragment
+							fragmentName="beamsuntoryinc.createcustomerform.view.fragments.TaxInformation"
+							type="XML"/>
+					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
 			

@@ -144,6 +144,33 @@
 			<Label
 				class="sapUiTinyMarginTop"
 				required="true"
+				text="{i18n>lblCountry}"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipCountry}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/general/country}"
+					items="{countries>/}"
+					valueState="{= ${customer>/general/country} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{countries>key}" text="{countries>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
 				text="{i18n>lblSearchTerm}"/>
 			<HBox>
 				<core:Icon

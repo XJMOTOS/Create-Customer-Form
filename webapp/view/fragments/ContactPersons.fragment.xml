@@ -18,35 +18,39 @@
 		</headerToolbar>
 		<columns>
 			<Column>
-				<Text text="{i18n>columnFunction}"/>
+				<Text text="{i18n>columnContactType}"/>
 			</Column>
 			<Column>
-				<Text text="{i18n>columnFirstName}"/>
+				<Text text="{i18n>columnName}"/>
 			</Column>
 			<Column>
-				<Text text="{i18n>columnLastName}"/>
-			</Column>
-			<Column>
-				<Text text="{i18n>columnEmail}"/>
+				<Text text="{i18n>columnSurname}"/>
 			</Column>
 			<Column>
 				<Text text="{i18n>columnPhone}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnFax}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnEmail}"/>
 			</Column>
 		</columns>
 		<items>
 			<ColumnListItem>
 				<cells>
 					<Select
-						selectedKey="{customer>function}"
+						selectedKey="{customer>contactType}"
 						forceSelection="false"
-						items="{ path: 'function>/', templateShareable: false }"
+						items="{ path: 'contactTypes>/', templateShareable: false }"
 						width="100%">
-						<core:Item key="{function>key}" text="{function>key}"/>
+						<core:Item key="{contactTypes>key}" text="{contactTypes>key}"/>
 					</Select>
-					<Input value="{customer>firstName}"/>
-					<Input value="{customer>lastName}"/>
-					<Input value="{customer>email}"/>
+					<Input value="{customer>name}"/>
+					<Input value="{customer>surname}"/>
 					<Input value="{customer>phone}"/>
+					<Input value="{customer>fax}"/>
+					<Input value="{customer>email}"/>
 				</cells>
 			</ColumnListItem>
 		</items>
