@@ -9,6 +9,21 @@ sap.ui.define([
 			this._initializeModels();
 		},
 
+		read: function() {
+			let model = this.getOwnerComponent().getModel("GWD_C_FORM");
+			let entity = "/ZFA1_BUS_ACC_GRPSet1";
+			let entity2 = "/ZFA1_SALES_ORGSet1";
+
+			model.read(entity, {
+				success: function(oData) {
+					console.log("Datos leídos:", oData);
+				},
+				error: function(oError) {
+					console.error("Error al leer:", oError);
+				}
+			});
+		},
+
 		_loadModelFromJSONFile: function (modelName, path) {
 			let model = new JSONModel();
 			model.loadData(path);

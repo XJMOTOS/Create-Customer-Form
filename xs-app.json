@@ -1,0 +1,24 @@
+{
+	"welcomeFile": "webapp/index.html",
+	"authenticationMethod": "none",
+	"routes": [
+		{
+			"source": "^/GWD_C_FORM/(.*)$",
+			"target": "$1",
+			"authenticationType": "xsuaa",
+			"destination": "GWD_C_FORM"
+		},
+		{
+			"source": "^/GWD_BPA/(.*)$",
+			"target": "$1",
+			"authenticationType": "xsuaa",
+			"destination": "GWD_BPA"
+		},
+		{
+			"source": "^/sbpa_process/(.*)$",
+			"target": "$1",
+			"authenticationType": "xsuaa",
+			"destination": "sbpa_process_destination"
+		}
+	]
+}

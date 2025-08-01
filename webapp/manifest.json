@@ -13,6 +13,29 @@
 		"sourceTemplate": {
 			"id": "generator-ui5-app",
 			"version": "1.1.0"
+		},
+		"dataSources": {
+			"GWD_C_FORM": {
+				"uri": "/GWD_C_FORM/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			},
+			"GWD_BPA": {
+				"uri": "/GWD_BPA/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			},
+			"sbpa_process": {
+				"uri": "/sbpa_process/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
 		}
 	},
 
@@ -67,6 +90,36 @@
 					"fallbackLocale": "en",
 					"async": true
 				}
+			},
+			"GWD_C_FORM": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"useBatch": true
+				},
+				"dataSource": "GWD_C_FORM",
+				"preload": true
+			},
+			"GWD_BPA": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"useBatch": true
+				},
+				"dataSource": "GWD_BPA",
+				"preload": true
+			},
+			"sbpa_process": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"useBatch": true
+				},
+				"dataSource": "sbpa_process",
+				"preload": true
 			}
 		},
 

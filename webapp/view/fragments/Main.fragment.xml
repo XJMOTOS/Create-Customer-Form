@@ -12,6 +12,7 @@
 		adjustLabelSpan="false"
 		singleContainerFullSize="false">
 		<forms:content>
+			<Button text="read oData" press=".read"/>
 			<Label
 				text="{i18n>lblAccountGroup}"
 				class="sapUiTinyMarginTop"
