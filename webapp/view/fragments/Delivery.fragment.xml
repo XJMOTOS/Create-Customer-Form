@@ -11,24 +11,16 @@
 		adjustLabelSpan="false"
 		singleContainerFullSize="false"
 		visible="{view>/show/optionalSalesDataFields}">
-		<forms:toolbar>
-			<Toolbar>
-				<Title text="{i18n>lblSectionDelivery}"/>
-				<ToolbarSpacer/>
-				<Button
-					text="{= ${view>/show/deliveryFields} ? ${i18n>buttonHideDeliveryFields} : ${i18n>buttonShowDeliveryFields} }"
-					press=".onToggleDeliveryFields"/>
-			</Toolbar>
-		</forms:toolbar>
 		<forms:content>
 			<Label
-				text="{i18n>lblShippingCondition}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblShippingCondition}"/>
 			<HBox>
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipShippingConditions}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -36,8 +28,9 @@
 				</core:Icon>
 				<Select
 					forceSelection="false"
-					selectedKey="{customer>/delivery/shippingCondition}"
 					items="{shippingConditions>/}"
+					selectedKey="{customer>/delivery/shippingCondition}"
+					valueState="{= ${customer>/delivery/shippingCondition} ? 'None' : 'Error' }"
 					width="100%">
 					<core:Item key="{shippingConditions>key}" text="{shippingConditions>text}"/>
 					<layoutData>
@@ -47,14 +40,14 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblDeliveryBlock}"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/deliveryFields}"/>
-			<HBox visible="{view>/show/deliveryFields}">
+				text="{i18n>lblDeliveryBlock}"
+				visible="{view>/show/salesFields}"/>
+			<HBox visible="{view>/show/salesFields}">
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipDeliveryBlock}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -70,14 +63,14 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblCompleteDelivery}"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/deliveryFields}"/>
-			<HBox visible="{view>/show/deliveryFields}">
+				text="{i18n>lblCompleteDelivery}"
+				visible="{view>/show/salesFields}"/>
+			<HBox visible="{view>/show/salesFields}">
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipCompleteDelivery}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -93,14 +86,14 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblMaxNumberOfPartialDeliveries}"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/deliveryFields}"/>
-			<HBox visible="{view>/show/deliveryFields}">
+				text="{i18n>lblMaxNumberOfPartialDeliveries}"
+				visible="{view>/show/salesFields}"/>
+			<HBox visible="{view>/show/salesFields}">
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipMaxNumberOfPartialDeliveries}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -116,14 +109,14 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblPartialDelivery}"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/deliveryFields}"/>
-			<HBox visible="{view>/show/deliveryFields}">
+				text="{i18n>lblPartialDelivery}"
+				visible="{view>/show/salesFields}"/>
+			<HBox visible="{view>/show/salesFields}">
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipPartialDelivery}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -139,32 +132,32 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblOrderCombinationIndicator}"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/deliveryFields}"/>
-			<HBox visible="{view>/show/deliveryFields}">
+				text="{i18n>lblOrderCombinationIndicator}"
+				visible="{view>/show/salesFields}"/>
+			<HBox visible="{view>/show/salesFields}">
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipOrderCombinationIndicator}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
-				<Input
-					value="{customer>/delivery/orderCombinationIndicator}"
-					maxLength="1">
+				<CheckBox
+					selected="{customer>/delivery/orderCombinationIndicator}">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
-				</Input>
+				</CheckBox>
 			</HBox>
 
 			<Label
+				class="sapUiTinyMarginTop"
 				text="{i18n>lblDeliveryPriority}"
-				class="sapUiTinyMarginTop"/>
-			<HBox>
+				visible="{view>/show/salesFields}"/>
+			<HBox visible="{view>/show/salesFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -176,8 +169,8 @@
 				</core:Icon>
 				<Select
 					forceSelection="false"
-					selectedKey="{customer>/delivery/deliveryPriority}"
 					items="{deliveryPriorities>/}"
+					selectedKey="{customer>/delivery/deliveryPriority}"
 					width="100%">
 					<core:Item key="{deliveryPriorities>key}" text="{deliveryPriorities>text}"/>
 					<layoutData>
@@ -187,14 +180,14 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblDeliveringPlant}"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/deliveryFields}"/>
-			<HBox visible="{view>/show/deliveryFields}">
+				text="{i18n>lblDeliveringPlant}"
+				visible="{view>/show/salesFields}"/>
+			<HBox visible="{view>/show/salesFields}">
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipDeliveringPlant}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -202,8 +195,8 @@
 				</core:Icon>
 				<Select
 					forceSelection="false"
-					selectedKey="{customer>/delivery/deliveringPlant}"
 					items="{deliveringPlants>/}"
+					selectedKey="{customer>/delivery/deliveringPlant}"
 					width="100%">
 					<core:Item key="{deliveringPlants>key}" text="{deliveringPlants>text}"/>
 					<layoutData>

@@ -11,24 +11,10 @@
 		layout="ResponsiveGridLayout"
 		adjustLabelSpan="false"
 		singleContainerFullSize="false">
-		<forms:toolbar>
-			<Toolbar>
-				<ToolbarSpacer/>
-				<microchart:HarveyBallMicroChart size="XS"
-						total="100" showFractions="true" >
-					<microchart:items>
-						<microchart:HarveyBallMicroChartItem fraction="33" color="Good" fractionScale="%"/>
-					</microchart:items>
-				</microchart:HarveyBallMicroChart>
-				<Button
-					text="{= ${view>/show/addressFields} ? ${i18n>buttonHideAddressFields} : ${i18n>buttonShowAddressFields} }"
-					press=".onToggleAddressFields"/>
-			</Toolbar>
-		</forms:toolbar>
 		<forms:content>
 			<Label
-				text="{i18n>lblCountry}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblCountry}"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -52,8 +38,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblRegion}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblRegion}"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -77,8 +63,9 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblCity}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblCity}"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -91,7 +78,8 @@
 				</core:Icon>
 				<Input
 					value="{customer>/address/city}"
-					maxLength="35">
+					maxLength="35"
+					valueState="{= ${customer>/address/city} ? 'None' : 'Error' }">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -99,8 +87,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblHouseNumber}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblHouseNumber}"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -121,8 +109,8 @@
 			</HBox>
 
 			<Label	
-				text="{i18n>lblStreet}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblStreet}"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -143,8 +131,8 @@
 			</HBox>
 
 			<Label	
-				text="{i18n>lblStreet} 2"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblStreet} 2"
 				visible="{view>/show/addressFields}"/>
 			<HBox visible="{view>/show/addressFields}">
 				<core:Icon
@@ -175,8 +163,8 @@
 			</HBox>
 
 			<Label	
-				text="{i18n>lblStreet} 3"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblStreet} 3"
 				visible="{= ${view>/show/addressFields} &amp;&amp; ${view>/show/street3} }"/>
 			<HBox visible="{= ${view>/show/addressFields} &amp;&amp; ${view>/show/street3} }">
 				<core:Icon
@@ -207,8 +195,8 @@
 			</HBox>
 
 			<Label	
-				text="{i18n>lblStreet} 4"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblStreet} 4"
 				visible="{= ${view>/show/addressFields} &amp;&amp; ${view>/show/street4} }"/>
 			<HBox visible="{= ${view>/show/addressFields} &amp;&amp; ${view>/show/street4} }">
 				<core:Icon
@@ -239,8 +227,8 @@
 			</HBox>
 
 			<Label	
-				text="{i18n>lblStreet} 5"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblStreet} 5"
 				visible="{= ${view>/show/addressFields} &amp;&amp; ${view>/show/street5} }"/>
 			<HBox visible="{= ${view>/show/addressFields} &amp;&amp; ${view>/show/street5} }">
 				<core:Icon
@@ -271,8 +259,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblPostalCode}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblPostalCode}"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -293,8 +281,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblTelephone} 1"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblTelephone} 1"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -334,8 +322,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblTelephone} 2"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblTelephone} 2"
 				visible="{view>/show/telephone2}"/>
 			<HBox visible="{view>/show/telephone2}">
 				<core:Icon
@@ -365,10 +353,10 @@
 					</layoutData>
 				</Input>
 				<core:Icon
-					src="sap-icon://sys-minus"
-					press=".onHideTelephone($event,2)"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin"
 					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					press=".onHideTelephone($event,2)"
+					src="sap-icon://sys-minus">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
@@ -376,8 +364,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblTelephone} 3"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblTelephone} 3"
 				visible="{view>/show/telephone3}"/>
 			<HBox visible="{view>/show/telephone3}">
 				<core:Icon
@@ -418,8 +406,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblTelephone} 4"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblTelephone} 4"
 				visible="{view>/show/telephone4}"/>
 			<HBox visible="{view>/show/telephone4}">
 				<core:Icon
@@ -460,8 +448,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblTelephone} 5"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblTelephone} 5"
 				visible="{view>/show/telephone5}"/>
 			<HBox visible="{view>/show/telephone5}">
 				<core:Icon
@@ -502,8 +490,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblFax} 1"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblFax} 1"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -543,8 +531,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblFax} 2"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblFax} 2"
 				visible="{view>/show/fax2}"/>
 			<HBox visible="{view>/show/fax2}">
 				<core:Icon
@@ -585,8 +573,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblFax} 3"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblFax} 3"
 				visible="{view>/show/fax3}"/>
 			<HBox visible="{view>/show/fax3}">
 				<core:Icon
@@ -627,8 +615,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblFax} 4"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblFax} 4"
 				visible="{view>/show/fax4}"/>
 			<HBox visible="{view>/show/fax4}">
 				<core:Icon
@@ -669,8 +657,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblFax} 5"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblFax} 5"
 				visible="{view>/show/fax5}"/>
 			<HBox visible="{view>/show/fax5}">
 				<core:Icon
@@ -711,8 +699,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblEmail} 1"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblEmail} 1"/>
 			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
@@ -742,8 +730,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblEmail} 2"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblEmail} 2"
 				visible="{view>/show/email2}"/>
 			<HBox visible="{view>/show/email2}">
 				<core:Icon
@@ -774,8 +762,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblEmail} 3"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblEmail} 3"
 				visible="{view>/show/email3}"/>
 			<HBox visible="{view>/show/email3}">
 				<core:Icon
@@ -806,8 +794,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblEmail} 4"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblEmail} 4"
 				visible="{view>/show/email4}"/>
 			<HBox visible="{view>/show/email4}">
 				<core:Icon
@@ -838,8 +826,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblEmail} 5"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblEmail} 5"
 				visible="{view>/show/email5}"/>
 			<HBox visible="{view>/show/email5}">
 				<core:Icon
@@ -870,8 +858,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblDistrict}"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblDistrict}"
 				visible="{view>/show/addressFields}"/>
 			<HBox visible="{view>/show/addressFields}">
 				<core:Icon
@@ -893,8 +881,8 @@
 			</HBox>
 			
 			<Label
-				text="{i18n>lblPOBox}"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblPOBox}"
 				visible="{view>/show/addressFields}"/>
 			<HBox visible="{view>/show/addressFields}">
 				<core:Icon
@@ -916,8 +904,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblBuilding}"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblBuilding}"
 				visible="{view>/show/addressFields}"/>
 			<HBox visible="{view>/show/addressFields}">
 				<core:Icon
@@ -939,8 +927,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblFloor}"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblFloor}"
 				visible="{view>/show/addressFields}"/>
 			<HBox visible="{view>/show/addressFields}">
 				<core:Icon
@@ -962,8 +950,8 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblRoom}"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblRoom}"
 				visible="{view>/show/addressFields}"/>
 			<HBox visible="{view>/show/addressFields}">
 				<core:Icon

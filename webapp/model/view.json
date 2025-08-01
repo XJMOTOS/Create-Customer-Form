@@ -19,14 +19,10 @@
 		"street3": false,
 		"street4": false,
 		"street5": false,
-		
-		"taxDetailsFields": false,
-		"attributeFields": false,
-		"contactPersonsTable": false,
+
+		"generalFields": false,
 		"addressFields": false,
 		"companyFields": false,
-		"deliveryFields": false,
-		"customerGroupFields": false,
 		"salesFields": false,
 		"hierarchyFields": false
 	}

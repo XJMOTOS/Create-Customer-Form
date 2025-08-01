@@ -3,22 +3,19 @@
 	xmlns:core="sap.ui.core"
 	xmlns:forms="sap.ui.layout.form"
 	xmlns="sap.m">
-	<Toolbar>
-		<Title text="{i18n>lblSectionContactPersons}"/>
-		<ToolbarSpacer/>
-		<Button
-			icon="sap-icon://add"
-			press=".onAddContactPerson"
-			visible="{view>/show/contactPersonsTable}"/>
-		<Button
-				text="{= ${view>/show/contactPersonsTable} ? ${i18n>buttonHideContactPersonsTable} : ${i18n>buttonShowContactPersonsTable} }"
-				press=".onToggleContactPersonsTable"/>
-	</Toolbar>
 	<Table 
 		mode="Delete"
 		delete=".onRemoveContactPerson"
 		items="{customer>/contactPersons}"
-		visible="{view>/show/contactPersonsTable}">
+		visible="{view>/show/generalFields}">
+		<headerToolbar>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button
+					icon="sap-icon://add"
+					press=".onAddContactPerson"/>
+			</Toolbar>
+		</headerToolbar>
 		<columns>
 			<Column>
 				<Text text="{i18n>columnFunction}"/>

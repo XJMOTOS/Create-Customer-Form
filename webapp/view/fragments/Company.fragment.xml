@@ -12,29 +12,16 @@
 		layout="ResponsiveGridLayout"
 		adjustLabelSpan="false"
 		singleContainerFullSize="false">
-		<forms:toolbar>
-			<Toolbar>
-				<ToolbarSpacer/>
-				<microchart:HarveyBallMicroChart size="XS"
-						total="100" showFractions="true" >
-					<microchart:items>
-						<microchart:HarveyBallMicroChartItem fraction="49" color="Good" fractionScale="%"/>
-					</microchart:items>
-				</microchart:HarveyBallMicroChart>
-				<Button
-					text="{= ${view>/show/companyFields} ? ${i18n>buttonHideCompanyFields} : ${i18n>buttonShowCompanyFields} }"
-					press=".onToggleCompanyFields"/>
-			</Toolbar>
-		</forms:toolbar>
 		<forms:content>
 			<Label	
-				text="{i18n>lblSortKey}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblSortKey}"/>
 			<HBox>
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipSortKey}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -42,8 +29,9 @@
 				</core:Icon>
 				<Select
 					forceSelection="false"
-					selectedKey="{customer>/company/sortKey}"
 					items="{sortKeys>/}"
+					selectedKey="{customer>/company/sortKey}"
+					valueState="{= ${customer>/company/sortKey} ? 'None' : 'Error' }"
 					width="100%">
 					<core:Item key="{sortKeys>key}" text="{sortKeys>text}"/>
 					<layoutData>
@@ -53,13 +41,14 @@
 			</HBox>
 			
 			<Label	
-				text="{i18n>lblReconciliationAccount}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblReconciliationAccount}"/>
 			<HBox>
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipReconciliationAccount}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -67,8 +56,9 @@
 				</core:Icon>
 				<Select
 					forceSelection="false"
-					selectedKey="{customer>/company/reconciliationAccount}"
 					items="{reconciliationAccounts>/}"
+					selectedKey="{customer>/company/reconciliationAccount}"
+					valueState="{= ${customer>/company/reconciliationAccount} ? 'None' : 'Error' }"
 					width="100%">
 					<core:Item key="{reconciliationAccounts>key}" text="{reconciliationAccounts>text}"/>
 					<layoutData>
@@ -78,14 +68,14 @@
 			</HBox>
 
 			<Label	
-				text="{i18n>lblAuthorizationGroup}"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblAuthorizationGroup}"
 				visible="{view>/show/companyFields}"/>
 			<HBox visible="{view>/show/companyFields}">
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipAuthorizationGroup}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -100,13 +90,14 @@
 			</HBox>
 
 			<Label	
-				text="{i18n>lblCashManagmentGroup}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblCashManagmentGroup}"/>
 			<HBox>
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipCashManagmentGroup}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -114,8 +105,9 @@
 				</core:Icon>
 				<Select
 					forceSelection="false"
-					selectedKey="{customer>/company/cashManagmentGroup}"
 					items="{cashManagmentGroups>/}"
+					selectedKey="{customer>/company/cashManagmentGroup}"
+					valueState="{= ${customer>/company/cashManagmentGroup} ? 'None' : 'Error' }"
 					width="100%">
 					<core:Item key="{cashManagmentGroups>key}" text="{cashManagmentGroups>text}"/>
 					<layoutData>
@@ -125,13 +117,13 @@
 			</HBox>
 
 			<Label	
-				text="{i18n>lblToleranceGroup}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblToleranceGroup}"/>
 			<HBox>
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipToleranceGroup}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -139,8 +131,8 @@
 				</core:Icon>
 				<Select
 					forceSelection="false"
-					selectedKey="{customer>/company/toleranceGroup}"
 					items="{toleranceGroups>/}"
+					selectedKey="{customer>/company/toleranceGroup}"
 					width="100%">
 					<core:Item key="{toleranceGroups>key}" text="{toleranceGroups>text}"/>
 					<layoutData>
@@ -150,13 +142,14 @@
 			</HBox>
 
 			<Label	
-				text="{i18n>lblPaymentMethod}"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblPaymentMethod}"/>
 			<HBox>
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipPaymentMethod}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -164,8 +157,9 @@
 				</core:Icon>
 				<Select
 					forceSelection="false"
-					selectedKey="{customer>/company/paymentMethod}"
 					items="{paymentMethods>/}"
+					selectedKey="{customer>/company/paymentMethod}"
+					valueState="{= ${customer>/company/paymentMethod} ? 'None' : 'Error' }"
 					width="100%">
 					<core:Item key="{oaymentMethods>key}" text="{paymentMethods>text}"/>
 					<layoutData>
@@ -175,14 +169,14 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblHouseBank}"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblHouseBank}"
 				visible="{view>/show/companyFields}"/>
 			<HBox visible="{view>/show/companyFields}">
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipHouseBank}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -197,14 +191,14 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblAccountingClerkAbbreviation}"
 				class="sapUiTinyMarginTop"
+				text="{i18n>lblAccountingClerkAbbreviation}"
 				visible="{view>/show/companyFields}"/>
 			<HBox visible="{view>/show/companyFields}">
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipAccountingClerkAbbreviation}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>

@@ -11,21 +11,12 @@
 		layout="ResponsiveGridLayout"
 		adjustLabelSpan="false"
 		singleContainerFullSize="false">
-		<forms:toolbar>
-			<Toolbar>
-				<Title text="{i18n>lblSectionAttributes}"/>
-				<ToolbarSpacer/>
-				<Button
-					text="{= ${view>/show/attributeFields} ? ${i18n>buttonHideAttributeFields} : ${i18n>buttonShowAttributeFields} }"
-					press=".onToggleAttributeFields"/>
-			</Toolbar>
-		</forms:toolbar>
 		<forms:content>
 			<Label
 				text="{i18n>lblAttribute} 1"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/attributeFields}"/>
-			<HBox visible="{view>/show/attributeFields}">
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -50,8 +41,8 @@
 			<Label
 				text="{i18n>lblAttribute} 2"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/attributeFields}"/>
-			<HBox visible="{view>/show/attributeFields}">
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -76,8 +67,8 @@
 			<Label
 				text="{i18n>lblAttribute} 3"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/attributeFields}"/>
-			<HBox visible="{view>/show/attributeFields}">
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -102,8 +93,8 @@
 			<Label
 				text="{i18n>lblAttribute} 4"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/attributeFields}"/>
-			<HBox visible="{view>/show/attributeFields}">
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -128,8 +119,8 @@
 			<Label
 				text="{i18n>lblAttribute} 5"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/attributeFields}"/>
-			<HBox visible="{view>/show/attributeFields}">
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -154,8 +145,8 @@
 			<Label
 				text="{i18n>lblAttribute} 6"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/attributeFields}"/>
-			<HBox visible="{view>/show/attributeFields}">
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -180,8 +171,8 @@
 			<Label
 				text="{i18n>lblAttribute} 7"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/attributeFields}"/>
-			<HBox visible="{view>/show/attributeFields}">
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -206,8 +197,8 @@
 			<Label
 				text="{i18n>lblAttribute} 8"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/attributeFields}"/>
-			<HBox visible="{view>/show/attributeFields}">
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -232,8 +223,8 @@
 			<Label
 				text="{i18n>lblAttribute} 9"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/attributeFields}"/>
-			<HBox visible="{view>/show/attributeFields}">
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -258,8 +249,8 @@
 			<Label
 				text="{i18n>lblAttribute} 10"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/attributeFields}"/>
-			<HBox visible="{view>/show/attributeFields}">
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"

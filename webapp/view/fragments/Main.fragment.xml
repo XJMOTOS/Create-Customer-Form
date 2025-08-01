@@ -11,18 +11,6 @@
 		layout="ResponsiveGridLayout"
 		adjustLabelSpan="false"
 		singleContainerFullSize="false">
-		<forms:toolbar>
-			<Toolbar height="100%">
-				<Image src="images/suntory_logo.jpg" width="20%"/>
-				<ToolbarSpacer/>
-				<microchart:HarveyBallMicroChart size="XS"
-						total="100" showFractions="true" >
-					<microchart:items>
-						<microchart:HarveyBallMicroChartItem fraction="0" color="Good" fractionScale="%"/>
-					</microchart:items>
-				</microchart:HarveyBallMicroChart>
-			</Toolbar>
-		</forms:toolbar>
 		<forms:content>
 			<Label
 				text="{i18n>lblAccountGroup}"
@@ -30,9 +18,9 @@
 				required="true"/>
 			<HBox>
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipAccountGroup}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -40,10 +28,10 @@
 				</core:Icon>
 				<Select
 					forceSelection="false"
-					selectedKey="{customer>/main/accountGroup}"
 					items="{accountGroups>/}"
-					width="100%"
-					valueState="{= ${customer>/main/accountGroup} ? 'None' : 'Error' }">
+					selectedKey="{customer>/main/accountGroup}"
+					valueState="{= ${customer>/main/accountGroup} ? 'None' : 'Error' }"
+					width="100%">
 					<core:Item key="{accountGroups>key}" text="{accountGroups>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -52,14 +40,14 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblCompanyCode}"
 				class="sapUiTinyMarginTop"
-				required="true"/>
+				required="true"
+				text="{i18n>lblCompanyCode}"/>
 			<HBox>
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipCompanyCode}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -67,10 +55,10 @@
 				</core:Icon>
 				<Select
 					forceSelection="false"
-					selectedKey="{customer>/main/companyCode}"
 					items="{companiesCodes>/}"
-					width="100%"
-					valueState="{= ${customer>/main/companyCode} ? 'None' : 'Error' }">
+					selectedKey="{customer>/main/companyCode}"
+					valueState="{= ${customer>/main/companyCode} ? 'None' : 'Error' }"
+					width="100%">
 					<core:Item key="{companiesCodes>key}" text="{companiesCodes>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -79,14 +67,14 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblSalesOrganization}"
 				class="sapUiTinyMarginTop"
-				required="true"/>
+				required="true"
+				text="{i18n>lblSalesOrganization}"/>
 			<HBox>
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipSalesOrganization}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -94,10 +82,10 @@
 				</core:Icon>
 				<Select
 					forceSelection="false"
-					selectedKey="{customer>/main/companyCode}"
 					items="{salesOrganizations>/}"
-					width="100%"
-					valueState="{= ${customer>/main/companyCode} ? 'None' : 'Error' }">
+					selectedKey="{customer>/main/companyCode}"
+					valueState="{= ${customer>/main/companyCode} ? 'None' : 'Error' }"
+					width="100%">
 					<core:Item key="{salesOrganizations>key}" text="{salesOrganizations>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -106,14 +94,14 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblDistributtionChannel}"
 				class="sapUiTinyMarginTop"
-				required="true"/>
+				required="true"
+				text="{i18n>lblDistributtionChannel}"/>
 			<HBox>
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipDistributtionChannel}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -121,10 +109,10 @@
 				</core:Icon>
 				<Select
 					forceSelection="false"
-					selectedKey="{customer>/main/distributtionChannel}"
 					items="{distributtionChannels>/}"
-					width="100%"
-					valueState="{= ${customer>/main/distributtionChannel} ? 'None' : 'Error' }">
+					selectedKey="{customer>/main/distributtionChannel}"
+					valueState="{= ${customer>/main/distributtionChannel} ? 'None' : 'Error' }"
+					width="100%">
 					<core:Item key="{distributtionChannels>key}" text="{distributtionChannels>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -133,14 +121,14 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblDivision}"
 				class="sapUiTinyMarginTop"
-				required="true"/>
+				required="true"
+				text="{i18n>lblDivision}"/>
 			<HBox>
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipDivision}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
@@ -148,8 +136,8 @@
 				</core:Icon>
 				<Select
 					forceSelection="false"
-					selectedKey="{customer>/main/division}"
 					items="{divisions>/}"
+					selectedKey="{customer>/main/division}"
 					width="100%"
 					valueState="{= ${customer>/main/division} ? 'None' : 'Error' }">
 					<core:Item key="{divisions>key}" text="{divisions>text}"/>
@@ -160,22 +148,22 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblTaxNumber}"
 				class="sapUiTinyMarginTop"
-				required="true"/>
+				required="true"
+				text="{i18n>lblTaxNumber}"/>
 			<HBox>
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipTaxNumber}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					value="{customer>/main/taxNumber}"
 					maxLength="35"
+					value="{customer>/main/taxNumber}"
 					valueState="{= ${customer>/main/taxNumber} ? 'None' : 'Error' }">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -184,22 +172,22 @@
 			</HBox>
 
 			<Label
-				text="{i18n>lblVatRegistrationNumber}"
 				class="sapUiTinyMarginTop"
-				required="true"/>
+				required="true"
+				text="{i18n>lblVatRegistrationNumber}"/>
 			<HBox>
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
 					tooltip="{i18n>tooltipTaxRegistration}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					value="{customer>/main/vatRegistrationNumber}"
 					maxLength="35"
+					value="{customer>/main/vatRegistrationNumber}"
 					valueState="{= ${customer>/main/vatRegistrationNumber} ? 'None' : 'Error' }">
 					<layoutData>
 						<FlexItemData growFactor="1"/>

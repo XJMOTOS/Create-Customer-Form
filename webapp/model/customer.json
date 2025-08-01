@@ -125,7 +125,7 @@
 		"completeDelivery": "",
 		"maxNumberOfPartialDeliveries": "",
 		"partialDelivery": "",
-		"orderCombinationIndicator": "",
+		"orderCombinationIndicator": false,
 		"deliveryPriority": "",
 		"deliveringPlant": ""
 	},
@@ -147,8 +147,8 @@
 		"district": "",
 		"incoterm1": "",
 		"incoterm2": "",
-		"salesAuthorizationGroup": "",
 		"orderProbability": "",
-		"customerClassification": ""
+		"customerClassification": "",
+		"indicatorRebateRelevant": ""
 	}
 }

@@ -45,32 +45,12 @@ sap.ui.define([
 			}
 		},
 
-		onToggleTaxDetailsFields: function (event) {
-			this._toggleVisibility("/show/taxDetailsFields");
-		},
-
-		onToggleAttributeFields: function (event) {
-			this._toggleVisibility("/show/attributeFields");
-		},
-
 		onToggleAddressFields: function (event) {
 			this._toggleVisibility("/show/addressFields");
-		},
-
-		onToggleContactPersonsTable: function (event) {
-			this._toggleVisibility("/show/contactPersonsTable");
 		},
 		
 		onToggleCompanyFields: function (event) {
 			this._toggleVisibility("/show/companyFields");
-		},
-
-		onToggleDeliveryFields: function (event) {
-			this._toggleVisibility("/show/deliveryFields");
-		},
-		
-		onToggleCustomerGroupFields: function (event) {
-			this._toggleVisibility("/show/customerGroupFields");
 		},
 
 		onToggleSalesFields: function (event) {
@@ -79,6 +59,10 @@ sap.ui.define([
 		
 		onToggleHierarchyFields: function (event) {
 			this._toggleVisibility("/show/hierarchyFields");
+		},
+		
+		onToggleGeneralFields: function (event) {
+			this._toggleVisibility("/show/generalFields");
 		},
 
 		onShowName: function (event) {

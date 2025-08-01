@@ -6,32 +6,23 @@
 	<forms:SimpleForm
 		labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
 		emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
-		columnsXL="2" columnsL="1" columnsM="1"
+		columnsXL="1" columnsL="1" columnsM="1"
 		editable="false"
 		layout="ResponsiveGridLayout"
 		adjustLabelSpan="false"
 		singleContainerFullSize="false">
-		<forms:toolbar>
-			<Toolbar>
-				<Title text="{i18n>lblSectionTaxDetails}"/>
-				<ToolbarSpacer/>
-				<Button
-					text="{= ${view>/show/taxDetailsFields} ? ${i18n>buttonHideTaxDetailsFields} : ${i18n>buttonShowTaxDetailsFields} }"
-					press=".onToggleTaxDetailsFields"/>
-			</Toolbar>
-		</forms:toolbar>
 		<forms:content>
-			<Label text="{i18n>lblTaxNumber} 1" class="sapUiTinyMarginTop"/>
-			<Text text="{customer>/main/taxNumber}" class="sapUiTinyMarginTopBottom"/>
+			<Label class="sapUiTinyMarginTop" text="{i18n>lblTaxNumber} 1"/>
+			<Text class="sapUiTinyMarginTopBottom" text="{customer>/main/taxNumber}"/>
 
-			<Label text="{i18n>lblVatRegistrationNumber}" class="sapUiTinyMarginTop"/>
-			<Text text="{customer>/main/vatRegistrationNumber}" class="sapUiTinyMarginTopBottom"/>
+			<Label class="sapUiTinyMarginTop" text="{i18n>lblVatRegistrationNumber}"/>
+			<Text class="sapUiTinyMarginTopBottom" text="{customer>/main/vatRegistrationNumber}"/>
 
 			<Label
-				text="{i18n>lblTaxNumber} 2"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/taxDetailsFields}"/>
-			<HBox visible="{view>/show/taxDetailsFields}">
+				text="{i18n>lblTaxNumber} 2"
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -51,8 +42,8 @@
 			<Label
 				text="{i18n>lblWarehouseExciseNumber}"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/taxDetailsFields}"/>
-			<HBox visible="{view>/show/taxDetailsFields}">
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -72,8 +63,8 @@
 			<Label
 				text="{i18n>lblTaxNumber} 4"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/taxDetailsFields}"/>
-			<HBox visible="{view>/show/taxDetailsFields}">
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"

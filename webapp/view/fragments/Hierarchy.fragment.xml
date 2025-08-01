@@ -11,21 +11,6 @@
 		layout="ResponsiveGridLayout"
 		adjustLabelSpan="false"
 		singleContainerFullSize="false">
-		<forms:toolbar>
-			<Toolbar>
-				<Title text="{i18n>lblSectionHierarchy} A"/>
-				<ToolbarSpacer/>
-				<microchart:HarveyBallMicroChart size="XS"
-						total="100" showFractions="true" >
-					<microchart:items>
-						<microchart:HarveyBallMicroChartItem fraction="84" color="Good" fractionScale="%"/>
-					</microchart:items>
-				</microchart:HarveyBallMicroChart>
-				<Button
-					text="{= ${view>/show/hierarchyFields} ? ${i18n>buttonHideHierarchyFields} : ${i18n>buttonShowHierarchyFields} }"
-					press=".onToggleHierarchyFields"/>
-			</Toolbar>
-		</forms:toolbar>
 		<forms:content>
 			<Label
 				text="{i18n>lblHierarchyA} 1"
