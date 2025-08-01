@@ -16,7 +16,7 @@
 		},
 		"dataSources": {
 			"GWD_C_FORM_UI5": {
-				"uri": "/GWD_C_FORM_UI5/",
+				"uri": "/sap/opu/odata/sap/ZGSP_CUSTOMER_CFORM_SRV/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0"
