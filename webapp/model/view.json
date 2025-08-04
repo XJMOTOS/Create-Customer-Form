@@ -1,0 +1,29 @@
+{
+	"show": {
+		"name2": false,
+		"name3": false,
+		"name4": false,
+		"telephone2": false,
+		"telephone3": false,
+		"telephone4": false,
+		"telephone5": false,
+		"fax2": false,
+		"fax3": false,
+		"fax4": false,
+		"fax5": false,
+		"email2": false,
+		"email3": false,
+		"email4": false,
+		"email5": false,
+		"street2": true,
+		"street3": false,
+		"street4": false,
+		"street5": false,
+
+		"generalFields": false,
+		"addressFields": false,
+		"companyFields": false,
+		"salesFields": false,
+		"hierarchyFields": false
+	}
+}

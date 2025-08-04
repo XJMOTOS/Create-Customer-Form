@@ -1,0 +1,212 @@
+<mvc:View controllerName="beamsuntoryinc.createcustomerform.controller.Main"
+    displayBlock="true"
+    xmlns="sap.uxap"
+    xmlns:m="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:microchart="sap.suite.ui.microchart">
+    <ObjectPageLayout
+		id="ObjectPageLayout"
+		showFooter="true"
+		showTitleInHeaderContent="true"
+		headerContentPinned="true"
+		upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle id="page">
+				<expandedHeading>
+					<m:VBox>
+						<m:Title text="{i18n>appTitle}" wrapping="true" />
+						<m:Toolbar height="100%">
+							<m:Image src="images/suntory_logo.jpg" width="20%"/>
+							<m:ToolbarSpacer/>
+							<microchart:HarveyBallMicroChart size="XS"
+									total="100" showFractions="true" >
+								<microchart:items>
+									<microchart:HarveyBallMicroChartItem fraction="0" color="Good" fractionScale="%"/>
+								</microchart:items>
+							</microchart:HarveyBallMicroChart>
+						</m:Toolbar>
+					</m:VBox>
+				</expandedHeading>
+				<snappedHeading>
+					<m:FlexBox fitContainer="true" alignItems="Center">
+						<m:Title text="{i18n>appTitle}" wrapping="true"/>
+					</m:FlexBox>
+				</snappedHeading>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+		<sections>
+			<ObjectPageSection
+				showTitle="false"
+				titleUppercase="false"
+				title="{i18n>lblSectionMain}">
+				<heading>
+					<m:Toolbar design="Transparent" style="Clear">
+						<m:Title text="{i18n>lblSectionMain}" titleStyle="H3"/>
+					</m:Toolbar>
+				</heading>
+				<subSections>
+					<ObjectPageSubSection>
+						<core:Fragment
+							fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Main"
+							type="XML"/>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			
+			<ObjectPageSection
+				showTitle="false"
+				titleUppercase="false"
+				title="{i18n>lblSectionGeneral}">
+				<heading>
+					<m:Toolbar design="Transparent" style="Clear">
+						<m:Title text="{i18n>lblSectionGeneral}" titleStyle="H3"/>
+						<m:ToolbarSpacer/>
+						<m:Button
+							text="{= ${view>/show/generalFields} ? ${i18n>buttonShowLess} : ${i18n>buttonShowMore} }"
+							press=".onToggleGeneralFields"/>
+					</m:Toolbar>
+				</heading>
+				<subSections>
+					<ObjectPageSubSection title="{i18n>lblSectionGeneral}" showTitle="false">
+						<core:Fragment
+							fragmentName="beamsuntoryinc.createcustomerform.view.fragments.General"
+							type="XML"/>
+					</ObjectPageSubSection>
+					<ObjectPageSubSection title="{i18n>lblSectionTaxDetails}">
+						<core:Fragment
+							fragmentName="beamsuntoryinc.createcustomerform.view.fragments.TaxDetails"
+							type="XML"/>
+					</ObjectPageSubSection>
+					<ObjectPageSubSection title="{i18n>lblSectionAttributes}">
+						<core:Fragment
+							fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Attributes"
+							type="XML"/>
+					</ObjectPageSubSection>
+					<ObjectPageSubSection title="{i18n>lblSectionContactPersons}">
+						<core:Fragment
+							fragmentName="beamsuntoryinc.createcustomerform.view.fragments.ContactPersons"
+							type="XML"/>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection
+				showTitle="false"
+				titleUppercase="false"
+				title="{i18n>lblSectionAddress}">
+				<heading>
+					<m:Toolbar design="Transparent" style="Clear">
+						<m:Title text="{i18n>lblSectionAddress}" titleStyle="H3"/>
+						<m:ToolbarSpacer/>
+						<m:Button
+							text="{= ${view>/show/addressFields} ? ${i18n>buttonShowLess} : ${i18n>buttonShowMore} }"
+							press=".onToggleAddressFields"/>
+					</m:Toolbar>
+				</heading>
+				<subSections>
+					<ObjectPageSubSection title="{i18n>lblSectionAddress}" showTitle="false">
+						<core:Fragment
+							fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Address"
+							type="XML"/>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection
+				showTitle="false"
+				titleUppercase="false"
+				title="{i18n>lblSectionCompany}">
+				<heading>
+					<m:Toolbar design="Transparent" style="Clear">
+						<m:Title text="{i18n>lblSectionCompany}" titleStyle="H3"/>
+						<m:ToolbarSpacer/>
+						<m:Button
+							text="{= ${view>/show/companyFields} ? ${i18n>buttonShowLess} : ${i18n>buttonShowMore} }"
+							press=".onToggleCompanyFields"/>
+					</m:Toolbar>
+				</heading>
+				<subSections>
+					<ObjectPageSubSection>
+						<core:Fragment
+							fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Company"
+							type="XML"/>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection
+				showTitle="false"
+				titleUppercase="false"
+				title="{i18n>lblSectionSales}">
+				<heading>
+					<m:Toolbar design="Transparent" style="Clear">
+						<m:Title text="{i18n>lblSectionSales}" titleStyle="H3"/>
+						<m:ToolbarSpacer/>
+						<m:Button
+							text="{= ${view>/show/salesFields} ? ${i18n>buttonShowLess} : ${i18n>buttonShowMore} }"
+							press=".onToggleSalesFields"/>
+					</m:Toolbar>
+				</heading>
+				<subSections>
+					<ObjectPageSubSection title="{i18n>lblSectionSales}" showTitle="false">
+						<core:Fragment
+							fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Sales"
+							type="XML"/>
+					</ObjectPageSubSection>
+					<ObjectPageSubSection title="{i18n>lblSectionCustomerGroup}">
+						<core:Fragment
+							fragmentName="beamsuntoryinc.createcustomerform.view.fragments.CustomerGroup"
+							type="XML"/>
+					</ObjectPageSubSection>
+					<ObjectPageSubSection title="{i18n>lblSectionDelivery}">
+						<core:Fragment
+							fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Delivery"
+							type="XML"/>
+					</ObjectPageSubSection>
+					<ObjectPageSubSection title="{i18n>lblSectionTaxInformation}">
+						<core:Fragment
+							fragmentName="beamsuntoryinc.createcustomerform.view.fragments.TaxInformation"
+							type="XML"/>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			
+			<ObjectPageSection
+				showTitle="false"
+				titleUppercase="false"
+				title="{i18n>lblSectionHierarchy}">
+				<heading>
+					<m:Toolbar design="Transparent" style="Clear">
+						<m:Title text="{i18n>lblSectionHierarchy}" titleStyle="H3"/>
+						<m:ToolbarSpacer/>
+						<m:Button
+							text="{= ${view>/show/hierarchyFields} ? ${i18n>buttonShowLess} : ${i18n>buttonShowMore} }"
+							press=".onToggleHierarchyFields"/>
+					</m:Toolbar>
+				</heading>
+				<subSections>
+					<ObjectPageSubSection>
+						<core:Fragment
+							fragmentName="beamsuntoryinc.createcustomerform.view.fragments.Hierarchy"
+							type="XML"/>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+		<footer>
+			<m:Toolbar design="Transparent" style="Clear">
+				<m:ToolbarSpacer/>
+				<m:Button
+					press=".onValidate"
+					text="{i18n>buttonValidate}"
+					type="Emphasized"/>
+				<m:Button
+					press=".onSubmit"
+					text="{i18n>buttonSubmit}"
+					type="Emphasized"/>
+			</m:Toolbar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>

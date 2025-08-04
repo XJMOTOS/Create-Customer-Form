@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGSP_CUSTOMER_CFORM_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZFA1_BRCUSGRP2" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Spart"/>
+                    <PropertyRef Name="Kvgr1"/>
+                    <PropertyRef Name="Kvgr2"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Sales Org" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Distr Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spart" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Division" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kvgr1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cust Group 1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kvgr2" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cust Group 2" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bezei" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_BRCUSGRP3" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Spart"/>
+                    <PropertyRef Name="Kvgr1"/>
+                    <PropertyRef Name="Kvgr2"/>
+                    <PropertyRef Name="Kvgr3"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Sales Org" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Distr Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spart" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Division" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kvgr1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cust Grp 1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kvgr2" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cust Grp 2" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kvgr3" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cust Grp 3" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bezei" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_TZone" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Land1"/>
+                    <PropertyRef Name="Zone1"/>
+                </Key>
+                <Property Name="Land1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Country" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Zone1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Trans Zone" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_ControlState" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KATR5"/>
+                </Key>
+                <Property Name="KATR5" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="Control State"/>
+                <Property Name="VTEXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="Description"/>
+            </EntityType>
+            <EntityType Name="ZFA1_Industry" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BRSCH"/>
+                </Key>
+                <Property Name="BRSCH" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:semantics="Industry key"/>
+                <Property Name="BRTXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="Description"/>
+            </EntityType>
+            <EntityType Name="ZFA1_SalesDistrict" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BZIRK"/>
+                </Key>
+                <Property Name="BZIRK" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:semantics="Sales district"/>
+                <Property Name="BZTXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="Name of the district"/>
+            </EntityType>
+            <EntityType Name="ZFA1_KATR1" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KATR1"/>
+                </Key>
+                <Property Name="KATR1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Attribute 1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="VTEXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_KATR2" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KATR2"/>
+                </Key>
+                <Property Name="KATR2" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Attribute 2" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="VTEXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_KATR3" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KATR3"/>
+                </Key>
+                <Property Name="KATR3" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Attribute 3" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="VTEXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_KATR4" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KATR4"/>
+                </Key>
+                <Property Name="KATR4" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Attribute 4" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="VTEXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_KATR5" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KATR5"/>
+                </Key>
+                <Property Name="KATR5" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Attribute 5" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="VTEXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_BRSCH" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BRSCH"/>
+                </Key>
+                <Property Name="BRSCH" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Industry key" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="BRTXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_INCO1" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="INCO1"/>
+                </Key>
+                <Property Name="INCO1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Incoterms (Part 1)" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="BEZEI" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_PayMeth" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LAND1"/>
+                    <PropertyRef Name="ZLSCH"/>
+                </Key>
+                <Property Name="LAND1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Country Key" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ZLSCH" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Payment Method" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="TEXT1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Name of Payment Method" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_BRCUSGRP1" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Spart"/>
+                    <PropertyRef Name="Kvgr1"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Sales org" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Distr Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spart" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Division" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kvgr1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cust Group 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bezei" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_BRCUSGRP4" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Spart"/>
+                    <PropertyRef Name="Kvgr1"/>
+                    <PropertyRef Name="Kvgr2"/>
+                    <PropertyRef Name="Kvgr3"/>
+                    <PropertyRef Name="Kvgr4"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Sales Org" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Distr Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spart" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Division" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kvgr1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cust Group 1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kvgr2" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cust Group 2" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kvgr3" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cust Group 3" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kvgr4" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cust Group 4" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bezei" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_Country" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LAND1"/>
+                </Key>
+                <Property Name="LAND1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:semantics="Country"/>
+                <Property Name="LANDX" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="Country Name"/>
+            </EntityType>
+            <EntityType Name="ZFA1_Region" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LAND1"/>
+                    <PropertyRef Name="BLAND"/>
+                </Key>
+                <Property Name="LAND1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:semantics="Country"/>
+                <Property Name="BLAND" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:semantics="Region Code"/>
+                <Property Name="BEZEI" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="Region"/>
+            </EntityType>
+            <EntityType Name="ZFA1_RefundState" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KATR7"/>
+                </Key>
+                <Property Name="KATR7" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="Refund State"/>
+                <Property Name="VTEXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="Description"/>
+            </EntityType>
+            <EntityType Name="ZFA1_DPUBStatus" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KVGR5"/>
+                </Key>
+                <Property Name="KVGR5" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:semantics="DP/UB Status"/>
+                <Property Name="BEZEI" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="Description"/>
+            </EntityType>
+            <EntityType Name="ZFA1_KATR6" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KATR6"/>
+                </Key>
+                <Property Name="KATR6" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Attribute 6" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="VTEXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_KATR7" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KATR7"/>
+                </Key>
+                <Property Name="KATR7" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Attribute 7" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="VTEXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_KATR8" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KATR8"/>
+                </Key>
+                <Property Name="KATR8" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Attribute 8" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="VTEXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_KATR9" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KATR9"/>
+                </Key>
+                <Property Name="KATR9" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Attribute 9" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="VTEXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_KATR10" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KATR10"/>
+                </Key>
+                <Property Name="KATR10" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Attribute 10" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="VTEXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_SPRAS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SPRSL"/>
+                </Key>
+                <Property Name="SPRSL" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Language Key" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="SPTXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Name of Language" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_CUST_GROUP" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Kdgrp"/>
+                </Key>
+                <Property Name="Kdgrp" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spras" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ktext" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_KONDA" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Konda"/>
+                </Key>
+                <Property Name="Konda" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spras" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_PLTYP" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pltyp"/>
+                </Key>
+                <Property Name="Pltyp" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spras" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Ptext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_HIER1" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Spart"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spart" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_HIER2" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Spart"/>
+                    <PropertyRef Name="Kunnr1"/>
+                    <PropertyRef Name="Kunnr"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spart" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_HIER4" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Spart"/>
+                    <PropertyRef Name="Kunnr3"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spart" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr3" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kunnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_HIERB1" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Spart"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spart" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_HIERB2" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Spart"/>
+                    <PropertyRef Name="Kunnr1"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spart" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_VKBUR" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkbur"/>
+                </Key>
+                <Property Name="Vkbur" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spras" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bezei" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_VSBED" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vsbed"/>
+                </Key>
+                <Property Name="Vsbed" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spras" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_HIERB3" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Spart"/>
+                    <PropertyRef Name="Kunnr2"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spart" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr2" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_HIERB4" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Spart"/>
+                    <PropertyRef Name="Kunnr3"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spart" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr3" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_HIERB5" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Spart"/>
+                    <PropertyRef Name="Kunnr4"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spart" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr4" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_HIERB6" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Spart"/>
+                    <PropertyRef Name="Kunnr5"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Spart" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kunnr5" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_BUS_ACC_GRP" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Ktokd"/>
+                    <PropertyRef Name="Btkod"/>
+                </Key>
+                <Property Name="Ktokd" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Account group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Btkod" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Business Account Gro" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_COMPAN_CODE" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Bukrs"/>
+                </Key>
+                <Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Company Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_SAL_LEV_PAR" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SalesOrg"/>
+                    <PropertyRef Name="SalesLevel1"/>
+                </Key>
+                <Property Name="SalesOrg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sales Organization" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SalesLevel1" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Sales Level 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NameSl1" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SalesLevel2" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Sales Level 2" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NameSl2" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SalesLevel3" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Sales Level 3" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NameSl3" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CommercialFinan" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Commercial Finance" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NameCf" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Csr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="CSR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NameCsr" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SalesManager" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Sales Manager" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NameSm" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_SALES_ORG" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_BRCUSCRG" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Country"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Country" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kkber" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Cred.Contr.Area" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sbgrp" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Cred.rep.grp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_BRCUSCGRP" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Spart"/>
+                    <PropertyRef Name="Ktokd01"/>
+                    <PropertyRef Name="Ktokd02"/>
+                    <PropertyRef Name="Ktokd03"/>
+                    <PropertyRef Name="Ktokd04"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Distr. Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Spart" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Division" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ktokd01" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Customer grp 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ktokd02" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Customer grp 2" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ktokd03" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Customer grp 3" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ktokd04" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Customer grp 4" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kdgrp" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Customer group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_BRCUSCURRD" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Curr"/>
+                </Key>
+                <Property Name="Curr" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+            </EntityType>
+            <EntityType Name="ZFA1_BRCUSLHB" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Waers"/>
+                    <PropertyRef Name="Zwels"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Waers" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Zwels" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Payment methods" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lockb" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Lockbox" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Hbkid" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="House bank" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SaveAction" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Save" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_BRCUSPAYT" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Burks"/>
+                </Key>
+                <Property Name="Burks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zterm" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Payt Terms" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Desc" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_BRCUSPGRP" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Kvgr1"/>
+                    <PropertyRef Name="Konda"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kvgr1" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Customer grp 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Konda" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Price group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_BRCUSRONR" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Country"/>
+                    <PropertyRef Name="Region"/>
+                </Key>
+                <Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Country" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Region" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Region" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Katr7" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Attribute 7" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_BRCUSTAX" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Talnd"/>
+                    <PropertyRef Name="Tatyp"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Talnd" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Tax country" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tatyp" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Tax category" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taxkd" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Tax classific." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_BRCUWANID" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TimeZone"/>
+                </Key>
+                <Property Name="TimeZone" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Time zone" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Wanid" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Goods rec.hours" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFA1_HIER3" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Spart"/>
+                    <PropertyRef Name="Kunnr2"/>
+                    <PropertyRef Name="Kunnr"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Spart" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr2" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kunnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZGSP_CUSTOMER_CFORM_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZFA1_BRCUSGRP2Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_BRCUSGRP2" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_BRCUSGRP3Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_BRCUSGRP3" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_TZoneSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_TZone" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_ControlStateSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_ControlState" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_IndustrySet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_Industry" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_SalesDistrictSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_SalesDistrict" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_KATR1Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_KATR1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_KATR2Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_KATR2" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_KATR3Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_KATR3" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_KATR4Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_KATR4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_KATR5Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_KATR5" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_BRSCHSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_BRSCH" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_INCO1Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_INCO1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_PayMethSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_PayMeth" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_BRCUSGRP1Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_BRCUSGRP1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_BRCUSGRP4Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_BRCUSGRP4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_CountrySet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_Country" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_RegionSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_Region" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_RefundStateSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_RefundState" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_DPUBStatusSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_DPUBStatus" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_KATR6Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_KATR6" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_KATR7Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_KATR7" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_KATR8Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_KATR8" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_KATR9Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_KATR9" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_KATR10Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_KATR10" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_SPRASSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_SPRAS" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_CUST_GROUPSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_CUST_GROUP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_KONDASet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_KONDA" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_PLTYPSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_PLTYP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_HIER1Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_HIER1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_HIER2Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_HIER2" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_HIER4Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_HIER4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_HIERB1Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_HIERB1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_HIERB2Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_HIERB2" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_VKBURSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_VKBUR" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_VSBEDSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_VSBED" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_HIERB3Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_HIERB3" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_HIERB4Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_HIERB4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_HIERB5Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_HIERB5" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_HIERB6Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_HIERB6" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_BUS_ACC_GRPSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_BUS_ACC_GRP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_COMPAN_CODESet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_COMPAN_CODE" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_SAL_LEV_PARSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_SAL_LEV_PAR" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_SALES_ORGSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_SALES_ORG" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_BRCUSCRGSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_BRCUSCRG" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_BRCUSCGRPSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_BRCUSCGRP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_BRCUSCURRDSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_BRCUSCURRD" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_BRCUSLHBSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_BRCUSLHB" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_BRCUSPAYTSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_BRCUSPAYT" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_BRCUSPGRPSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_BRCUSPGRP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_BRCUSRONRSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_BRCUSRONR" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_BRCUSTAXSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_BRCUSTAX" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_BRCUWANIDSet" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_BRCUWANID" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFA1_HIER3Set" EntityType="ZGSP_CUSTOMER_CFORM_SRV.ZFA1_HIER3" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="https://mobiled.beamsuntory.com:443/sap/opu/odata/sap/ZGSP_CUSTOMER_CFORM_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://mobiled.beamsuntory.com:443/sap/opu/odata/sap/ZGSP_CUSTOMER_CFORM_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

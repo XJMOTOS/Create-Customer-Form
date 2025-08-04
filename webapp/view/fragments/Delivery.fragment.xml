@@ -1,0 +1,210 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form">
+	<forms:SimpleForm
+		labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+		emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+		columnsXL="2" columnsL="1" columnsM="1"
+		editable="false"
+		layout="ResponsiveGridLayout"
+		adjustLabelSpan="false"
+		singleContainerFullSize="false"
+		visible="{view>/show/optionalSalesDataFields}">
+		<forms:content>
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblShippingCondition}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipShippingConditions}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					items="{shippingConditions>/}"
+					selectedKey="{customer>/delivery/shippingCondition}"
+					valueState="{= ${customer>/delivery/shippingCondition} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{shippingConditions>key}" text="{shippingConditions>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblDeliveryBlock}"
+				visible="{view>/show/salesFields}"/>
+			<HBox visible="{view>/show/salesFields}">
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipDeliveryBlock}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/delivery/deliveryBlock}"
+					maxLength="2">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblCompleteDelivery}"
+				visible="{view>/show/salesFields}"/>
+			<HBox visible="{view>/show/salesFields}">
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipCompleteDelivery}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/delivery/completeDelivery}"
+					maxLength="1">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblMaxNumberOfPartialDeliveries}"
+				visible="{view>/show/salesFields}"/>
+			<HBox visible="{view>/show/salesFields}">
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipMaxNumberOfPartialDeliveries}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/delivery/maxNumberOfPartialDeliveries}"
+					maxLength="1">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblPartialDelivery}"
+				visible="{view>/show/salesFields}"/>
+			<HBox visible="{view>/show/salesFields}">
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipPartialDelivery}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/delivery/partialDelivery}"
+					maxLength="1">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblOrderCombinationIndicator}"
+				visible="{view>/show/salesFields}"/>
+			<HBox visible="{view>/show/salesFields}">
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipOrderCombinationIndicator}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<CheckBox
+					selected="{customer>/delivery/orderCombinationIndicator}">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</CheckBox>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblDeliveryPriority}"
+				visible="{view>/show/salesFields}"/>
+			<HBox visible="{view>/show/salesFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipDeliveryPrioritys}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					items="{deliveryPriorities>/}"
+					selectedKey="{customer>/delivery/deliveryPriority}"
+					width="100%">
+					<core:Item key="{deliveryPriorities>key}" text="{deliveryPriorities>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblDeliveringPlant}"
+				visible="{view>/show/salesFields}"/>
+			<HBox visible="{view>/show/salesFields}">
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipDeliveringPlant}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					items="{deliveringPlants>/}"
+					selectedKey="{customer>/delivery/deliveringPlant}"
+					width="100%">
+					<core:Item key="{deliveringPlants>key}" text="{deliveringPlants>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+			
+		</forms:content>
+	</forms:SimpleForm>
+</core:FragmentDefinition>

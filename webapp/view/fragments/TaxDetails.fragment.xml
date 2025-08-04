@@ -1,0 +1,86 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:microchart="sap.suite.ui.microchart">
+	<forms:SimpleForm
+		labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+		emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+		columnsXL="1" columnsL="1" columnsM="1"
+		editable="false"
+		layout="ResponsiveGridLayout"
+		adjustLabelSpan="false"
+		singleContainerFullSize="false">
+		<forms:content>
+			<Label class="sapUiTinyMarginTop" text="{i18n>lblTaxNumber} 1"/>
+			<Text class="sapUiTinyMarginTopBottom" text="{customer>/main/taxNumber}"/>
+
+			<Label class="sapUiTinyMarginTop" text="{i18n>lblVatRegistrationNumber}"/>
+			<Text class="sapUiTinyMarginTopBottom" text="{customer>/main/vatRegistrationNumber}"/>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblTaxNumber} 2"
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipVatNumber2}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input value="{customer>/taxDetails/vatNumber2}">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				text="{i18n>lblWarehouseExciseNumber}"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipVWareExciseNumber}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input value="{customer>/taxDetails/warehouseExciseNumber}">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				text="{i18n>lblTaxNumber} 4"
+				class="sapUiTinyMarginTop"
+				visible="{view>/show/generalFields}"/>
+			<HBox visible="{view>/show/generalFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipVatNumber4}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input value="{customer>/taxDetails/vatNumber4}">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+		</forms:content>
+	</forms:SimpleForm>
+</core:FragmentDefinition>

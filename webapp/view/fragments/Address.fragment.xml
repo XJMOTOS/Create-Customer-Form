@@ -1,0 +1,968 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:microchart="sap.suite.ui.microchart">
+	<forms:SimpleForm
+		labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+		emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+		columnsXL="2" columnsL="1" columnsM="1"
+		editable="false"
+		layout="ResponsiveGridLayout"
+		adjustLabelSpan="false"
+		singleContainerFullSize="false">
+		<forms:content>
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblCountry}"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipCountry}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Text class="sapUiTinyMarginTopBottom" text="{customer>/general/country}"/>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblRegion}"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipRegion}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/address/region}"
+					items="{regions>/}"
+					width="100%">
+					<core:Item key="{regions>key}" text="{regions>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblCity}"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipCity}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/city}"
+					maxLength="35"
+					valueState="{= ${customer>/address/city} ? 'None' : 'Error' }">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblHouseNumber}"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipHouseNumber}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/houseNumber}"
+					maxLength="10">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label	
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblStreet}"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipStreet}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/street}"
+					maxLength="60">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label	
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblStreet} 2"
+				visible="{view>/show/addressFields}"/>
+			<HBox visible="{view>/show/addressFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipStreet2}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/street2}"
+					maxLength="40">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-add"
+					press=".onShowStreet"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label	
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblStreet} 3"
+				visible="{= ${view>/show/addressFields} &amp;&amp; ${view>/show/street3} }"/>
+			<HBox visible="{= ${view>/show/addressFields} &amp;&amp; ${view>/show/street3} }">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipStreet3}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/street3}"
+					maxLength="40">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideStreet($event,3)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label	
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblStreet} 4"
+				visible="{= ${view>/show/addressFields} &amp;&amp; ${view>/show/street4} }"/>
+			<HBox visible="{= ${view>/show/addressFields} &amp;&amp; ${view>/show/street4} }">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipStreet4}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/street4}"
+					maxLength="40">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideStreet($event,4)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label	
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblStreet} 5"
+				visible="{= ${view>/show/addressFields} &amp;&amp; ${view>/show/street5} }"/>
+			<HBox visible="{= ${view>/show/addressFields} &amp;&amp; ${view>/show/street5} }">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipStreet5}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/street5}"
+					maxLength="40">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideStreet($event,5)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblPostalCode}"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipPostalCode}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/postalCode}"
+					maxLength="10">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblTelephone} 1"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipTelephone}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/address/telephoneCountryCode1}"
+					items="{telephoneCountryCodes>/}"
+					width="100%">
+					<core:Item key="{telephoneCountryCodes>key}" text="{telephoneCountryCodes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+				<Input
+					value="{customer>/address/telephone1}"
+					maxLength="16">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-add"
+					press=".onShowTelephone"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblTelephone} 2"
+				visible="{view>/show/telephone2}"/>
+			<HBox visible="{view>/show/telephone2}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipTelephone}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/address/telephoneCountryCode2}"
+					items="{telephoneCountryCodes>/}"
+					width="100%">
+					<core:Item key="{telephoneCountryCodes>key}" text="{telephoneCountryCodes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+				<Input
+					value="{customer>/address/telephone2}"
+					maxLength="16">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin"
+					decorative="false"
+					press=".onHideTelephone($event,2)"
+					src="sap-icon://sys-minus">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblTelephone} 3"
+				visible="{view>/show/telephone3}"/>
+			<HBox visible="{view>/show/telephone3}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipTelephone}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/address/telephoneCountryCode3}"
+					items="{telephoneCountryCodes>/}"
+					width="100%">
+					<core:Item key="{telephoneCountryCodes>key}" text="{telephoneCountryCodes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+				<Input
+					value="{customer>/address/telephone3}"
+					maxLength="16">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideTelephone($event,3)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblTelephone} 4"
+				visible="{view>/show/telephone4}"/>
+			<HBox visible="{view>/show/telephone4}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipTelephone}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/address/telephoneCountryCode4}"
+					items="{telephoneCountryCodes>/}"
+					width="100%">
+					<core:Item key="{telephoneCountryCodes>key}" text="{telephoneCountryCodes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+				<Input
+					value="{customer>/address/telephone4}"
+					maxLength="16">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideTelephone($event,4)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblTelephone} 5"
+				visible="{view>/show/telephone5}"/>
+			<HBox visible="{view>/show/telephone5}">
+				<core:Icon
+					src="sap-icon://sys-minus"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipTelephone}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/address/telephoneCountryCode5}"
+					items="{telephoneCountryCodes>/}"
+					width="100%">
+					<core:Item key="{telephoneCountryCodes>key}" text="{telephoneCountryCodes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+				<Input
+					value="{customer>/address/telephone5}"
+					maxLength="16">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideTelephone($event,5)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblFax} 1"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipFax}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/address/faxCountryCode1}"
+					items="{faxCountryCodes>/}"
+					width="100%">
+					<core:Item key="{faxCountryCodes>key}" text="{faxCountryCodes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+				<Input
+					value="{customer>/address/fax1}"
+					maxLength="16">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-add"
+					press=".onShowFax"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblFax} 2"
+				visible="{view>/show/fax2}"/>
+			<HBox visible="{view>/show/fax2}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipFax}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/address/faxCountryCode2}"
+					items="{faxCountryCodes>/}"
+					width="100%">
+					<core:Item key="{faxCountryCodes>key}" text="{faxCountryCodes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+				<Input
+					value="{customer>/address/fax2}"
+					maxLength="31">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideFax($event,2)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblFax} 3"
+				visible="{view>/show/fax3}"/>
+			<HBox visible="{view>/show/fax3}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipFax}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/address/faxCountryCode3}"
+					items="{faxCountryCodes>/}"
+					width="100%">
+					<core:Item key="{faxCountryCodes>key}" text="{faxCountryCodes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+				<Input
+					value="{customer>/address/fax3}"
+					maxLength="31">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideFax($event,3)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblFax} 4"
+				visible="{view>/show/fax4}"/>
+			<HBox visible="{view>/show/fax4}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipFax}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/address/faxCountryCode4}"
+					items="{faxCountryCodes>/}"
+					width="100%">
+					<core:Item key="{faxCountryCodes>key}" text="{faxCountryCodes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+				<Input
+					value="{customer>/address/fax4}"
+					maxLength="31">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideFax($event,4)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblFax} 5"
+				visible="{view>/show/fax5}"/>
+			<HBox visible="{view>/show/fax5}">
+				<core:Icon
+					src="sap-icon://sys-minus"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipFax}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/address/faxCountryCode5}"
+					items="{faxCountryCodes>/}"
+					width="100%">
+					<core:Item key="{faxCountryCodes>key}" text="{faxCountryCodes>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+				<Input
+					value="{customer>/address/fax5}"
+					maxLength="31">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideFax($event,5)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblEmail} 1"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipEmail}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/email1}"
+					maxLength="241">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-add"
+					press=".onShowEmail"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblEmail} 2"
+				visible="{view>/show/email2}"/>
+			<HBox visible="{view>/show/email2}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipEmail}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/email2}"
+					maxLength="241">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideEmail($event,2)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblEmail} 3"
+				visible="{view>/show/email3}"/>
+			<HBox visible="{view>/show/email3}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipEmail}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/email3}"
+					maxLength="241">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideEmail($event,3)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblEmail} 4"
+				visible="{view>/show/email4}"/>
+			<HBox visible="{view>/show/email4}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipEmail}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/email4}"
+					maxLength="241">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideEmail($event,4)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblEmail} 5"
+				visible="{view>/show/email5}"/>
+			<HBox visible="{view>/show/email5}">
+				<core:Icon
+					src="sap-icon://sys-minus"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipEmail}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/email5}"
+					maxLength="241">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					src="sap-icon://sys-minus"
+					press=".onHideEmail($event,5)"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblDistrict}"
+				visible="{view>/show/addressFields}"/>
+			<HBox visible="{view>/show/addressFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipDistrict}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/district}"
+					maxLength="35">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+			
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblPOBox}"
+				visible="{view>/show/addressFields}"/>
+			<HBox visible="{view>/show/addressFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipPOBox}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/poBox}"
+					maxLength="">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblBuilding}"
+				visible="{view>/show/addressFields}"/>
+			<HBox visible="{view>/show/addressFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipBuilding}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/building}"
+					maxLength="20">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblFloor}"
+				visible="{view>/show/addressFields}"/>
+			<HBox visible="{view>/show/addressFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipFloor}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/floor}"
+					maxLength="10">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblRoom}"
+				visible="{view>/show/addressFields}"/>
+			<HBox visible="{view>/show/addressFields}">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipRoom}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/address/room}"
+					maxLength="10">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+		</forms:content>
+	</forms:SimpleForm>
+</core:FragmentDefinition>

@@ -1,0 +1,58 @@
+<core:FragmentDefinition
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns="sap.m">
+	<Table 
+		mode="Delete"
+		delete=".onRemoveContactPerson"
+		items="{customer>/contactPersons}"
+		visible="{view>/show/generalFields}">
+		<headerToolbar>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button
+					icon="sap-icon://add"
+					press=".onAddContactPerson"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="{i18n>columnContactType}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnName}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnSurname}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnPhone}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnFax}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>columnEmail}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Select
+						selectedKey="{customer>contactType}"
+						forceSelection="false"
+						items="{ path: 'contactTypes>/', templateShareable: false }"
+						width="100%">
+						<core:Item key="{contactTypes>key}" text="{contactTypes>key}"/>
+					</Select>
+					<Input value="{customer>name}"/>
+					<Input value="{customer>surname}"/>
+					<Input value="{customer>phone}"/>
+					<Input value="{customer>fax}"/>
+					<Input value="{customer>email}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

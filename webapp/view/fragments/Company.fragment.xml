@@ -1,0 +1,217 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:microchart="sap.suite.ui.microchart">
+	<forms:SimpleForm
+		labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+		emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+		columnsXL="2" columnsL="1" columnsM="1"
+		editable="false"
+		layout="ResponsiveGridLayout"
+		adjustLabelSpan="false"
+		singleContainerFullSize="false">
+		<forms:content>
+			<Label	
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblSortKey}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipSortKey}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					items="{sortKeys>/}"
+					selectedKey="{customer>/company/sortKey}"
+					valueState="{= ${customer>/company/sortKey} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{sortKeys>key}" text="{sortKeys>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+			
+			<Label	
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblReconciliationAccount}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipReconciliationAccount}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					items="{reconciliationAccounts>/}"
+					selectedKey="{customer>/company/reconciliationAccount}"
+					valueState="{= ${customer>/company/reconciliationAccount} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{reconciliationAccounts>key}" text="{reconciliationAccounts>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label	
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblAuthorizationGroup}"
+				visible="{view>/show/companyFields}"/>
+			<HBox visible="{view>/show/companyFields}">
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipAuthorizationGroup}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/company/authorizationGroup}">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label	
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblCashManagmentGroup}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipCashManagmentGroup}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					items="{cashManagmentGroups>/}"
+					selectedKey="{customer>/company/cashManagmentGroup}"
+					valueState="{= ${customer>/company/cashManagmentGroup} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{cashManagmentGroups>key}" text="{cashManagmentGroups>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label	
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblToleranceGroup}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipToleranceGroup}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					items="{toleranceGroups>/}"
+					selectedKey="{customer>/company/toleranceGroup}"
+					width="100%">
+					<core:Item key="{toleranceGroups>key}" text="{toleranceGroups>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label	
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblPaymentMethod}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipPaymentMethod}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					items="{paymentMethods>/}"
+					selectedKey="{customer>/company/paymentMethod}"
+					valueState="{= ${customer>/company/paymentMethod} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{oaymentMethods>key}" text="{paymentMethods>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblHouseBank}"
+				visible="{view>/show/companyFields}"/>
+			<HBox visible="{view>/show/companyFields}">
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipHouseBank}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/company/houseBank}">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblAccountingClerkAbbreviation}"
+				visible="{view>/show/companyFields}"/>
+			<HBox visible="{view>/show/companyFields}">
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipAccountingClerkAbbreviation}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/company/accountingClerkAbbreviation}">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+		</forms:content>
+	</forms:SimpleForm>
+</core:FragmentDefinition>

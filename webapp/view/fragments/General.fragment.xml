@@ -1,0 +1,330 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:microchart="sap.suite.ui.microchart">
+	<forms:SimpleForm
+		labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+		emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+		columnsXL="2" columnsL="1" columnsM="1"
+		editable="false"
+		layout="ResponsiveGridLayout"
+		adjustLabelSpan="false"
+		singleContainerFullSize="false">
+		<forms:content>
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblName} 1"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipName1}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					maxLength="35"
+					value="{customer>/general/name1}"
+					valueState="{= ${customer>/general/name1} ? 'None' : 'Error' }">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin"
+					decorative="false"
+					press=".onShowName"
+					src="sap-icon://sys-add">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblName} 2"
+				visible="{view>/show/name2}"/>
+			<HBox visible="{view>/show/name2}">
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipName2}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					maxLength="35"
+					value="{customer>/general/name2}">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin"
+					decorative="false"
+					press=".onHideName($event,2)"
+					src="sap-icon://sys-minus">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop" 
+				text="{i18n>lblName} 3"
+				visible="{view>/show/name3}"/>
+			<HBox visible="{view>/show/name3}">
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipName3}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					maxLength="35"
+					value="{customer>/general/name3}">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin"
+					decorative="false"
+					press=".onHideName($event,3)"
+					src="sap-icon://sys-minus">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblName} 4"
+				visible="{view>/show/name4}"/>
+			<HBox visible="{view>/show/name4}">
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipName4}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					maxLength="35"
+					value="{customer>/general/name4}">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin"
+					decorative="false"
+					press=".onHideName($event,4)"
+					src="sap-icon://sys-minus">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblCountry}"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipCountry}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/general/country}"
+					items="{countries>/}"
+					valueState="{= ${customer>/general/country} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{countries>key}" text="{countries>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblSearchTerm}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipSearchTerm}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					value="{customer>/general/searchTerm}"
+					valueState="{= ${customer>/general/searchTerm} ? 'None' : 'Error' }">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblLanguage}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipLanguage}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					items="{languages>/}"
+					selectedKey="{customer>/general/language}"
+					valueState="{= ${customer>/general/language} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{languages>key}" text="{languages>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblClassification}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipClassification}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					items="{classifications>/}"
+					selectedKey="{customer>/general/classification}"
+					valueState="{= ${customer>/general/classification} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{classifications>key}" text="{classifications>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblTransportationZone}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipTransportationZone}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					items="{transportationZones>/}"
+					selectedKey="{customer>/general/transportationZone}"
+					valueState="{= ${customer>/general/transportationZone} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{transportationZones>key}" text="{transportationZones>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblIndustryKey}"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipIndustryKey}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/general/industryKey}"
+					items="{industryKeys>/}"
+					valueState="{= ${customer>/general/industryKey} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{industryKeys>key}" text="{industryKeys>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblTimeZone}"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipTimeZone}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/general/timeZone}"
+					items="{timeZones>/}"
+					valueState="{= ${customer>/general/timeZone} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{timeZones>key}" text="{timeZones>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+		</forms:content>
+	</forms:SimpleForm>
+</core:FragmentDefinition>
