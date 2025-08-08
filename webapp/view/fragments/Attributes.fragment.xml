@@ -27,11 +27,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/1}"
-					items="{attributes>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_KATR1Set}"
 					width="100%">
-					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>KATR1}" text="{GWD_C_FORM_UI5>VTEXT}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -53,11 +54,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/2}"
-					items="{attributes>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_KATR2Set}"
 					width="100%">
-					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>KATR2}" text="{GWD_C_FORM_UI5>VTEXT}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -79,11 +81,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/3}"
-					items="{attributes>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_KATR3Set}"
 					width="100%">
-					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>KATR3}" text="{GWD_C_FORM_UI5>VTEXT}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -105,11 +108,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/4}"
-					items="{attributes>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_KATR4Set}"
 					width="100%">
-					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>KATR4}" text="{GWD_C_FORM_UI5>VTEXT}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -131,11 +135,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/5}"
-					items="{attributes>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_KATR5Set}"
 					width="100%">
-					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>KATR5}" text="{GWD_C_FORM_UI5>VTEXT}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -157,11 +162,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/6}"
-					items="{attributes>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_KATR6Set}"
 					width="100%">
-					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>KATR6}" text="{GWD_C_FORM_UI5>VTEXT}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -183,11 +189,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/7}"
-					items="{attributes>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_KATR7Set}"
 					width="100%">
-					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>KATR7}" text="{GWD_C_FORM_UI5>VTEXT}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -209,11 +216,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/8}"
-					items="{attributes>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_KATR8Set}"
 					width="100%">
-					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>KATR8}" text="{GWD_C_FORM_UI5>VTEXT}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -235,11 +243,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/9}"
-					items="{attributes>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_KATR9Set}"
 					width="100%">
-					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>KATR9}" text="{GWD_C_FORM_UI5>VTEXT}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -261,11 +270,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/10}"
-					items="{attributes>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_KATR10Set}"
 					width="100%">
-					<core:Item key="{attributes>key}" text="{attributes>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>KATR10}" text="{GWD_C_FORM_UI5>VTEXT}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>

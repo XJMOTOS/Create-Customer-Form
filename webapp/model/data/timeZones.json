@@ -1,0 +1,503 @@
+[
+	{
+        "key": "AFGHAN",
+        "text": "Afghanistan",
+        "diff": "+ 4 1/2 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "ALA",
+        "text": "Alaska (Anchorage)",
+        "diff": "- 9 hours",
+        "daylight": "USA"
+    }, {
+        "key": "ALAW",
+        "text": "Alaska (Aleutian)",
+        "diff": "- 10 hours",
+        "daylight": "USA"
+    }, {
+        "key": "AST",
+        "text": "Atlantic Time (Halifax)",
+        "diff": "- 4 hours",
+        "daylight": "USA"
+    }, {
+        "key": "AUSACT",
+        "text": "Australia Capital Territories",
+        "diff": "+ 10 hours",
+        "daylight": "Australia"
+    }, {
+        "key": "AUSLHI",
+        "text": "Australia Lord Howe Island",
+        "diff": "+ 10 1/2 hours",
+        "daylight": "Australia"
+    }, {
+        "key": "AUSNSW",
+        "text": "Australia New South Wales",
+        "diff": "+ 10 hours",
+        "daylight": "Australia"
+    }, {
+        "key": "AUSNT",
+        "text": "Australia Northern Territories",
+        "diff": "+ 9 1/2 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "AUSQLD",
+        "text": "Australia Queensland",
+        "diff": "+ 10 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "AUSSA",
+        "text": "Australia South Australia",
+        "diff": "+ 9 1/2 hours",
+        "daylight": "Australia"
+    }, {
+        "key": "AUSTAS",
+        "text": "Australia Tasmania",
+        "diff": "+ 10 hours",
+        "daylight": "Australia"
+    }, {
+        "key": "AUSVIC",
+        "text": "Australia Victoria",
+        "diff": "+ 10 hours",
+        "daylight": "Australia"
+    }, {
+        "key": "AUSWA",
+        "text": "Australia Western Australia",
+        "diff": "+ 8 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "AZOREN",
+        "text": "Europe Azores",
+        "diff": "- 1 hour",
+        "daylight": "Europe"
+    }, {
+        "key": "BRAZIL",
+        "text": "Brazil",
+        "diff": "- 3 hours",
+        "daylight": "Brazil"
+    }, {
+        "key": "BRZLAN",
+        "text": "Brazil Andes",
+        "diff": "- 5 hours",
+        "daylight": "Brazil"
+    }, {
+        "key": "BRZLEA",
+        "text": "Brazil East",
+        "diff": "- 3 hours",
+        "daylight": "Brazil"
+    }, {
+        "key": "BRZLWE",
+        "text": "Brazil West",
+        "diff": "- 4 hours",
+        "daylight": "Brazil"
+    }, {
+        "key": "CAT",
+        "text": "Central Africa",
+        "diff": "+ 2 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "CET",
+        "text": "Central Europe",
+        "diff": "+ 1 hour",
+        "daylight": "Europe"
+    }, {
+        "key": "CHILE",
+        "text": "Chile",
+        "diff": "- 4 hours",
+        "daylight": "Chile"
+    }, {
+        "key": "CHILEE",
+        "text": "Chile Easter Island",
+        "diff": "- 6 hours",
+        "daylight": "Chile"
+    }, {
+        "key": "CST",
+        "text": "Central Time (Dallas)",
+        "diff": "- 6 hours",
+        "daylight": "USA"
+    }, {
+        "key": "CSTNO",
+        "text": "Central Time No DST",
+        "diff": "- 6 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "CYPRUS",
+        "text": "Cyprus",
+        "diff": "+ 2 hours",
+        "daylight": "Cyprus"
+    }, {
+        "key": "EET",
+        "text": "Eastern Europe",
+        "diff": "+ 2 hours",
+        "daylight": "Europe"
+    }, {
+        "key": "EGYPT",
+        "text": "Egypt",
+        "diff": "+ 2 hours",
+        "daylight": "Egypt"
+    }, {
+        "key": "EST",
+        "text": "Eastern Time (New York)",
+        "diff": "- 5 hours",
+        "daylight": "USA"
+    }, {
+        "key": "EST_",
+        "text": "Eastern Time (Montréal)",
+        "diff": "- 5 hours",
+        "daylight": "USA"
+    }, {
+        "key": "ESTNO",
+        "text": "Eastern Time (Indianapolis)",
+        "diff": "- 5 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "FLKLND",
+        "text": "Falkland Islands",
+        "diff": "- 4 hours",
+        "daylight": "Chile"
+    }, {
+        "key": "GMTUK",
+        "text": "Greenwich UK with DST",
+        "diff": "+/- 0  = UTC/GMT",
+        "daylight": "Europe"
+    }, {
+        "key": "GST",
+        "text": "Greenland",
+        "diff": "-  3 hours",
+        "daylight": "Europe"
+    } , {
+        "key": "GSTE",
+        "text": "Eastern Greenland",
+        "diff": "-  1 hour",
+        "daylight": "Europe"
+    } , {
+        "key": "GSTW",
+        "text": "Western Greenland",
+        "diff": "-  4 hours",
+        "daylight": "Europe"
+    } , {
+        "key": "HAW",
+        "text": "Hawaii",
+        "diff": "- 10 hours",
+        "daylight": "USA"
+    } , {
+        "key": "INDIA",
+        "text": "India",
+        "diff": "+  5 1/2 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "IRAN",
+        "text": "Iran",
+        "diff": "+ 3 1/2 hours",
+        "daylight": "Iran"
+    }, {
+        "key": "IRAQ",
+        "text": "Iraq",
+        "diff": "+ 3 hours",
+        "daylight": "Iraq"
+    }, {
+        "key": "ISRAEL",
+        "text": "Israel",
+        "diff": "+ 2 hours",
+        "daylight": "Israel"
+    }, {
+        "key": "JAPAN",
+        "text": "Japan",
+        "diff": "+ 9 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "JORDAN",
+        "text": "Jordan",
+        "diff": "+ 2 hours",
+        "daylight": "Jordan"
+    }, {
+        "key": "LBANON",
+        "text": "Lebanon",
+        "diff": "+ 2 hours",
+        "daylight": "Lebanon"
+    }, {
+        "key": "MST",
+        "text": "Mountain Time (Denver)",
+        "diff": "- 7 hours",
+        "daylight": "USA"
+    }, {
+        "key": "MSTNO",
+        "text": "Mountain Time (Phoenix)",
+        "diff": "- 7 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "NEPAL",
+        "text": "Nepal",
+        "diff": "+ 5 3/4 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "NFDL",
+        "text": "Newfoundland",
+        "diff": "- 3 1/2 hours",
+        "daylight": "USA"
+    }, {
+        "key": "NORFLK",
+        "text": "Norfolk Islands",
+        "diff": "+ 11 1/2 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "NST",
+        "text": "Newfoundland",
+        "diff": "- 3 1/2 hours",
+        "daylight": "USA"
+    }, {
+        "key": "NZCHA",
+        "text": "New Zealand Chatham Islands",
+        "diff": "+ 12 3/4 hours",
+        "daylight": "New Zealand"
+    }, {
+        "key": "NZST",
+        "text": "New Zealand",
+        "diff": "+ 12 hours",
+        "daylight": "New Zealand"
+    }, {
+        "key": "PARAGY",
+        "text": "Paraguay",
+        "diff": "- 4 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "PIERRE",
+        "text": "St Pierre and Miquelon",
+        "diff": "- 3 hours",
+        "daylight": "USA"
+    }, {
+        "key": "PST",
+        "text": "Pacific Time (Los Angeles)",
+        "diff": "- 8 hours",
+        "daylight": "USA"
+    }, {
+        "key": "RUS03",
+        "text": "Russia (Moscow) (UTC+03)",
+        "diff": "+ 3 hours",
+        "daylight": "Europe"
+    }, {
+        "key": "RUS04",
+        "text": "Russia (UTC+04)",
+        "diff": "+ 4 hours",
+        "daylight": "Europe"
+    }, {
+        "key": "RUS05",
+        "text": "Russia (UTC+05)",
+        "diff": "+ 5 hours",
+        "daylight": "Europe"
+    }, {
+        "key": "RUS06",
+        "text": "Russia (UTC+06)",
+        "diff": "+ 6 hours",
+        "daylight": "Europe"
+    }, {
+        "key": "RUS07",
+        "text": "Russia (UTC+07)",
+        "diff": "+ 7 hours",
+        "daylight": "Europe"
+    }, {
+        "key": "RUS08",
+        "text": "Russia (UTC+08)",
+        "diff": "+ 8 hours",
+        "daylight": "Europe"
+    }, {
+        "key": "RUS09",
+        "text": "Russia (UTC+09)",
+        "diff": "+ 9 hours",
+        "daylight": "Europe"
+    }, {
+        "key": "RUS10",
+        "text": "Russia (UTC+10)",
+        "diff": "+ 10 hours",
+        "daylight": "Europe"
+    }, {
+        "key": "RUS11",
+        "text": "Russia (UTC+11)",
+        "diff": "+ 11 hours",
+        "daylight": "Europe"
+    }, {
+        "key": "RUS12",
+        "text": "Russia (UTC+12)",
+        "diff": "+ 12 hours",
+        "daylight": "Europe"
+    }, {
+        "key": "RUS13",
+        "text": "Russia (UTC+13)",
+        "diff": "+ 13 hours",
+        "daylight": "Europe"
+    }, {
+        "key": "RUS14",
+        "text": "Russia (UTC+14)",
+        "diff": "+ 14 hours",
+        "daylight": "Europe"
+    }, {
+        "key": "SYRIA",
+        "text": "Syria",
+        "diff": "+ 2 hours",
+        "daylight": "Syria"
+    }, {
+        "key": "UK",
+        "text": "England, Ireland, Scotland",
+        "diff": "+/- 0  = UTC/GMT",
+        "daylight": "Europe"
+    }, {
+        "key": "UTC",
+        "text": "UTC+0",
+        "diff": "+/- 0  = UTC/GMT",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC-1",
+        "text": "UTC-01",
+        "diff": "- 1 hour",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC-10",
+        "text": "UTC-10",
+        "diff": "- 10 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC-11",
+        "text": "UTC-11",
+        "diff": "- 11 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC-12",
+        "text": "UTC-12",
+        "diff": "- 12 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC-2",
+        "text": "UTC-02",
+        "diff": "- 2 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC-3",
+        "text": "UTC-03",
+        "diff": "- 3 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC-4",
+        "text": "UTC-04",
+        "diff": "- 4 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC-5",
+        "text": "UTC-05",
+        "diff": "- 5 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC-6",
+        "text": "UTC-06",
+        "diff": "- 6 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC-7",
+        "text": "UTC-07",
+        "diff": "- 7 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC-8",
+        "text": "UTC-08",
+        "diff": "- 8 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC-83",
+        "text": "UTC-8:30",
+        "diff": "- 8 1/2 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC-9",
+        "text": "UTC-09",
+        "diff": "- 9 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+1",
+        "text": "UTC+01",
+        "diff": "+ 1 hour",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+10",
+        "text": "UTC+10",
+        "diff": "+ 10 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+11",
+        "text": "UTC+11",
+        "diff": "+ 11 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+12",
+        "text": "UTC+12",
+        "diff": "+ 12 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+13",
+        "text": "UTC+13",
+        "diff": "+ 13 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+14",
+        "text": "UTC+14",
+        "diff": "+ 14 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+2",
+        "text": "UTC+02",
+        "diff": "+ 2 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+3",
+        "text": "UTC+03",
+        "diff": "+ 3 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+4",
+        "text": "UTC+04",
+        "diff": "+ 4 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+5",
+        "text": "UTC+05",
+        "diff": "+ 5 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+53",
+        "text": "UTC+05:30",
+        "diff": "+ 5 1/2 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+6",
+        "text": "UTC+06",
+        "diff": "+ 6 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+63",
+        "text": "UTC+06:30",
+        "diff": "+ 6 1/2 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+7",
+        "text": "UTC+07",
+        "diff": "+ 7 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+8",
+        "text": "UTC+08",
+        "diff": "+ 8 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "UTC+9",
+        "text": "UTC+09",
+        "diff": "+ 9 hours",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "WAT",
+        "text": "Western Africa",
+        "diff": "+ 1 hour",
+        "daylight": "NO daylight saving"
+    }, {
+        "key": "WDFT",
+        "text": "Walldorf Time",
+        "diff": "+ 1 hour",
+        "daylight": "Europe"
+    }
+]

@@ -1,0 +1,66 @@
+[
+	{
+		"key": "CD",
+		"text": "CD - Direct Customers"
+	},
+	{
+		"key": "CI",
+		"text": "CI - Indirect Customers"
+	},
+	{
+		"key": "CM",
+		"text": "CM - Mix Customers"
+	},
+	{
+		"key": "CN",
+		"text": "CN - National Accounts"
+	},
+	{
+		"key": "CO",
+		"text": "CO - Other Customers"
+	},
+	{
+		"key": "CR",
+		"text": "CR - Regional Accounts"
+	},
+	{
+		"key": "CS",
+		"text": "CS - Supermarket"
+	},
+	{
+		"key": "EC",
+		"text": "EC - Command Customer ON"
+	},
+	{
+		"key": "ED",
+		"text": "ED - Reg.Direct Customers"
+	},
+	{
+		"key": "EI",
+		"text": "EI - Indirect Customers"
+	},
+	{
+		"key": "EM",
+		"text": "EM - Reg.Mixed Customers"
+	},
+	{
+		"key": "EN",
+		"text": "EN - National Accounts"
+	},
+	{
+		"key": "EO",
+		"text": "EO - Other Customers"
+	},
+	{
+		"key": "ER",
+		"text": "ER - Regional Accounts"
+	},
+	{
+		"key": "ES",
+		"text": "ES - Supermarket"
+	},
+	{
+		"key": "PO",
+		"text": "PO - Other Customers"
+	}
+]

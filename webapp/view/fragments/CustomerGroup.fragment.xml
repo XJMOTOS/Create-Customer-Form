@@ -27,12 +27,13 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/0}"
 					items="{customerGroups>/}"
 					valueState="{= ${customer>/customerGroup/0} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{customerGroups>key}" text="{customerGroups>text}"/>
+					<core:Item key="{customerGroups>Kdgrp}" text="{customerGroups>Kdgrp}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -53,11 +54,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/1}"
-					items="{customerGroups>/}"
+					items="{customerGroups1>/}"
 					width="100%">
-					<core:Item key="{customerGroups>key}" text="{customerGroups>text}"/>
+					<core:Item key="{customerGroups1>Kvgr1}" text="{customerGroups1>Bezei}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -78,11 +80,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/2}"
-					items="{customerGroups>/}"
+					items="{customerGroups2>/}"
 					width="100%">
-					<core:Item key="{customerGroups>key}" text="{customerGroups>text}"/>
+					<core:Item key="{customerGroups2>Kvgr2}" text="{customerGroups2>Bezei}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -103,11 +106,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/3}"
-					items="{customerGroups>/}"
+					items="{customerGroups3>/}"
 					width="100%">
-					<core:Item key="{customerGroups>key}" text="{customerGroups>text}"/>
+					<core:Item key="{customerGroups3>Kvgr3}" text="{customerGroups3>Bezei}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -128,11 +132,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/4}"
-					items="{customerGroups>/}"
+					items="{customerGroups4>/}"
 					width="100%">
-					<core:Item key="{customerGroups>key}" text="{customerGroups>text}"/>
+					<core:Item key="{customerGroups4>Kvgr4}" text="{customerGroups4>Bezei}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -153,11 +158,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/5}"
-					items="{customerGroups>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_DPUBStatusSet}"
 					width="100%">
-					<core:Item key="{customerGroups>key}" text="{customerGroups>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>KVGR5}" text="{GWD_C_FORM_UI5>BEZEI}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -179,6 +185,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/6}"
 					items="{customerGroups>/}"
@@ -205,6 +212,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/7}"
 					items="{customerGroups>/}"
@@ -231,6 +239,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/8}"
 					items="{customerGroups>/}"
@@ -257,6 +266,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/9}"
 					items="{customerGroups>/}"
@@ -283,6 +293,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/10}"
 					items="{customerGroups>/}"
@@ -309,6 +320,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/11}"
 					items="{customerGroups>/}"
@@ -335,6 +347,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/12}"
 					items="{customerGroups>/}"
@@ -361,6 +374,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/13}"
 					items="{customerGroups>/}"
@@ -387,6 +401,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/14}"
 					items="{customerGroups>/}"
@@ -413,6 +428,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/15}"
 					items="{customerGroups>/}"
@@ -439,6 +455,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/16}"
 					items="{customerGroups>/}"
@@ -465,6 +482,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/17}"
 					items="{customerGroups>/}"
@@ -491,6 +509,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/18}"
 					items="{customerGroups>/}"
@@ -517,6 +536,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/19}"
 					items="{customerGroups>/}"
@@ -543,6 +563,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/20}"
 					items="{customerGroups>/}"
@@ -569,11 +590,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/priceGroup}"
-					items="{priceGroups>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_KONDASet}"
 					width="100%">
-					<core:Item key="{priceGroups>key}" text="{priceGroups>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>Konda}" text="{GWD_C_FORM_UI5>Vtext}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -594,11 +616,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/priceListType}"
-					items="{priceListTypes>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_PLTYPSet}"
 					width="100%">
-					<core:Item key="{priceListTypes>key}" text="{priceListTypes>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>Pltyp}" text="{GWD_C_FORM_UI5>Ptext}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -620,12 +643,13 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/statisticsGroup}"
-					items="{statisticsGroups>/}"
+					items="{customerStatisticsGroups>/}"
 					valueState="{= ${customer>/customerGroup/statisticsGroup} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{statisticsGroups>key}" text="{statisticsGroups>text}"/>
+					<core:Item key="{customerStatisticsGroups>key}" text="{customerStatisticsGroups>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>

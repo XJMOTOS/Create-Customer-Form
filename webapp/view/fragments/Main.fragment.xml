@@ -12,130 +12,195 @@
 		adjustLabelSpan="false"
 		singleContainerFullSize="false">
 		<forms:content>
+			<Button text="read oData" press=".read"/>
 			<Label
-				text="{i18n>lblHierarchyA} 1"
-				class="sapUiTinyMarginTop"/>
-			<HBox>
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipHierarchyA1}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					forceSelection="false"
-					selectedKey="{customer>/hierarchy/a1}"
-					items="{hierarchies>/}"
-					width="100%">
-					<core:Item key="{hierarchies>key}" text="{hierarchies>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblHierarchyA} 2"
-				class="sapUiTinyMarginTop"/>
-			<HBox>
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipHierarchyA2}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					forceSelection="false"
-					selectedKey="{customer>/hierarchy/a2}"
-					items="{hierarchies>/}"
-					width="100%">
-					<core:Item key="{hierarchies>key}" text="{hierarchies>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblHierarchyA} 3"
-				class="sapUiTinyMarginTop"/>
-			<HBox>
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipHierarchyA3}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					forceSelection="false"
-					selectedKey="{customer>/hierarchy/a3}"
-					items="{hierarchies>/}"
-					width="100%">
-					<core:Item key="{hierarchies>key}" text="{hierarchies>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblHierarchyA} 4"
-				class="sapUiTinyMarginTop"/>
-			<HBox>
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipHierarchyA4}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					forceSelection="false"
-					selectedKey="{customer>/hierarchy/a4}"
-					items="{hierarchies>/}"
-					width="100%">
-					<core:Item key="{hierarchies>key}" text="{hierarchies>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblHierarchyB} 1"
+				text="{i18n>lblAccountGroup}"
 				class="sapUiTinyMarginTop"
-				visible="{view>/show/hierarchyFields}"/>
-			<HBox visible="{view>/show/hierarchyFields}">
+				required="true"/>
+			<HBox>
 				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
 					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipHierarchyB1}">
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipAccountGroup}">
 					<core:layoutData>
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onChangeMain"
 					forceSelection="false"
-					selectedKey="{customer>/hierarchy/b1}"
-					items="{hierarchies>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_BUS_ACC_GRPSet}"
+					selectedKey="{customer>/main/accountGroup}"
+					valueState="{= ${customer>/main/accountGroup} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{hierarchies>key}" text="{hierarchies>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>Ktokd}" text="{GWD_C_FORM_UI5>Description}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
 				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblCompanyCode}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipCompanyCode}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					change=".onChangeMain"
+					forceSelection="false"
+					items="{GWD_C_FORM_UI5>/ZFA1_COMPAN_CODESet}"
+					selectedKey="{customer>/main/companyCode}"
+					valueState="{= ${customer>/main/companyCode} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{GWD_C_FORM_UI5>Bukrs}" text="{GWD_C_FORM_UI5>Description}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblSalesOrganization}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipSalesOrganization}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					change="onChangeSalesOrganization"
+					forceSelection="false"
+					items="{GWD_C_FORM_UI5>/ZFA1_SALES_ORGSet}"
+					selectedKey="{customer>/main/salesOrganization}"
+					valueState="{= ${customer>/main/salesOrganization} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{GWD_C_FORM_UI5>Vkorg}" text="{GWD_C_FORM_UI5>Description}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblDistributtionChannel}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipDistributtionChannel}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					change=".onChangeDistributtionChannel"
+					forceSelection="false"
+					items="{distributtionChannels>/}"
+					selectedKey="{customer>/main/distributtionChannel}"
+					valueState="{= ${customer>/main/distributtionChannel} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{distributtionChannels>key}" text="{distributtionChannels>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblDivision}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipDivision}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					change=".onChangeMain"
+					forceSelection="false"
+					items="{divisions>/}"
+					selectedKey="{customer>/main/division}"
+					width="100%"
+					valueState="{= ${customer>/main/division} ? 'None' : 'Error' }">
+					<core:Item key="{divisions>key}" text="{divisions>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblTaxNumber}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipTaxNumber}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					change=".onChangeMain"
+					maxLength="35"
+					value="{customer>/main/taxNumber}"
+					valueState="{= ${customer>/main/taxNumber} ? 'None' : 'Error' }">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblVatRegistrationNumber}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipTaxRegistration}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					change=".onChangeMain"
+					maxLength="35"
+					value="{customer>/main/vatRegistrationNumber}"
+					valueState="{= ${customer>/main/vatRegistrationNumber} ? 'None' : 'Error' }">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
 			</HBox>
 
 		</forms:content>

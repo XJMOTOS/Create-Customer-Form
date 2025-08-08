@@ -16,7 +16,7 @@
       "toolsId": "6f268d6f-c0cc-4a10-bf82-4f8d6aba951b"
     },
     "dataSources": {
-      "mainService": {
+      "GWD_C_FORM_UI5": {
         "uri": "/sap/opu/odata/sap/ZGSP_CUSTOMER_CFORM_SRV/",
         "type": "OData",
         "settings": {
@@ -72,11 +72,16 @@
           "bundleName": "beamsuntoryinc.createcustomerform.i18n.i18n"
         }
       },
-      "": {
-        "dataSource": "mainService",
+      "GWD_C_FORM_UI5": {
+        "dataSource": "GWD_C_FORM_UI5",
         "preload": true,
-        "settings": {}
-      }
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"useBatch": true
+				}
+			}
     },
     "resources": {
       "css": [

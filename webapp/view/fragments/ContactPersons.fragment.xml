@@ -12,6 +12,7 @@
 			<Toolbar>
 				<ToolbarSpacer/>
 				<Button
+					enabled="{view>/enabled/secondary}"
 					icon="sap-icon://add"
 					press=".onAddContactPerson"/>
 			</Toolbar>
@@ -40,17 +41,18 @@
 			<ColumnListItem>
 				<cells>
 					<Select
+						enabled="{view>/enabled/secondary}"
 						selectedKey="{customer>contactType}"
 						forceSelection="false"
 						items="{ path: 'contactTypes>/', templateShareable: false }"
 						width="100%">
 						<core:Item key="{contactTypes>key}" text="{contactTypes>key}"/>
 					</Select>
-					<Input value="{customer>name}"/>
-					<Input value="{customer>surname}"/>
-					<Input value="{customer>phone}"/>
-					<Input value="{customer>fax}"/>
-					<Input value="{customer>email}"/>
+					<Input enabled="{view>/enabled/secondary}" value="{customer>name}"/>
+					<Input enabled="{view>/enabled/secondary}" value="{customer>surname}"/>
+					<Input enabled="{view>/enabled/secondary}" value="{customer>phone}"/>
+					<Input enabled="{view>/enabled/secondary}" value="{customer>fax}"/>
+					<Input enabled="{view>/enabled/secondary}" value="{customer>email}"/>
 				</cells>
 			</ColumnListItem>
 		</items>

@@ -5,7 +5,7 @@
 	xmlns:microchart="sap.suite.ui.microchart">
 	<Table 
 		mode="None"
-		items="{taxInformation>/}"
+		items="{taxInformations>/}"
 		visible="{view>/show/salesFields}">
 		<columns>
 			<Column>
@@ -21,14 +21,14 @@
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Input value="{taxInformation>taxCountry}"/>
-					<Input value="{taxInformation>taxCategory}"/>
+					<Text text="{taxInformations>taxCountry}"/>
+					<Text text="{taxInformations>taxCategory}"/>
 					<Select
-						selectedKey="{taxInformation>taxClassification}"
-						items="{ path: 'taxClasification>/', templateShareable: false }">
-						<core:Item key="{taxClasification>key}" text="{taxClasification>text}"/>
+						enabled="{view>/enabled/secondary}"
+						selectedKey="{taxInformations>taxClassification}"
+						items="{ path: 'taxClasifications>/', templateShareable: false }">
+						<core:Item key="{taxClasifications>key}" text="{taxClasifications>text}"/>
 					</Select>
-					<Input value="{taxInformation>taxClassification}"/>
 				</cells>
 			</ColumnListItem>
 		</items>

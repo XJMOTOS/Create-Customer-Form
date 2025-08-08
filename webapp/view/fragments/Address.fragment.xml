@@ -42,11 +42,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/address/region}"
 					items="{regions>/}"
 					width="100%">
-					<core:Item key="{regions>key}" text="{regions>text}"/>
+					<core:Item key="{regions>BLAND}" text="{regions>BEZEI}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -68,6 +69,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/city}"
 					maxLength="35"
 					valueState="{= ${customer>/address/city} ? 'None' : 'Error' }">
@@ -91,6 +93,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/houseNumber}"
 					maxLength="10">
 					<layoutData>
@@ -113,6 +116,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/street}"
 					maxLength="60">
 					<layoutData>
@@ -136,6 +140,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/street2}"
 					maxLength="40">
 					<layoutData>
@@ -168,6 +173,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/street3}"
 					maxLength="40">
 					<layoutData>
@@ -200,6 +206,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/street4}"
 					maxLength="40">
 					<layoutData>
@@ -232,6 +239,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/street5}"
 					maxLength="40">
 					<layoutData>
@@ -263,6 +271,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/postalCode}"
 					maxLength="10">
 					<layoutData>
@@ -285,6 +294,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/address/telephoneCountryCode1}"
 					items="{telephoneCountryCodes>/}"
@@ -327,6 +337,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/address/telephoneCountryCode2}"
 					items="{telephoneCountryCodes>/}"
@@ -337,6 +348,7 @@
 					</layoutData>
 				</Select>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/telephone2}"
 					maxLength="16">
 					<layoutData>
@@ -369,6 +381,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/address/telephoneCountryCode3}"
 					items="{telephoneCountryCodes>/}"
@@ -379,6 +392,7 @@
 					</layoutData>
 				</Select>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/telephone3}"
 					maxLength="16">
 					<layoutData>
@@ -411,6 +425,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/address/telephoneCountryCode4}"
 					items="{telephoneCountryCodes>/}"
@@ -421,6 +436,7 @@
 					</layoutData>
 				</Select>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/telephone4}"
 					maxLength="16">
 					<layoutData>
@@ -453,6 +469,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/address/telephoneCountryCode5}"
 					items="{telephoneCountryCodes>/}"
@@ -463,6 +480,7 @@
 					</layoutData>
 				</Select>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/telephone5}"
 					maxLength="16">
 					<layoutData>
@@ -494,6 +512,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/address/faxCountryCode1}"
 					items="{faxCountryCodes>/}"
@@ -504,6 +523,7 @@
 					</layoutData>
 				</Select>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/fax1}"
 					maxLength="16">
 					<layoutData>
@@ -536,6 +556,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/address/faxCountryCode2}"
 					items="{faxCountryCodes>/}"
@@ -546,6 +567,7 @@
 					</layoutData>
 				</Select>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/fax2}"
 					maxLength="31">
 					<layoutData>
@@ -578,6 +600,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/address/faxCountryCode3}"
 					items="{faxCountryCodes>/}"
@@ -588,6 +611,7 @@
 					</layoutData>
 				</Select>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/fax3}"
 					maxLength="31">
 					<layoutData>
@@ -620,6 +644,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/address/faxCountryCode4}"
 					items="{faxCountryCodes>/}"
@@ -630,6 +655,7 @@
 					</layoutData>
 				</Select>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/fax4}"
 					maxLength="31">
 					<layoutData>
@@ -662,6 +688,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/address/faxCountryCode5}"
 					items="{faxCountryCodes>/}"
@@ -672,6 +699,7 @@
 					</layoutData>
 				</Select>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/fax5}"
 					maxLength="31">
 					<layoutData>
@@ -703,6 +731,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/email1}"
 					maxLength="241">
 					<layoutData>
@@ -735,6 +764,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/email2}"
 					maxLength="241">
 					<layoutData>
@@ -767,6 +797,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/email3}"
 					maxLength="241">
 					<layoutData>
@@ -799,6 +830,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/email4}"
 					maxLength="241">
 					<layoutData>
@@ -831,6 +863,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/email5}"
 					maxLength="241">
 					<layoutData>
@@ -863,6 +896,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/district}"
 					maxLength="35">
 					<layoutData>
@@ -886,6 +920,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/poBox}"
 					maxLength="">
 					<layoutData>
@@ -909,6 +944,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/building}"
 					maxLength="20">
 					<layoutData>
@@ -932,6 +968,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/floor}"
 					maxLength="10">
 					<layoutData>
@@ -955,6 +992,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/address/room}"
 					maxLength="10">
 					<layoutData>

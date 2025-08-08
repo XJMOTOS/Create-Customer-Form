@@ -26,13 +26,16 @@
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
+				<!-- TODO + 3000 -->
 				<Select
+					enabled="{view>/enabled/secondary}"
+					change=".onChangeSalesDistrict"
 					forceSelection="false"
-					items="{salesDistricts>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_SalesDistrictSet}"
 					selectedKey="{customer>/sales/district}"
 					valueState="{= ${customer>/sales/district} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{salesDistricts>key}" text="{salesDistricts>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>BZIRK}" text="{GWD_C_FORM_UI5>BZTXT}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -52,12 +55,14 @@
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
+					<!-- enabled="{= ${view>/enabled/secondary} &amp;&amp; ${customer>/general/language} !== ''}" -->
 				<Select
-					selectedKey="{customer>/sales/group}"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{salesGroups>/}"
+					selectedKey="{customer>/sales/group}"
 					width="100%">
-					<core:Item key="{salesGroups>key}" text="{salesGroups>text}"/>
+					<core:Item key="{salesGroups>Kvgr1}" text="{salesGroups>Bezei}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -78,11 +83,12 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{salesOffices>/}"
 					selectedKey="{customer>/sales/office}"
 					width="100%">
-					<core:Item key="{salesOffices>key}" text="{salesOffices>text}"/>
+					<core:Item key="{salesOffices>Vkbur}" text="{salesOffices>Bezei}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -104,12 +110,13 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
-					items="{currencies>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_BRCUSCURRDSet}"
 					selectedKey="{customer>/sales/currency}"
 					valueState="{= ${customer>/sales/currency} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{currencies>key}" text="{currencies>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>Curr}" text="{GWD_C_FORM_UI5>Curr}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -131,6 +138,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{accountAssignmentGroups>/}"
 					selectedKey="{customer>/sales/accountAssignmentGroup}"
@@ -158,12 +166,13 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/sales/termsOfPayment}"
-					items="{termsOfPayments>/}"
+					items="{paymentTerms>/}"
 					valueState="{= ${customer>/sales/termsOfPayment} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{termsOfPayments>key}" text="{termsOfPayments>text}"/>
+					<core:Item key="{paymentTerms>key}" text="{paymentTerms>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -185,6 +194,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{pricingProcedures>/}"
 					selectedKey="{customer>/sales/pricingProcedure}"
@@ -212,12 +222,13 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
-					items="{incoterms>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_INCO1Set}"
 					selectedKey="{customer>/sales/incoterm1}"
 					valueState="{= ${customer>/sales/incoterm1} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{incoterms>key}" text="{incoterms>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>INCO1}" text="{GWD_C_FORM_UI5>BEZEI}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -238,6 +249,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/sales/incoterm2}"
 					maxLength="35">
 					<layoutData>
@@ -261,6 +273,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/sales/orderProbability}"
 					maxLength="3">
 					<layoutData>
@@ -284,6 +297,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/sales/customerClassification}"
 					maxLength="2">
 					<layoutData>
@@ -307,6 +321,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/sales/indicatorRebateRelevant}"
 					maxLength="2">
 					<layoutData>

@@ -1,22 +1,22 @@
 [
 	{
 		"key": "NT24",
-		"text": "Net Due in 24 days"
+		"text": "NT24 - Net Due in 24 days"
 	},
 	{
-	"key": "NT30",
-		"text": "Net Due in 30 days"
+		"key": "NT30",
+		"text": "NT30 - Net Due in 30 days"
 	},
 	{
 		"key": "NT45",
-		"text": "Net Due in 45 days"
+		"text": "NT45 - Net Due in 45 days"
 	},
 	{
-	"key": "NT60",
-		"text": "Net Due in 60 days"
+		"key": "NT60",
+		"text": "NT60 - Net Due in 60 days"
 	},
 	{
 		"key": "OTH",
-		"text": "OTHERS"
+		"text": "OTH - OTHERS"
 	}
 ]

@@ -1,10 +1,10 @@
 {
 	"main": {
-		"accountGroup": "",
+		"accountGroup": "ZESP",
 		"companyCode": "",
 		"salesOrganization": "",
-		"distributtionChannel": "",
-		"division": "",
+		"distributtionChannel": "OU",
+		"division": "20",
 		"taxNumber": "",
 		"vatRegistrationNumber": ""
 	},
@@ -13,9 +13,9 @@
 		"name2": "",
 		"name3": "",
 		"name4": "",
-		"country": "",
+		"country": "US",
 		"searchTerm": "",
-		"language": "",
+		"language": "E",
 		"accountGroup": "",
 		"classification": "",
 		"transportationZone": "",
@@ -145,10 +145,20 @@
 	},
 	
 	"hierarchy": {
+		"type": "",
 		"a1": "",
 		"a2": "",
 		"a3": "",
 		"a4": "",
-		"b1": ""
+		"b1": "",
+		"b2": "",
+		"b3": "",
+		"b4": "",
+		"b5": "",
+		"b6": "",
+		"c1": "",
+		"c2": "",
+		"c3": "",
+		"c4": ""
 	}
 }

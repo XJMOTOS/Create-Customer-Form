@@ -1,0 +1,30 @@
+[
+	{
+		"key": "1",
+		"text": "1 - Standard"
+	},
+	{
+		"key": "3",
+		"text": "3 - Intercompany"
+	},
+	{
+		"key": "4",
+		"text": "4 - = Legal  Entity Cust"
+	},
+	{
+		"key": "5",
+		"text": "5 - Diff.Leg/Same Gr.Rep"
+	},
+	{
+		"key": "6",
+		"text": "6 - JBB Standard"
+	},
+	{
+		"key": "7",
+		"text": "7 - Free Goods Sales"
+	},
+	{
+		"key": "8",
+		"text": "8 - Visitor Center/DTC"
+	}
+]

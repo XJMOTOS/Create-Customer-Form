@@ -1,12 +1,11 @@
 <core:FragmentDefinition
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core"
-	xmlns:forms="sap.ui.layout.form"
-	xmlns:microchart="sap.suite.ui.microchart">
+	xmlns:forms="sap.ui.layout.form">
 	<forms:SimpleForm
 		labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
 		emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
-		columnsXL="1" columnsL="1" columnsM="1"
+		columnsXL="2" columnsL="1" columnsM="1"
 		editable="false"
 		layout="ResponsiveGridLayout"
 		adjustLabelSpan="false"
@@ -32,7 +31,9 @@
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
-				<Input value="{customer>/taxDetails/vatNumber2}">
+				<Input
+					enabled="{view>/enabled/secondary}"
+					value="{customer>/taxDetails/vatNumber2}">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -53,7 +54,9 @@
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
-				<Input value="{customer>/taxDetails/warehouseExciseNumber}">
+				<Input
+					enabled="{view>/enabled/secondary}"
+					value="{customer>/taxDetails/warehouseExciseNumber}">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -74,13 +77,14 @@
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
-				<Input value="{customer>/taxDetails/vatNumber4}">
+				<Input
+					enabled="{view>/enabled/secondary}"
+					value="{customer>/taxDetails/vatNumber4}">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
 				</Input>
 			</HBox>
-
 		</forms:content>
 	</forms:SimpleForm>
 </core:FragmentDefinition>

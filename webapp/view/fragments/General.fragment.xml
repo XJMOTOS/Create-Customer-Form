@@ -27,6 +27,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					maxLength="35"
 					value="{customer>/general/name1}"
 					valueState="{= ${customer>/general/name1} ? 'None' : 'Error' }">
@@ -60,6 +61,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					maxLength="35"
 					value="{customer>/general/name2}">
 					<layoutData>
@@ -92,6 +94,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					maxLength="35"
 					value="{customer>/general/name3}">
 					<layoutData>
@@ -124,6 +127,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					maxLength="35"
 					value="{customer>/general/name4}">
 					<layoutData>
@@ -156,12 +160,14 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
+					change=".onChangeCountry"
 					selectedKey="{customer>/general/country}"
-					items="{countries>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_CountrySet}"
 					valueState="{= ${customer>/general/country} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{countries>key}" text="{countries>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>LAND1}" text="{GWD_C_FORM_UI5>LANDX}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -183,6 +189,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/general/searchTerm}"
 					valueState="{= ${customer>/general/searchTerm} ? 'None' : 'Error' }">
 					<layoutData>
@@ -206,12 +213,14 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
+					change=".onChangeLanguage"
 					forceSelection="false"
-					items="{languages>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_SPRASSet}"
 					selectedKey="{customer>/general/language}"
 					valueState="{= ${customer>/general/language} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{languages>key}" text="{languages>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>SPRSL}" text="{GWD_C_FORM_UI5>SPTXT}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -232,12 +241,13 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
-					items="{classifications>/}"
+					items="{customerClassifications>/}"
 					selectedKey="{customer>/general/classification}"
 					valueState="{= ${customer>/general/classification} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{classifications>key}" text="{classifications>text}"/>
+					<core:Item key="{customerClassifications>key}" text="{customerClassifications>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -259,12 +269,13 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; ${view>/enabled/transportationZone} }"
 					forceSelection="false"
 					items="{transportationZones>/}"
 					selectedKey="{customer>/general/transportationZone}"
 					valueState="{= ${customer>/general/transportationZone} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{transportationZones>key}" text="{transportationZones>text}"/>
+					<core:Item key="{transportationZones>Zone1}" text="{transportationZones>Vtext}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -286,12 +297,13 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/general/industryKey}"
-					items="{industryKeys>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_IndustrySet}"
 					valueState="{= ${customer>/general/industryKey} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{industryKeys>key}" text="{industryKeys>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>BRSCH}" text="{GWD_C_FORM_UI5>BRTXT}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -313,6 +325,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/general/timeZone}"
 					items="{timeZones>/}"

@@ -16,33 +16,6 @@
 			<Label	
 				class="sapUiTinyMarginTop"
 				required="true"
-				text="{i18n>lblSortKey}"/>
-			<HBox>
-				<core:Icon
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					decorative="false"
-					src="sap-icon://hint"
-					tooltip="{i18n>tooltipSortKey}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					forceSelection="false"
-					items="{sortKeys>/}"
-					selectedKey="{customer>/company/sortKey}"
-					valueState="{= ${customer>/company/sortKey} ? 'None' : 'Error' }"
-					width="100%">
-					<core:Item key="{sortKeys>key}" text="{sortKeys>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-			
-			<Label	
-				class="sapUiTinyMarginTop"
-				required="true"
 				text="{i18n>lblReconciliationAccount}"/>
 			<HBox>
 				<core:Icon
@@ -55,12 +28,41 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{reconciliationAccounts>/}"
 					selectedKey="{customer>/company/reconciliationAccount}"
 					valueState="{= ${customer>/company/reconciliationAccount} ? 'None' : 'Error' }"
 					width="100%">
 					<core:Item key="{reconciliationAccounts>key}" text="{reconciliationAccounts>text}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label	
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblSortKey}"/>
+			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipSortKey}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					enabled="{view>/enabled/secondary}"
+					forceSelection="false"
+					items="{sortKeys>/}"
+					selectedKey="{customer>/company/sortKey}"
+					valueState="{= ${customer>/company/sortKey} ? 'None' : 'Error' }"
+					width="100%">
+					<core:Item key="{sortKeys>key}" text="{sortKeys>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -82,6 +84,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/company/authorizationGroup}">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -103,7 +106,9 @@
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
+				<!-- TODO Cash Managment Group entity does not exists -->
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{cashManagmentGroups>/}"
 					selectedKey="{customer>/company/cashManagmentGroup}"
@@ -130,6 +135,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{toleranceGroups>/}"
 					selectedKey="{customer>/company/toleranceGroup}"
@@ -156,12 +162,13 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{paymentMethods>/}"
 					selectedKey="{customer>/company/paymentMethod}"
 					valueState="{= ${customer>/company/paymentMethod} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{oaymentMethods>key}" text="{paymentMethods>text}"/>
+					<core:Item key="{oaymentMethods>ZLSCH}" text="{paymentMethods>TEXT1}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -183,6 +190,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/company/houseBank}">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -205,6 +213,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/company/accountingClerkAbbreviation}">
 					<layoutData>
 						<FlexItemData growFactor="1"/>

@@ -19,12 +19,12 @@
 						<m:Toolbar height="100%">
 							<m:Image src="images/suntory_logo.jpg" width="20%"/>
 							<m:ToolbarSpacer/>
-							<microchart:HarveyBallMicroChart size="XS"
+							<!-- <microchart:HarveyBallMicroChart size="XS"
 									total="100" showFractions="true" >
 								<microchart:items>
 									<microchart:HarveyBallMicroChartItem fraction="0" color="Good" fractionScale="%"/>
 								</microchart:items>
-							</microchart:HarveyBallMicroChart>
+							</microchart:HarveyBallMicroChart> -->
 						</m:Toolbar>
 					</m:VBox>
 				</expandedHeading>
@@ -180,10 +180,6 @@
 				<heading>
 					<m:Toolbar design="Transparent" style="Clear">
 						<m:Title text="{i18n>lblSectionHierarchy}" titleStyle="H3"/>
-						<m:ToolbarSpacer/>
-						<m:Button
-							text="{= ${view>/show/hierarchyFields} ? ${i18n>buttonShowLess} : ${i18n>buttonShowMore} }"
-							press=".onToggleHierarchyFields"/>
 					</m:Toolbar>
 				</heading>
 				<subSections>
@@ -199,10 +195,12 @@
 			<m:Toolbar design="Transparent" style="Clear">
 				<m:ToolbarSpacer/>
 				<m:Button
+					enabled="{view>/enabled/validate}"
 					press=".onValidate"
 					text="{i18n>buttonValidate}"
 					type="Emphasized"/>
 				<m:Button
+					enabled="{view>/enabled/submit}"
 					press=".onSubmit"
 					text="{i18n>buttonSubmit}"
 					type="Emphasized"/>

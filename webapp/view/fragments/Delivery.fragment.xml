@@ -27,12 +27,13 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
-					items="{shippingConditions>/}"
+					items="{GWD_C_FORM_UI5>/ZFA1_VSBEDSet}"
 					selectedKey="{customer>/delivery/shippingCondition}"
 					valueState="{= ${customer>/delivery/shippingCondition} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{shippingConditions>key}" text="{shippingConditions>text}"/>
+					<core:Item key="{GWD_C_FORM_UI5>Vsbed}" text="{GWD_C_FORM_UI5>Vtext}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -54,6 +55,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/delivery/deliveryBlock}"
 					maxLength="2">
 					<layoutData>
@@ -77,6 +79,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/delivery/completeDelivery}"
 					maxLength="1">
 					<layoutData>
@@ -100,6 +103,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/delivery/maxNumberOfPartialDeliveries}"
 					maxLength="1">
 					<layoutData>
@@ -123,6 +127,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					enabled="{view>/enabled/secondary}"
 					value="{customer>/delivery/partialDelivery}"
 					maxLength="1">
 					<layoutData>
@@ -168,6 +173,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{deliveryPriorities>/}"
 					selectedKey="{customer>/delivery/deliveryPriority}"
@@ -194,6 +200,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{deliveringPlants>/}"
 					selectedKey="{customer>/delivery/deliveringPlant}"

@@ -25,5 +25,12 @@
 		"companyFields": false,
 		"salesFields": false,
 		"hierarchyFields": false
+	},
+	"enabled": {
+		"secondary": false,
+		"transportationZone": true,
+		"salesGroup": true,
+		"validate": false,
+		"submit": false
 	}
 }

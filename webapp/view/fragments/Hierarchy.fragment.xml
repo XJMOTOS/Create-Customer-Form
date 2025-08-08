@@ -13,9 +13,36 @@
 		singleContainerFullSize="false">
 		<forms:content>
 			<Label
-				text="{i18n>lblHierarchyA} 1"
-				class="sapUiTinyMarginTop"/>
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblHierarchyType}"/>
 			<HBox>
+				<core:Icon
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					decorative="false"
+					src="sap-icon://hint"
+					tooltip="{i18n>tooltipHierarchyType}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					enabled="{view>/enabled/secondary}"
+					forceSelection="false"
+					items="{hierarchyTypes>/}"
+					selectedKey="{customer>/hierarchy/type}"
+					width="100%">
+					<core:Item key="{hierarchyTypes>key}" text="{hierarchyTypes>key}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblHierarchyA} 1"
+				visible="{= ${customer>/hierarchy/type} === 'A' }"/>
+			<HBox visible="{= ${customer>/hierarchy/type} === 'A' }">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -28,9 +55,9 @@
 				<Select
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/a1}"
-					items="{hierarchies>/}"
+					items="{hierarchiesA1>/}"
 					width="100%">
-					<core:Item key="{hierarchies>key}" text="{hierarchies>text}"/>
+					<core:Item key="{hierarchiesA1>Kunnr}" text="{hierarchiesA1>Name1}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -40,7 +67,7 @@
 			<Label
 				text="{i18n>lblHierarchyA} 2"
 				class="sapUiTinyMarginTop"/>
-			<HBox>
+			<HBox visible="{= ${customer>/hierarchy/type} === 'A' }">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -53,9 +80,9 @@
 				<Select
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/a2}"
-					items="{hierarchies>/}"
+					items="{hierarchiesA2>/}"
 					width="100%">
-					<core:Item key="{hierarchies>key}" text="{hierarchies>text}"/>
+					<core:Item key="{hierarchiesA2>Kunnr}" text="{hierarchiesA2>Name1}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -65,7 +92,7 @@
 			<Label
 				text="{i18n>lblHierarchyA} 3"
 				class="sapUiTinyMarginTop"/>
-			<HBox>
+			<HBox visible="{= ${customer>/hierarchy/type} === 'A' }">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -78,9 +105,9 @@
 				<Select
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/a3}"
-					items="{hierarchies>/}"
+					items="{hierarchiesA3>/}"
 					width="100%">
-					<core:Item key="{hierarchies>key}" text="{hierarchies>text}"/>
+					<core:Item key="{hierarchiesA3>Kunnr}" text="{hierarchiesA3>Name1}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -90,7 +117,7 @@
 			<Label
 				text="{i18n>lblHierarchyA} 4"
 				class="sapUiTinyMarginTop"/>
-			<HBox>
+			<HBox visible="{= ${customer>/hierarchy/type} === 'A' }">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -103,9 +130,9 @@
 				<Select
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/a4}"
-					items="{hierarchies>/}"
+					items="{hierarchiesA4>/}"
 					width="100%">
-					<core:Item key="{hierarchies>key}" text="{hierarchies>text}"/>
+					<core:Item key="{hierarchiesA4>Kunnr}" text="{hierarchiesA4>Name1}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -114,9 +141,8 @@
 
 			<Label
 				text="{i18n>lblHierarchyB} 1"
-				class="sapUiTinyMarginTop"
-				visible="{view>/show/hierarchyFields}"/>
-			<HBox visible="{view>/show/hierarchyFields}">
+				class="sapUiTinyMarginTop"/>
+			<HBox visible="{= ${customer>/hierarchy/type} === 'B' }">
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -129,9 +155,238 @@
 				<Select
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/b1}"
-					items="{hierarchies>/}"
+					items="{hierarchiesB1>/}"
 					width="100%">
-					<core:Item key="{hierarchies>key}" text="{hierarchies>text}"/>
+					<core:Item key="{hierrchiesB1>Kunnr}" text="{hierarchiesB1>Name1}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblHierarchyB} 2"
+				class="sapUiTinyMarginTop"/>
+			<HBox visible="{= ${customer>/hierarchy/type} === 'B' }">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipHierarchyB2}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/hierarchy/b2}"
+					items="{hierarchiesB2>/}"
+					width="100%">
+					<core:Item key="{hierarchiesB2>Kunnr}" text="{hierarchiesB2>Name1}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblHierarchyB} 3"
+				class="sapUiTinyMarginTop"/>
+			<HBox visible="{= ${customer>/hierarchy/type} === 'B' }">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipHierarchyB3}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/hierarchy/b3}"
+					items="{hierarchiesB3>/}"
+					width="100%">
+					<core:Item key="{hierarchiesB3>Kunnr}" text="{hierarchiesB3>Name1}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblHierarchyB} 4"
+				class="sapUiTinyMarginTop"/>
+			<HBox visible="{= ${customer>/hierarchy/type} === 'B' }">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipHierarchyB4}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/hierarchy/b4}"
+					items="{hierarchiesB4>/}"
+					width="100%">
+					<core:Item key="{hierarchiesB4>Kunnr}" text="{hierarchiesB4>Name1}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblHierarchyB} 5"
+				class="sapUiTinyMarginTop"/>
+			<HBox visible="{= ${customer>/hierarchy/type} === 'B' }">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipHierarchyB5}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/hierarchy/b5}"
+					items="{hierarchiesB5>/}"
+					width="100%">
+					<core:Item key="{hierarchiesB5>Kunnr}" text="{hierarchiesB5>Name1}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblHierarchyB} 6"
+				class="sapUiTinyMarginTop"/>
+			<HBox visible="{= ${customer>/hierarchy/type} === 'B' }">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipHierarchyB6}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/hierarchy/b6}"
+					items="{hierarchiesB6>/}"
+					width="100%">
+					<core:Item key="{hierarchiesB6>Kunnr}" text="{hierarchiesB6>Name1}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblHierarchyC} 1"
+				class="sapUiTinyMarginTop"
+				visible="{= ${customer>/hierarchy/type} === 'C' }"/>
+			<HBox visible="{= ${customer>/hierarchy/type} === 'C' }">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipHierarchyC1}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/hierarchy/c1}"
+					items="{hierarchiesC1>/}"
+					width="100%">
+					<core:Item key="{hierarchiesC1>Kunnr}" text="{hierarchiesC1>Name1}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblHierarchyC} 2"
+				class="sapUiTinyMarginTop"
+				visible="{= ${customer>/hierarchy/type} === 'C' }"/>
+			<HBox visible="{= ${customer>/hierarchy/type} === 'C' }">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipHierarchyC2}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/hierarchy/c2}"
+					items="{hierarchiesC2>/}"
+					width="100%">
+					<core:Item key="{hierarchiesC2>Kunnr}" text="{hierarchiesC2>Name1}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblHierarchyC} 3"
+				class="sapUiTinyMarginTop"
+				visible="{= ${customer>/hierarchy/type} === 'C' }"/>
+			<HBox visible="{= ${customer>/hierarchy/type} === 'C' }">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipHierarchyC3}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/hierarchy/c3}"
+					items="{hierarchiesC3>/}"
+					width="100%">
+					<core:Item key="{hierarchiesC3>Kunnr}" text="{hierarchiesC3>Name1}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select>
+			</HBox>
+
+			<Label
+				text="{i18n>lblHierarchyC} 4"
+				class="sapUiTinyMarginTop"
+				visible="{= ${customer>/hierarchy/type} === 'C' }"/>
+			<HBox visible="{= ${customer>/hierarchy/type} === 'C' }">
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipHierarchyC4}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Select
+					forceSelection="false"
+					selectedKey="{customer>/hierarchy/c4}"
+					items="{hierarchiesC4>/}"
+					width="100%">
+					<core:Item key="{hierarchiesC4>Kunnr}" text="{hierarchiesC4>Name1}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
