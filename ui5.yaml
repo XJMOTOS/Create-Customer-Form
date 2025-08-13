@@ -19,6 +19,9 @@ server:
           - path: /sap
             url: http://mobiled.beamsuntory.com:443
             destination: GWD_C_FORM_UI5
+          - path: /sap
+            url: http://mobiled.beamsuntory.com:443
+            destination: GWD_BPA_UI5 
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:

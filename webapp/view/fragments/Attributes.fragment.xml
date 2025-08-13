@@ -27,7 +27,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/1}"
 					items="{GWD_C_FORM_UI5>/ZFA1_KATR1Set}"
@@ -54,7 +54,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/2}"
 					items="{GWD_C_FORM_UI5>/ZFA1_KATR2Set}"
@@ -81,7 +81,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/3}"
 					items="{GWD_C_FORM_UI5>/ZFA1_KATR3Set}"
@@ -108,7 +108,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/4}"
 					items="{GWD_C_FORM_UI5>/ZFA1_KATR4Set}"
@@ -135,7 +135,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/5}"
 					items="{GWD_C_FORM_UI5>/ZFA1_KATR5Set}"
@@ -162,7 +162,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/6}"
 					items="{GWD_C_FORM_UI5>/ZFA1_KATR6Set}"
@@ -189,7 +189,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/7}"
 					items="{GWD_C_FORM_UI5>/ZFA1_KATR7Set}"
@@ -216,7 +216,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/8}"
 					items="{GWD_C_FORM_UI5>/ZFA1_KATR8Set}"
@@ -243,7 +243,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/9}"
 					items="{GWD_C_FORM_UI5>/ZFA1_KATR9Set}"
@@ -270,7 +270,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/10}"
 					items="{GWD_C_FORM_UI5>/ZFA1_KATR10Set}"

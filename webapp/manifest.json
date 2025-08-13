@@ -24,6 +24,14 @@
           "localUri": "localService/mainService/metadata.xml",
           "odataVersion": "2.0"
         }
+      },
+      "GWD_BPA_UI5": {
+        "uri": "/sap/opu/odata/sap/ZGSP_CUST_CREATE_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "2.0"
+        }
       }
     }
   },
@@ -74,6 +82,16 @@
       },
       "GWD_C_FORM_UI5": {
         "dataSource": "GWD_C_FORM_UI5",
+        "preload": true,
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"useBatch": true
+				}
+			},
+      "GWD_BPA_UI5": {
+        "dataSource": "GWD_BPA_UI5",
         "preload": true,
 				"type": "sap.ui.model.odata.v2.ODataModel",
 				"settings": {

@@ -27,7 +27,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					change="onToggleValidationButton"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					items="{GWD_C_FORM_UI5>/ZFA1_VSBEDSet}"
 					selectedKey="{customer>/delivery/shippingCondition}"
@@ -55,7 +56,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					value="{customer>/delivery/deliveryBlock}"
 					maxLength="2">
 					<layoutData>
@@ -79,7 +80,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					value="{customer>/delivery/completeDelivery}"
 					maxLength="1">
 					<layoutData>
@@ -103,7 +104,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					value="{customer>/delivery/maxNumberOfPartialDeliveries}"
 					maxLength="1">
 					<layoutData>
@@ -127,7 +128,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					value="{customer>/delivery/partialDelivery}"
 					maxLength="1">
 					<layoutData>
@@ -173,7 +174,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					items="{deliveryPriorities>/}"
 					selectedKey="{customer>/delivery/deliveryPriority}"
@@ -200,7 +201,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					items="{deliveringPlants>/}"
 					selectedKey="{customer>/delivery/deliveringPlant}"

@@ -27,7 +27,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					change="onToggleValidationButton"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					maxLength="35"
 					value="{customer>/general/name1}"
 					valueState="{= ${customer>/general/name1} ? 'None' : 'Error' }">
@@ -61,7 +62,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					maxLength="35"
 					value="{customer>/general/name2}">
 					<layoutData>
@@ -94,7 +95,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					maxLength="35"
 					value="{customer>/general/name3}">
 					<layoutData>
@@ -127,7 +128,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					maxLength="35"
 					value="{customer>/general/name4}">
 					<layoutData>
@@ -159,19 +160,21 @@
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
-				<Select
-					enabled="{view>/enabled/secondary}"
-					forceSelection="false"
-					change=".onChangeCountry"
-					selectedKey="{customer>/general/country}"
-					items="{GWD_C_FORM_UI5>/ZFA1_CountrySet}"
-					valueState="{= ${customer>/general/country} ? 'None' : 'Error' }"
-					width="100%">
-					<core:Item key="{GWD_C_FORM_UI5>LAND1}" text="{GWD_C_FORM_UI5>LANDX}"/>
+				<Input
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					liveChange=".onLiveChangeCountry"
+					showSuggestion="true"
+					showValueHelp="false"
+					suggestionItems="{filteredCountries>/}"
+					suggestionItemSelected=".onSelectCountry"
+					value="{customer>/general/countryText}">
+					<suggestionItems>
+						<core:Item key="{filteredCountries>LAND1}" text="{filteredCountries>LANDX}"/>
+					</suggestionItems>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
-				</Select>
+				</Input>
 			</HBox>
 
 			<Label
@@ -189,7 +192,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					change="onToggleValidationButton"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					value="{customer>/general/searchTerm}"
 					valueState="{= ${customer>/general/searchTerm} ? 'None' : 'Error' }">
 					<layoutData>
@@ -213,8 +217,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
-					change=".onChangeLanguage"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					change="onToggleValidationButton"
 					forceSelection="false"
 					items="{GWD_C_FORM_UI5>/ZFA1_SPRASSet}"
 					selectedKey="{customer>/general/language}"
@@ -241,7 +245,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					items="{customerClassifications>/}"
 					selectedKey="{customer>/general/classification}"
@@ -269,7 +273,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; ${view>/enabled/transportationZone} }"
+					change="onToggleValidationButton"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; ${view>/enabled/transportationZone} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					items="{transportationZones>/}"
 					selectedKey="{customer>/general/transportationZone}"
@@ -297,7 +302,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					change="onToggleValidationButton"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					selectedKey="{customer>/general/industryKey}"
 					items="{GWD_C_FORM_UI5>/ZFA1_IndustrySet}"
@@ -325,7 +331,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					change="onToggleValidationButton"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					selectedKey="{customer>/general/timeZone}"
 					items="{timeZones>/}"

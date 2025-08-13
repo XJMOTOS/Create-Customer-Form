@@ -84,7 +84,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					change="onChangeSalesOrganization"
+					change=".onChangeSalesStructure"
 					forceSelection="false"
 					items="{GWD_C_FORM_UI5>/ZFA1_SALES_ORGSet}"
 					selectedKey="{customer>/main/salesOrganization}"
@@ -112,7 +112,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					change=".onChangeDistributtionChannel"
+					change=".onChangeSalesStructure"
 					forceSelection="false"
 					items="{distributtionChannels>/}"
 					selectedKey="{customer>/main/distributtionChannel}"
@@ -140,7 +140,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					change=".onChangeMain"
+					change=".onChangeDivision"
 					forceSelection="false"
 					items="{divisions>/}"
 					selectedKey="{customer>/main/division}"
@@ -168,7 +168,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					change=".onChangeMain"
+					change=".onChangeTaxNumber"
 					maxLength="35"
 					value="{customer>/main/taxNumber}"
 					valueState="{= ${customer>/main/taxNumber} ? 'None' : 'Error' }">
@@ -193,7 +193,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					change=".onChangeMain"
+					change=".onChangeVatRegistrationNumber"
 					maxLength="35"
 					value="{customer>/main/vatRegistrationNumber}"
 					valueState="{= ${customer>/main/vatRegistrationNumber} ? 'None' : 'Error' }">

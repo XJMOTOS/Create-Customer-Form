@@ -26,20 +26,22 @@
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
-				<!-- TODO + 3000 -->
-				<Select
-					enabled="{view>/enabled/secondary}"
-					change=".onChangeSalesDistrict"
-					forceSelection="false"
-					items="{GWD_C_FORM_UI5>/ZFA1_SalesDistrictSet}"
-					selectedKey="{customer>/sales/district}"
-					valueState="{= ${customer>/sales/district} ? 'None' : 'Error' }"
-					width="100%">
-					<core:Item key="{GWD_C_FORM_UI5>BZIRK}" text="{GWD_C_FORM_UI5>BZTXT}"/>
+				<Input
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					liveChange=".onLiveSalesDistrict"
+					showSuggestion="true"
+					showValueHelp="false"
+					suggestionItems="{filteredSalesDistricts>/}"
+					suggestionItemSelected=".onSelectSalesDistricts"
+					value="{customer>/sales>/districtText}"
+					valueState="{= ${customer>/sales/districtKey} ? 'None' : 'Error' }">
+					<suggestionItems>
+						<core:Item key="{filteredSalesDistricts>BZIRK}" text="{filteredSalesDistricts>BZTXT}"/>
+					</suggestionItems>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
-				</Select>
+				</Input>
 			</HBox>
 
 			<Label
@@ -55,9 +57,8 @@
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
-					<!-- enabled="{= ${view>/enabled/secondary} &amp;&amp; ${customer>/general/language} !== ''}" -->
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					items="{salesGroups>/}"
 					selectedKey="{customer>/sales/group}"
@@ -83,7 +84,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					items="{salesOffices>/}"
 					selectedKey="{customer>/sales/office}"
@@ -110,7 +111,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					items="{GWD_C_FORM_UI5>/ZFA1_BRCUSCURRDSet}"
 					selectedKey="{customer>/sales/currency}"
@@ -138,7 +139,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					change="onToggleValidationButton"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					items="{accountAssignmentGroups>/}"
 					selectedKey="{customer>/sales/accountAssignmentGroup}"
@@ -166,7 +168,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					change="onToggleValidationButton"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					selectedKey="{customer>/sales/termsOfPayment}"
 					items="{paymentTerms>/}"
@@ -194,7 +197,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					change="onToggleValidationButton"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					items="{pricingProcedures>/}"
 					selectedKey="{customer>/sales/pricingProcedure}"
@@ -222,7 +226,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					change="onToggleValidationButton"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					items="{GWD_C_FORM_UI5>/ZFA1_INCO1Set}"
 					selectedKey="{customer>/sales/incoterm1}"
@@ -249,7 +254,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					value="{customer>/sales/incoterm2}"
 					maxLength="35">
 					<layoutData>
@@ -273,7 +278,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					value="{customer>/sales/orderProbability}"
 					maxLength="3">
 					<layoutData>
@@ -297,7 +302,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					value="{customer>/sales/customerClassification}"
 					maxLength="2">
 					<layoutData>
@@ -321,7 +326,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					value="{customer>/sales/indicatorRebateRelevant}"
 					maxLength="2">
 					<layoutData>

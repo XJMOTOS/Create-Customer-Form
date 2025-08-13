@@ -28,7 +28,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					change="onToggleValidationButton"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					items="{reconciliationAccounts>/}"
 					selectedKey="{customer>/company/reconciliationAccount}"
@@ -56,7 +57,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					change="onToggleValidationButton"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					items="{sortKeys>/}"
 					selectedKey="{customer>/company/sortKey}"
@@ -84,7 +86,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					value="{customer>/company/authorizationGroup}">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -108,13 +110,14 @@
 				</core:Icon>
 				<!-- TODO Cash Managment Group entity does not exists -->
 				<Select
-					enabled="{view>/enabled/secondary}"
+					change="onToggleValidationButton"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
-					items="{cashManagmentGroups>/}"
+					items="{toleranceGroups>/}"
 					selectedKey="{customer>/company/cashManagmentGroup}"
 					valueState="{= ${customer>/company/cashManagmentGroup} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{cashManagmentGroups>key}" text="{cashManagmentGroups>text}"/>
+					<core:Item key="{toleranceGroups>key}" text="{toleranceGroups>text}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -135,7 +138,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					items="{toleranceGroups>/}"
 					selectedKey="{customer>/company/toleranceGroup}"
@@ -162,13 +165,14 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
+					change="onToggleValidationButton"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					forceSelection="false"
 					items="{paymentMethods>/}"
 					selectedKey="{customer>/company/paymentMethod}"
 					valueState="{= ${customer>/company/paymentMethod} ? 'None' : 'Error' }"
 					width="100%">
-					<core:Item key="{oaymentMethods>ZLSCH}" text="{paymentMethods>TEXT1}"/>
+					<core:Item key="{paymentMethods>ZLSCH}" text="{paymentMethods>TEXT1}"/>
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
@@ -190,7 +194,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					value="{customer>/company/houseBank}">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -213,7 +217,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{view>/enabled/secondary}"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
 					value="{customer>/company/accountingClerkAbbreviation}">
 					<layoutData>
 						<FlexItemData growFactor="1"/>

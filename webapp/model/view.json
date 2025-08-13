@@ -31,6 +31,7 @@
 		"transportationZone": true,
 		"salesGroup": true,
 		"validate": false,
-		"submit": false
+		"submit": false,
+		"existing": false
 	}
 }
