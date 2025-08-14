@@ -3,8 +3,9 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
 	"sap/ui/model/Filter",
 	"sap/m/MessageBox",
-	"../model/submit"
-], (BaseController, JSONModel, Filter, MessageBox, submit) => {
+	"../model/submit",
+	"../model/validate"
+], (BaseController, JSONModel, Filter, MessageBox, submit, validate) => {
     "use strict";
 
 	const GWD_C_FORM_UI5 = 'GWD_C_FORM_UI5';
@@ -578,5 +579,9 @@ sap.ui.define([
 			let taxInformations = this.getModel("taxInformations").getData();
 			submit.postCustomerData(customer, taxInformations);
 		},
+		validate: function () {
+			let oDataModel = this.getOwnerComponent().getModel("GWD_BPA_UI5")
+			validate.onValidate(oDataModel)
+		}
     });
 });

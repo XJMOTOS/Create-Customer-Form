@@ -196,7 +196,7 @@
 				<m:ToolbarSpacer/>
 				<m:Button
 					enabled="{view>/enabled/validate}"
-					press=".onValidate"
+					press=".validate"
 					text="{i18n>buttonValidate}"
 					type="Emphasized"/>
 				<m:Button
