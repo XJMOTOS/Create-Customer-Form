@@ -1,190 +1,186 @@
 [
-    {
-        "key": "",
-        "text": ""
-    },
-    {
-        "key": "000",
-        "text": "Allocation number"
-    },
-    {
-        "key": "001",
-        "text": "Posting date"
-    },
-    {
-        "key": "002",
-        "text": "Doc.no., fiscal year"
-    },
-    {
-        "key": "003",
-        "text": "Document date"
-    },
-    {
-        "key": "004",
-        "text": "Branch account"
-    },
-    {
-        "key": "005",
-        "text": "Loc.currency amount"
-    },
-    {
-        "key": "006",
-        "text": "Doc.currency amount"
-    },
-    {
-        "key": "007",
-        "text": "Bill/exch.due date"
-    },
-    {
-        "key": "008",
-        "text": "Cost center"
-    },
-    {
-        "key": "009",
-        "text": "External doc.number"
-    },
-    {
-        "key": "010",
-        "text": "Purchase order no."
-    },
-    {
-        "key": "011",
-        "text": "Plant number"
-    },
-    {
-        "key": "012",
-        "text": "Vendor number"
-    },
-    {
-        "key": "014",
-        "text": "Purchase order"
-    },
-    {
-        "key": "015",
-        "text": "Personnel number"
-    },
-    {
-        "key": "016",
-        "text": "Settlement period"
-    },
-    {
-        "key": "017",
-        "text": "Settl.per., pers.no."
-    },
-    {
-        "key": "018",
-        "text": "Asset number"
-    },
-    {
-        "key": "021",
-        "text": "Segment text"
-    },
-    {
-        "key": "022",
-        "text": "One-time name / city"
-    },
-    {
-        "key": "023",
-        "text": "One-time city / name"
-    },
-    {
-        "key": "024",
-        "text": "Document header text"
-    },
-    {
-        "key": "025",
-        "text": "CPU date"
-    },
-    {
-        "key": "026",
-        "text": "Pmnt per.bslne date"
-    },
-    {
-        "key": "027",
-        "text": "Value date"
-    },
-    {
-        "key": "028",
-        "text": "Asset number"
-    },
-    {
-        "key": "029",
-        "text": "Pstng month, vendor"
-    },
-    {
-        "key": "031",
-        "text": "Customer number"
-    },
-    {
-        "key": "032",
-        "text": "Pstng yr,month,curr."
-    },
-    {
-        "key": "033",
-        "text": "Cost center"
-    },
-    {
-        "key": "034",
-        "text": "Month, cost center"
-    },
-    {
-        "key": "035",
-        "text": "Contract number"
-    },
-    {
-        "key": "036",
-        "text": "Order"
-    },
-    {
-        "key": "037",
-        "text": "Currency key"
-    },
-    {
-        "key": "039",
-        "text": "Project number"
-    },
-    {
-        "key": "055",
-        "text": "Fiscal year, month"
-    },
-    {
-        "key": "060",
-        "text": "Test0"
-    },
-    {
-        "key": "061",
-        "text": "Test1"
-    },
-    {
-        "key": "065",
-        "text": "Test5"
-    },
-    {
-        "key": "066",
-        "text": "Billing document"
-    },
-    {
-        "key": "101",
-        "text": "Cash discnt clearing"
-    },
-    {
-        "key": "105",
-        "text": "Test"
-    },
-    {
-        "key": "901",
-        "text": "Sales document"
-    },
-    {
-        "key": "902",
-        "text": "Document number"
-    },
-    {
-        "key": "Y66",
-        "text": "Billing doc. full 16"
-    },
-    {
-        "key": "ZID",
-        "text": "Company DocNumb Year"
-    }
+	{
+		"key": "000",
+		"text": "Allocation number"
+	},
+	{
+		"key": "001",
+		"text": "Posting date"
+	},
+	{
+		"key": "002",
+		"text": "Doc.no., fiscal year"
+	},
+	{
+		"key": "003",
+		"text": "Document date"
+	},
+	{
+		"key": "004",
+		"text": "Branch account"
+	},
+	{
+		"key": "005",
+		"text": "Loc.currency amount"
+	},
+	{
+		"key": "006",
+		"text": "Doc.currency amount"
+	},
+	{
+		"key": "007",
+		"text": "Bill/exch.due date"
+	},
+	{
+		"key": "008",
+		"text": "Cost center"
+	},
+	{
+		"key": "009",
+		"text": "External doc.number"
+	},
+	{
+		"key": "010",
+		"text": "Purchase order no."
+	},
+	{
+		"key": "011",
+		"text": "Plant number"
+	},
+	{
+		"key": "012",
+		"text": "Vendor number"
+	},
+	{
+		"key": "014",
+		"text": "Purchase order"
+	},
+	{
+		"key": "015",
+		"text": "Personnel number"
+	},
+	{
+		"key": "016",
+		"text": "Settlement period"
+	},
+	{
+		"key": "017",
+		"text": "Settl.per., pers.no."
+	},
+	{
+		"key": "018",
+		"text": "Asset number"
+	},
+	{
+		"key": "021",
+		"text": "Segment text"
+	},
+	{
+		"key": "022",
+		"text": "One-time name / city"
+	},
+	{
+		"key": "023",
+		"text": "One-time city / name"
+	},
+	{
+		"key": "024",
+		"text": "Document header text"
+	},
+	{
+		"key": "025",
+		"text": "CPU date"
+	},
+	{
+		"key": "026",
+		"text": "Pmnt per.bslne date"
+	},
+	{
+		"key": "027",
+		"text": "Value date"
+	},
+	{
+		"key": "028",
+		"text": "Asset number"
+	},
+	{
+		"key": "029",
+		"text": "Pstng month, vendor"
+	},
+	{
+		"key": "031",
+		"text": "Customer number"
+	},
+	{
+		"key": "032",
+		"text": "Pstng yr,month,curr."
+	},
+	{
+		"key": "033",
+		"text": "Cost center"
+	},
+	{
+		"key": "034",
+		"text": "Month, cost center"
+	},
+	{
+		"key": "035",
+		"text": "Contract number"
+	},
+	{
+		"key": "036",
+		"text": "Order"
+	},
+	{
+		"key": "037",
+		"text": "Currency key"
+	},
+	{
+		"key": "039",
+		"text": "Project number"
+	},
+	{
+		"key": "055",
+		"text": "Fiscal year, month"
+	},
+	{
+		"key": "060",
+		"text": "Test0"
+	},
+	{
+		"key": "061",
+		"text": "Test1"
+	},
+	{
+		"key": "065",
+		"text": "Test5"
+	},
+	{
+		"key": "066",
+		"text": "Billing document"
+	},
+	{
+		"key": "101",
+		"text": "Cash discnt clearing"
+	},
+	{
+		"key": "105",
+		"text": "Test"
+	},
+	{
+		"key": "901",
+		"text": "Sales document"
+	},
+	{
+		"key": "902",
+		"text": "Document number"
+	},
+	{
+		"key": "Y66",
+		"text": "Billing doc. full 16"
+	},
+	{
+		"key": "ZID",
+		"text": "Company DocNumb Year"
+	}
 ]

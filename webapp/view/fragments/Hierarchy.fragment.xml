@@ -12,7 +12,7 @@
 		adjustLabelSpan="false"
 		singleContainerFullSize="false">
 		<forms:content>
-			<Label
+			<!-- <Label
 				class="sapUiTinyMarginTop"
 				text="{i18n>lblHierarchyType}"/>
 			<HBox>
@@ -26,7 +26,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{hierarchyTypes>/}"
 					selectedKey="{customer>/hierarchy/type}"
@@ -36,9 +36,36 @@
 						<FlexItemData growFactor="1"/>
 					</layoutData>
 				</Select>
-			</HBox>
+			</HBox> -->
 
 			<Label
+				class="sapUiTinyMarginTop"
+				text="{i18n>lblHierarchyA} 1"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipHierarchyA1}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Text class="sapUiTinyMarginTopBottom" text="{customer>/hierarchy/a1Text}"/>
+				<!-- <Select
+					enabled="{view>/enabled/secondary}"
+					forceSelection="false"
+					selectedKey="{customer>/hierarchy/a1}"
+					items="{hierarchiesA1>/}"
+					width="100%">
+					<core:Item key="{hierarchiesA1>Hkunnr1}" text="{hierarchiesA1>Name1} {hierarchiesA1>Name2} {hierarchiesA1>Name3} {hierarchiesA1>Name4}"/>
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Select> -->
+			</HBox>
+
+			<!-- <Label
 				class="sapUiTinyMarginTop"
 				text="{i18n>lblHierarchyA} 1"
 				visible="{= ${customer>/hierarchy/type} === 'A' }"/>
@@ -63,12 +90,12 @@
 						<FlexItemData growFactor="1"/>
 					</layoutData>
 				</Select>
-			</HBox>
+			</HBox> -->
 
 			<Label
 				text="{i18n>lblHierarchyA} 2"
 				class="sapUiTinyMarginTop"/>
-			<HBox visible="{= ${customer>/hierarchy/type} === 'A' }">
+			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -78,7 +105,8 @@
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
-				<Select
+				<Text class="sapUiTinyMarginTopBottom" text="{customer>/hierarchy/a2Text}"/>
+				<!-- <Select
 					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} &amp;&amp; ${customer>/hierarchy/a3} !== '' }"
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/a2}"
@@ -88,13 +116,13 @@
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
-				</Select>
+				</Select> -->
 			</HBox>
 
 			<Label
 				text="{i18n>lblHierarchyA} 3"
 				class="sapUiTinyMarginTop"/>
-			<HBox visible="{= ${customer>/hierarchy/type} === 'A' }">
+			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -104,8 +132,9 @@
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
-				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} &amp;&amp; ${customer>/hierarchy/a4} !== '' }"
+				<Text class="sapUiTinyMarginTopBottom" text="{customer>/hierarchy/a3Text}"/>
+				<!-- <Select
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; ${customer>/hierarchy/a4} !== '' }"
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/a3}"
 					items="{hierarchiesA3>/}"
@@ -114,13 +143,13 @@
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>
-				</Select>
+				</Select> -->
 			</HBox>
 
 			<Label
 				text="{i18n>lblHierarchyA} 4"
 				class="sapUiTinyMarginTop"/>
-			<HBox visible="{= ${customer>/hierarchy/type} === 'A' }">
+			<HBox>
 				<core:Icon
 					src="sap-icon://hint"
 					decorative="false"
@@ -130,20 +159,10 @@
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
-				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
-					forceSelection="false"
-					selectedKey="{customer>/hierarchy/a4}"
-					items="{hierarchiesA4>/}"
-					width="100%">
-					<core:Item key="{hierarchiesA4>Kunnr}" text="{hierarchiesA4>Name1}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
+				<Text class="sapUiTinyMarginTopBottom" text="{customer>/hierarchy/a4Text}"/>
 			</HBox>
 
-			<Label
+			<!-- <Label
 				text="{i18n>lblHierarchyB} 1"
 				class="sapUiTinyMarginTop"/>
 			<HBox visible="{= ${customer>/hierarchy/type} === 'B' }">
@@ -157,7 +176,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/b1}"
 					items="{hierarchiesB1>/}"
@@ -183,7 +202,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/b2}"
 					items="{hierarchiesB2>/}"
@@ -209,7 +228,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/b3}"
 					items="{hierarchiesB3>/}"
@@ -235,7 +254,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/b4}"
 					items="{hierarchiesB4>/}"
@@ -261,7 +280,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/b5}"
 					items="{hierarchiesB5>/}"
@@ -287,7 +306,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/b6}"
 					items="{hierarchiesB6>/}"
@@ -314,7 +333,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/c1}"
 					items="{hierarchiesC1>/}"
@@ -341,7 +360,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/c2}"
 					items="{hierarchiesC2>/}"
@@ -368,7 +387,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/c3}"
 					items="{hierarchiesC3>/}"
@@ -395,7 +414,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/hierarchy/c4}"
 					items="{hierarchiesC4>/}"
@@ -405,7 +424,7 @@
 						<FlexItemData growFactor="1"/>
 					</layoutData>
 				</Select>
-			</HBox>
+			</HBox> -->
 
 		</forms:content>
 	</forms:SimpleForm>

@@ -1,0 +1,125 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog title="{i18n>dialogTitleExistingCustomers}">
+	<Table
+		items="{existingCustomers>/}">
+		<columns>
+			<Column width="8em">
+				<header>
+					<Text text="{i18n>lblCustomerNumber}"/>
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Text text="{i18n>lblName}"/>
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Text text="{i18n>lblSalesOrganization}"/>
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Text text="{i18n>lblDistributtionChannel}"/>
+				</header>
+			</Column>
+			<Column width="10em">
+				<header>
+					<Text text="{i18n>lblDivision}"/>
+				</header>
+			</Column>
+			<Column width="10em">
+				<header>
+					<Text text="{i18n>lblTaxNumber}"/>
+				</header>
+			</Column>
+			<Column width="10em">
+				<header>
+					<Text text="{i18n>lblVatRegistrationNumber}"/>
+				</header>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{existingCustomers>Kunnr}"/>
+					<Text text="{existingCustomers>Name1}"/>
+					<Text text="{existingCustomers>Vkorg}"/>
+					<Text text="{existingCustomers>Vtweg}"/>
+					<Text text="{existingCustomers>Spart}"/>
+					<Text text="{existingCustomers>Stcd1}"/>
+					<Text text="{existingCustomers>Stceg}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<buttons>
+		<Button
+			press="onConfirmDuplicateCustomer"
+			text="{i18n>buttonConfirmDuplicateCustomer}"
+			type="Emphasized"/>
+		<Button
+			press="onCancelDuplicateCustomer"
+			text="{i18n>buttonCancelDuplicateCustomer}"
+			type="Emphasized"/>
+	</buttons>
+</Dialog>
+
+	<!-- <TableSelectDialog
+		confirm=".handleClose"
+		title="Select Product"
+		search=".handleSearch"
+		cancel=".onCancelExistingCustomers"
+		items="{existingCustomers>/}">
+		<columns>
+			<Column width="8em">
+				<header>
+					<Text text="{i18n>lblCustomerNumber}"/>
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Text text="{i18n>lblName}"/>
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Text text="{i18n>lblSalesOrganization}"/>
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Text text="{i18n>lblDistributtionChannel}"/>
+				</header>
+			</Column>
+			<Column width="10em">
+				<header>
+					<Text text="{i18n>lblDivision}"/>
+				</header>
+			</Column>
+			<Column width="10em">
+				<header>
+					<Text text="{i18n>lblTaxNumber}"/>
+				</header>
+			</Column>
+			<Column width="10em">
+				<header>
+					<Text text="{i18n>lblVatRegistrationNumber}"/>
+				</header>
+			</Column>
+		</columns>
+        <ColumnListItem>
+			<cells>
+				<Text text="{existingCustomers>Kunnr}"/>
+				<Text text="{existingCustomers>Name1}"/>
+				<Text text="{existingCustomers>Vkorg}"/>
+				<Text text="{existingCustomers>Vtweg}"/>
+				<Text text="{existingCustomers>Spart}"/>
+				<Text text="{existingCustomers>Stcd1}"/>
+				<Text text="{existingCustomers>Stceg}"/>
+			</cells>
+		</ColumnListItem>
+	</TableSelectDialog> -->
+</core:FragmentDefinition>

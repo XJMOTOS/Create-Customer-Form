@@ -12,7 +12,7 @@
 		adjustLabelSpan="false"
 		singleContainerFullSize="false">
 		<forms:content>
-			<Button text="read oData" press=".read"/>
+			<!-- <Button text="read oData" press=".read"/> -->
 			<Label
 				text="{i18n>lblAccountGroup}"
 				class="sapUiTinyMarginTop"
@@ -139,8 +139,9 @@
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
+					<!-- change=".onChangeDivision" -->
 				<Select
-					change=".onChangeDivision"
+					change=".onChangeMain"
 					forceSelection="false"
 					items="{divisions>/}"
 					selectedKey="{customer>/main/division}"
@@ -169,7 +170,7 @@
 				</core:Icon>
 				<Input
 					change=".onChangeTaxNumber"
-					maxLength="35"
+					maxLength="16"
 					value="{customer>/main/taxNumber}"
 					valueState="{= ${customer>/main/taxNumber} ? 'None' : 'Error' }">
 					<layoutData>
@@ -194,9 +195,36 @@
 				</core:Icon>
 				<Input
 					change=".onChangeVatRegistrationNumber"
-					maxLength="35"
+					maxLength="20"
 					value="{customer>/main/vatRegistrationNumber}"
 					valueState="{= ${customer>/main/vatRegistrationNumber} ? 'None' : 'Error' }">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Input>
+			</HBox>
+
+			<Label
+				class="sapUiTinyMarginTop"
+				required="true"
+				text="{i18n>lblHierarchy}"/>
+			<HBox>
+				<core:Icon
+					src="sap-icon://hint"
+					decorative="false"
+					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+					tooltip="{i18n>tooltipHierarchyA4}">
+					<core:layoutData>
+						<FlexItemData growFactor="0"/>
+					</core:layoutData>
+				</core:Icon>
+				<Input
+					enabled="{view>/enabled/secondary}"
+					value="{customer>/hierarchy/a4Text}"
+					showValueHelp="true"
+					valueHelpOnly="true"
+					valueHelpRequest=".onHierarchy4HelpRequest"
+					valueState="{= ${customer>/hierarchy/a4Key} ? 'None' : 'Error' }">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
 					</layoutData>

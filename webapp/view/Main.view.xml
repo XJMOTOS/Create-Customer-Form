@@ -14,11 +14,11 @@
 		<headerTitle>
 			<ObjectPageDynamicHeaderTitle id="page">
 				<expandedHeading>
-					<m:VBox>
-						<m:Title text="{i18n>appTitle}" wrapping="true" />
+					<m:HBox>
 						<m:Toolbar height="100%">
-							<m:Image src="images/suntory_logo.jpg" width="20%"/>
+						<m:Title text="{i18n>appTitle}" wrapping="true" />
 							<m:ToolbarSpacer/>
+							<m:Image src="images/suntory_logo.jpg" width="20%"/>
 							<!-- <microchart:HarveyBallMicroChart size="XS"
 									total="100" showFractions="true" >
 								<microchart:items>
@@ -26,7 +26,7 @@
 								</microchart:items>
 							</microchart:HarveyBallMicroChart> -->
 						</m:Toolbar>
-					</m:VBox>
+					</m:HBox>
 				</expandedHeading>
 				<snappedHeading>
 					<m:FlexBox fitContainer="true" alignItems="Center">
@@ -193,10 +193,27 @@
 		</sections>
 		<footer>
 			<m:Toolbar design="Transparent" style="Clear">
+				<!-- <m:MessagePopover
+					id="messagePopover"
+					items="{message>/}"
+					itemSelect=".onMessageItemSelect">
+					<m:MessageItem
+						type="{message>type}"
+						title="{message>message}"
+						subtitle="{message>subtitle}"
+						description="{message>description}" />
+				</m:MessagePopover> -->
+				<m:Button
+					icon="sap-icon://error"
+					id="idButtonShowErrors"
+					type="Negative"
+					text= "{errors>/length}"
+					press=".onOpenErrorsDialog"
+                    visible="{= ${errors>/length} > 0}"/>
 				<m:ToolbarSpacer/>
 				<m:Button
 					enabled="{view>/enabled/validate}"
-					press=".validate"
+					press=".onValidate"
 					text="{i18n>buttonValidate}"
 					type="Emphasized"/>
 				<m:Button

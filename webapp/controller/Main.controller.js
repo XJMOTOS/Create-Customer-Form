@@ -3,16 +3,38 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
 	"sap/ui/model/Filter",
 	"sap/m/MessageBox",
+	"sap/ui/core/message/MessageType",
+	"sap/ui/core/Fragment",
+	"sap/m/MessagePopover",
+	"sap/m/MessageItem",
 	"../model/submit",
 	"../model/validate"
-], (BaseController, JSONModel, Filter, MessageBox, submit, validate) => {
+], (BaseController, JSONModel, Filter, MessageBox, MessageType, Fragment, MessagePopover, MessageItem,
+	submit, validate) => {
     "use strict";
 
 	const GWD_C_FORM_UI5 = 'GWD_C_FORM_UI5';
+	const GWD_BPA_UI5 = 'GWD_BPA_UI5';
 
     return BaseController.extend("beamsuntoryinc.createcustomerform.controller.Main", {
+		hierarchyDialog: null,
+		errorsDialog: null,
+		existingCustomersDialog: null,
+
         onInit: function () {
 			this._initializeModels();
+
+			this.errorsDialog = new MessagePopover({
+				items: {
+					path: "errors>/",
+					template: new MessageItem({
+						title: "{errors>message}",
+						type: MessageType.Error,
+						subtitle:"{errors>propertyref}"
+					}),
+				}
+			});
+			this.getView().addDependent(this.errorsDialog);
 		},
 
 		read: function () {
@@ -35,28 +57,13 @@ sap.ui.define([
 			this.getView().setModel(model, modelName);
 		},
 
-		_loadAndFilterModelFromOData: function (modelName, entity, filteredModelName, fieldName, value) {
-			let model = this.getOwnerComponent().getModel(modelName);
-			model.read(`/${entity}`, {
-				success: function (data) {
-					this.getView().setModel(new JSONModel(data.results), entity);
-					let filteredData = data.results.filter( item => item[fieldName] === value );
-					this.getView().setModel(new JSONModel(filteredData), filteredModelName);
-				}.bind(this),
-				error: function (error) {
-					this.getView().setModel(new JSONModel([]), entity);
-					this.getView().setModel(new JSONModel([]), filteredModelName);
-				}
-			});
-		},
-
 		_loadModelFromOData: function (entity, filters) {
 			let model = this.getModel(GWD_C_FORM_UI5);
 			return new Promise((resolve, reject) => {
 				model.read(`/${entity}`, {
-				  filters: filters,
-				  success: (data) => resolve(data.results),
-				  error: (error) => reject(error)
+					filters: filters,
+					success: (data) => resolve(data.results),
+					error: (error) => reject(error)
 				});
 			});
 		},
@@ -70,7 +77,8 @@ sap.ui.define([
 			this.getView().setModel(new JSONModel([]), "filteredCountries");
 			this.getView().setModel(new JSONModel([]), "salesDistricts");
 			this.getView().setModel(new JSONModel([]), "filteredSalesDistricts");
-			this.getView().setModel(new JSONModel([]), "deliveryPriorities");
+			this.getView().setModel(new JSONModel([]), "filteredPhonePrefix");
+			this.getView().setModel(new JSONModel([]), "errors");
 
 			this._loadModelFromJSONFile("customer", "model/customer.json");
 			this._loadModelFromJSONFile("existingCustomer", "model/existingCustomer.json");
@@ -91,6 +99,7 @@ sap.ui.define([
 			this._loadModelFromJSONFile("sortKeys", "model/data/sortKeys.json");
 			this._loadModelFromJSONFile("toleranceGroups", "model/data/toleranceGroups.json");
 			this._loadModelFromJSONFile("deliveryPriorities", "model/data/deliveryPriorities.json");
+			this._loadModelFromJSONFile("phonePrefix", "model/data/phonePrefix.json");
 		},
 
 		_toggleVisibility: function (property) {
@@ -128,47 +137,6 @@ sap.ui.define([
 				}];
 		},
 
-		_getDivisionFilterODataCalls: function(division) {
-			let filters = [new Filter("Spart", "EQ", division)];
-			return [{
-					key:"Kunnr",
-					modelName: "hierarchiesA2",
-					promise: this._loadModelFromOData("ZFA1_HIER2Set", filters)
-				}, {
-					key:"Kunnr",
-					modelName: "hierarchiesA3",
-					promise: this._loadModelFromOData("ZFA1_HIER3Set", filters)
-				}, {
-					key:"Kunnr",
-					modelName: "hierarchiesA4",
-					promise: this._loadModelFromOData("ZFA1_HIER4Set", filters)
-				}, {
-					key:"Kunnr",
-					modelName: "hierarchiesB1",
-					promise: this._loadModelFromOData("ZFA1_HIERB1Set", filters)
-				}, {
-					key:"Kunnr",
-					modelName: "hierarchiesB2",
-					promise: this._loadModelFromOData("ZFA1_HIERB2Set", filters)
-				}, {
-					key:"Kunnr",
-					modelName: "hierarchiesB3",
-					promise: this._loadModelFromOData("ZFA1_HIERB3Set", filters)
-				}, {
-					key:"Kunnr",
-					modelName: "hierarchiesB4",
-					promise: this._loadModelFromOData("ZFA1_HIERB4Set", filters)
-				}, {
-					key:"Kunnr",
-					modelName: "hierarchiesB5",
-					promise: this._loadModelFromOData("ZFA1_HIERB5Set", filters)
-				}, {
-					key:"Kunnr",
-					modelName: "hierarchiesB6",
-					promise: this._loadModelFromOData("ZFA1_HIERB6Set", filters)
-				}];
-		},
-
 		_getSalesStructureFilterODataCalls: function(distributtionChannel, salesOrganization, division) {
 			let filters = [
 				new Filter("Vkorg", "EQ", salesOrganization),
@@ -202,12 +170,12 @@ sap.ui.define([
 					promise: this._loadModelFromOData("ZFA1_BRCUSGRP4Set", filters)
 				}, {
 					key:"Kunnr",
-					modelName: "hierarchiesA1",
-					promise: this._loadModelFromOData("ZFA1_HIER1Set", filters)
+					modelName: "hierarchies",
+					promise: this._loadModelFromOData("ZFA1_HIERARCHY_TYPE_ASet", filters)
 				}];
 		},
 
-		_initializeODataModels: async function (hasCountryFilter, hasDivisionFilter, hasSalesStructureFilter) {
+		_initializeODataModels: async function (hasCountryFilter, hasSalesStructureFilter) {
 			let initialCustomer = this.getModel("customer").getData();
 			let country = initialCustomer.general.countryKey;
 			let distributtionChannel = initialCustomer.main.distributtionChannel;
@@ -216,7 +184,7 @@ sap.ui.define([
 			let tasks = [];
 
 			sap.ui.core.BusyIndicator.show(0);
-			if (hasCountryFilter && hasDivisionFilter && hasSalesStructureFilter) {
+			if (hasCountryFilter && hasSalesStructureFilter) {
 				tasks = [{
 					key: "Vkbur",
 					modelName: "salesOffices",
@@ -234,10 +202,7 @@ sap.ui.define([
 
 			if (hasCountryFilter) {
 				tasks.push(...this._getCountryFilterODataCalls(country));
-			}
-			if (hasDivisionFilter) {
-				tasks.push(...this._getDivisionFilterODataCalls(division));
-			}			
+			}		
 			if (hasSalesStructureFilter) {
 				tasks.push(...this._getSalesStructureFilterODataCalls(
 					distributtionChannel, salesOrganization, division));
@@ -246,21 +211,30 @@ sap.ui.define([
 			await Promise
 				.all(tasks.map(task => task.promise))
 				.then(function(values) {
-					values.forEach((data, index) => {
-						let task = tasks[index];
-						if(data.length && (data[0][task.key] !== "" || data.at(-1)[task.key] !== "")) {
-							let emptyData = Object.fromEntries(Object.keys(data[0]).map(key => [key, ""]));
-							data.unshift(emptyData);
-						}
-						this.setModel(new JSONModel(data), task.modelName);
-					});
-					if (hasCountryFilter && hasDivisionFilter && hasSalesStructureFilter) {
+					values.forEach((data, index) => this.setModel(new JSONModel(data), tasks[index].modelName));
+					if (hasCountryFilter && hasSalesStructureFilter) {
 						this.setModel(new JSONModel(values[1]), "filteredCountries");
 						this.setModel(new JSONModel(values[2]), "filteredSalesDistricts");
 					}
 				}.bind(this))
 				.catch((error => MessageBox.error("Error loading data: " + error.message)))
 				.finally(() => sap.ui.core.BusyIndicator.hide());
+		},
+
+		_getExistingCustomers: function(taxNumber, vatRegistrationNumber) {
+			let model = this.getModel(GWD_BPA_UI5);
+			let filters = [
+				new Filter("Stcd1", "EQ", taxNumber),
+				new Filter("Stceg", "EQ", vatRegistrationNumber)
+			];
+
+			return new Promise((resolve, reject) => {
+				model.read("/GetCustomerSet", {
+					filters: filters,
+					success: (data) => resolve(data.results),
+					error: (error) => reject(error)
+				});
+			});
 		},
 
 		onChangeMain: async function (event) {
@@ -273,42 +247,22 @@ sap.ui.define([
 				!mainFields.distributtionChannel ||
 				!mainFields.division ||
 				!mainFields.taxNumber ||
-				!mainFields.vatRegistrationNumber) {
+				!mainFields.vatRegistrationNumber
+			) {
 				view.setProperty("/enabled/secondary", false);
 				view.setProperty("/enabled/validate", false);
+				view.setProperty("/enabled/submit", false);
 				return;
 			}
-			await this._initializeODataModels(true, true, true);
+			await this._initializeODataModels(true, true);
 			view.setProperty("/enabled/secondary", true);
 			this.onToggleValidationButton();
-		},
-
-
-		onChangeDivision: function (event) {
-			let enabledApp = this.getModel("view").getProperty("/enabled/secondary");
-			if (enabledApp) {
-				this._initializeODataModels(false, true, true);
-				this.onToggleValidationButton();
-
-				let customer = this.getModel("customer");
-				customer.setProperty("/hierarchy/a2", "");
-				customer.setProperty("/hierarchy/a3", "");
-				customer.setProperty("/hierarchy/a4", "");
-				customer.setProperty("/hierarchy/b1", "");
-				customer.setProperty("/hierarchy/b2", "");
-				customer.setProperty("/hierarchy/b3", "");
-				customer.setProperty("/hierarchy/b4", "");
-				customer.setProperty("/hierarchy/b5", "");
-				customer.setProperty("/hierarchy/b6", "");
-			} else {
-				this.onChangeMain();
-			}
 		},
 
 		onChangeSalesStructure: function (event) {
 			let enabledApp = this.getModel("view").getProperty("/enabled/secondary");
 			if (enabledApp) {
-				this._initializeODataModels(false, false, true);
+				this._initializeODataModels(false, true);
 				this.onToggleValidationButton();
 
 				let customer = this.getModel("customer");
@@ -318,48 +272,178 @@ sap.ui.define([
 				customer.setProperty("/customerGroup/2", "");
 				customer.setProperty("/customerGroup/3", "");
 				customer.setProperty("/customerGroup/4", "");
-				customer.setProperty("/hierarchy/a1", "");
-				customer.setProperty("/hierarchy/a2", "");
-				customer.setProperty("/hierarchy/a3", "");
-				customer.setProperty("/hierarchy/a4", "");
-				customer.setProperty("/hierarchy/b1", "");
-				customer.setProperty("/hierarchy/b2", "");
-				customer.setProperty("/hierarchy/b3", "");
-				customer.setProperty("/hierarchy/b4", "");
-				customer.setProperty("/hierarchy/b5", "");
-				customer.setProperty("/hierarchy/b6", "");
+				customer.setProperty("/hierarchy/a1Key", "");
+				customer.setProperty("/hierarchy/a1Text", "");
+				customer.setProperty("/hierarchy/a2Key", "");
+				customer.setProperty("/hierarchy/a2Text", "");
+				customer.setProperty("/hierarchy/a3Key", "");
+				customer.setProperty("/hierarchy/a3Text", "");
+				customer.setProperty("/hierarchy/a4Key", "");
+				customer.setProperty("/hierarchy/a4Text", "");
 			} else {
-				this.onChangeMain();
+				this.onChangeMain(event);
 			}
 			this.onToggleValidationButton();
 		},
 
-		onChangeTaxNumber: function (event) {
-			let taxNumber = event.getParameter("newValue") ;
-			let view = this.getModel("view");
-			if(taxNumber === "123456") {
-				let existingCustomer = this.getModel("existingCustomer").getData();
-				this.getModel("customer").setData(existingCustomer);
-				MessageBox.information("Customer already exists");
-				view.setProperty("/enabled/existing", true);
-				return;
+		_onCustomerExists: function() {
+			MessageBox.information(this.getText("messageCustomerExists"), {
+				actions: [MessageBox.Action.OK, MessageBox.Action.CANCEL],
+				onClose: function (action) {
+					let customer = this.getModel("customer");
+					if (action === MessageBox.Action.OK) {
+						let existingCustomer = this.getModel("existingCustomer").getData();
+						customer.setData(existingCustomer);
+					} else {
+						customer.setProperty("/main/taxNumber", "");
+						customer.setProperty("/main/vatRegistrationNumber", "");
+					}
+				}.bind(this),
+				dependentOn: this.getView()
+			});
+			view.setProperty("/enabled/existing", true);
+		},
+
+		// _mapExistingCustomers: function(customers) {
+		// 	return customers.map(customer => {
+		// 		return {
+		// 			Aufsd: customer.Aufsd,
+		// 			Cassd: customer.Cassd,
+		// 			Faksd: customer.Faksd,
+		// 			Kunnr: customer.Kunnr, //Customer
+		// 			Land1: customer.Land1,
+		// 			Loevm: customer.Loevm,
+		// 			Mcod1: customer.Mcod1,
+		// 			Nodel: customer.Nodel,
+		// 			Sperr: customer.Sperr, //Posting Block
+		// 			Sperz: customer.Sperz,
+		// 			Regio: customer.Regio,
+		// 			main: {
+		// 				companyCode: customer.Bukrs,
+		// 				taxNumber: customer.Stcd1,
+		// 				vatRegistrationNumber: customer.Stceg,
+		// 				salesOrganization: customer.Vkorg,
+		// 				distributtionChannel: customer.Vtweg,
+		// 				division: customer.Spart,
+		// 			},
+		// 			general: {
+		// 				name1: customer.Name1,
+		// 			},
+		// 			taxDetails: {
+		// 				warehouseExciseNumber: customer.Stcd3,
+		// 			},
+		// 			delivery: {
+		// 				deliveryBlock: customer.Lifsd,
+		// 			},
+					
+		// 		};
+		// 	})
+		// },
+
+		_openDialog: function(dialog, name) {
+			let view = this.getView();
+			if (!dialog) {
+				dialog = Fragment.load({
+					id: view.getId(),
+					name: `beamsuntoryinc.createcustomerform.view.fragments.${name}`,
+					controller: this
+				}).then(function(dialog){
+					view.addDependent(dialog);
+					return dialog;
+				});
 			}
-			view.setProperty("/enabled/existing", false);
+			dialog.then(function(dialog){
+				dialog.open();
+			}.bind(this));
+		},
+
+		onChangeTaxNumber: function (event) {
+			let taxNumber = event.getParameter("newValue");
+			let customer = this.getModel("customer");
+			let vatRegistrationNumber = customer.getProperty("/main/vatRegistrationNumber");
+
+			if (taxNumber && vatRegistrationNumber) {
+				this._getExistingCustomers(taxNumber, vatRegistrationNumber)
+					.then(function(result) {
+						if(!result.length) {
+							return;
+						}
+						this.setModel(new JSONModel(result), "existingCustomers");
+						this._openDialog(this.existingCustomersDialog, "ExistingCustomers");
+					}.bind(this))
+					.catch((error => MessageBox.error("Error reading existing customers: " + error.message)))
+					.finally();
+			}
 			this.onChangeMain(event);
 		},
 		
 		onChangeVatRegistrationNumber: function (event) {
 			let vatRegistrationNumber = event.getParameter("newValue");
-			let view = this.getModel("view");
-			if(vatRegistrationNumber === "123456") {
-				let existingCustomer = this.getModel("existingCustomer").getData();
-				this.getModel("customer").setData(existingCustomer);
-				MessageBox.information("Customer already exists");
-				view.setProperty("/enabled/existing", true);
-				return;
+			let customer = this.getModel("customer");
+			let taxNumber = customer.getProperty("/main/taxNumber");
+
+			if (taxNumber && vatRegistrationNumber) {
+				this._getExistingCustomers(taxNumber, vatRegistrationNumber)
+					.then(function(result) {
+						if(!result.length) {
+							return;
+						}
+						this.setModel(new JSONModel(result), "existingCustomers");
+						this._openDialog(this.existingCustomersDialog, "ExistingCustomers");
+					}.bind(this))
+					.catch((error => MessageBox.error("Error reading existing customers: " + error.message)))
+					.finally();
 			}
-			view.setProperty("/enabled/existing", false);
 			this.onChangeMain(event);
+		},
+
+		onConfirmDuplicateCustomer: function(event) {
+			event.getSource().getParent().exit();
+		},
+
+		onCancelDuplicateCustomer: function(event) {
+			let customer = this.getModel("customer");
+			customer.setProperty("/main/taxNumber", "");
+			customer.setProperty("/main/vatRegistrationNumber", "");
+			this.getModel("view").setProperty("/enabled/secondary", false);
+			event.getSource().getParent().exit();
+		},
+
+		// onCancelExistingCustomers: function(event) {
+		// 	let customer = this.getModel("customer");
+		// 	customer.setProperty("/main/taxNumber", "");
+		// 	customer.setProperty("/main/vatRegistrationNumber", "");
+		// 	this.getModel("view").setProperty("/enabled/secondary", false);
+			
+		// },
+
+		onChangeMaxNumberOfPartialDeliveries: function(event) {
+			let customer = this.getModel("customer");
+			let input = event.getParameter("value");
+			if (isNaN(parseInt(input))) {
+				customer.setProperty("/delivery/maxNumberOfPartialDeliveries/", "");
+			}
+		},
+
+		onHierarchy4HelpRequest: function(event) {
+			this._openDialog(this.hierarchyDialog, "HierarchyA4Dialog");
+		},
+
+		onHierarchyPress: function(event) {
+			let itemPath = event.getParameter("selectedItem").getBindingContextPath();
+			let model = this.getModel("hierarchies");
+			let item = model.getProperty(itemPath);
+
+			let customer = this.getModel("customer");
+			customer.setProperty("/hierarchy/a1Key", item.Hkunnr1);
+			customer.setProperty("/hierarchy/a1Text", item.Name1);
+			customer.setProperty("/hierarchy/a2Key", item.Hkunnr2);
+			customer.setProperty("/hierarchy/a2Text", item.Name2);
+			customer.setProperty("/hierarchy/a3Key", item.Hkunnr3);
+			customer.setProperty("/hierarchy/a3Text", item.Name3);
+			customer.setProperty("/hierarchy/a4Key", item.Hkunnr4);
+			customer.setProperty("/hierarchy/a4Text", item.Name4);
+			this.onToggleValidationButton(event);
 		},
 
 		onLiveChangeCountry: function (event) {
@@ -373,7 +457,8 @@ sap.ui.define([
 			customer.setProperty("/general/countryText", input);
 			if(input === "") {
 				customer.setProperty("/general/countryKey", "");
-				this.getModel("view").setProperty("/enabled/validate", false);
+				this.onToggleValidationButton();
+				// this.getModel("view").setProperty("/enabled/validate", false);
 			}
 		},
 
@@ -387,7 +472,7 @@ sap.ui.define([
 			customer.setProperty("/address/region", "");
 			customer.setProperty("/company/paymentMethod", "");
 			
-			this._initializeODataModels(true, false, false);
+			this._initializeODataModels(true, false);
 			this.onToggleValidationButton();
 		},
 
@@ -397,12 +482,12 @@ sap.ui.define([
 			let customer = this.getModel("customer");
 			let salesDistricts = this.getModel("salesDistricts").getData();
 			let filteredSalesDistricts = 
-				salesDistricts.filter( salesDistrict => salesDistrict.BZIRK.toUpperCase().includes(value) || salesDistrict.BZTXT.toUpperCase().includes(input));
+				salesDistricts.filter(salesDistrict => salesDistrict.BZIRK.toUpperCase().includes(value) || salesDistrict.BZTXT.toUpperCase().includes(value));
 			this.setModel(new JSONModel(filteredSalesDistricts), "filteredSalesDistricts");
 			customer.setProperty("/sales/districtText", input);
 			if(input === "") {
 				customer.setProperty("/sales/districtKey", "");
-				this.getModel("view").setProperty("/enabled/validate", false);
+				this.onToggleValidationButton();
 			}
 		},
 
@@ -413,6 +498,48 @@ sap.ui.define([
 			customer.setProperty("/sales/districtKey", selectedKey);
 			customer.setProperty("/sales/districtText", selectedText);
 			this.onToggleValidationButton();
+		},
+
+		onLiveFaxPrefix: function (event, param) {
+			let input = event.getParameter("newValue");
+			let customer = this.getModel("customer");
+			let phonePrefixes = this.getModel("phonePrefix").getData();
+			let filteredPhonePrefix = 
+				phonePrefixes.filter(phonePrefix => phonePrefix.text.toUpperCase().includes(input.toUpperCase()) || phonePrefix.phone.includes(input));
+			this.setModel(new JSONModel(filteredPhonePrefix), "filteredPhonePrefix");
+			customer.setProperty(`/address/faxCountryCode${param}`, input);
+			if(input === "") {
+				customer.setProperty(`/address/faxCountryCode${param}`, "");
+			}
+		},
+
+		onLivePhonePrefix: function (event, param) {
+			let input = event.getParameter("newValue");
+			let customer = this.getModel("customer");
+			let phonePrefixes = this.getModel("phonePrefix").getData();
+			let filteredPhonePrefix = 
+				phonePrefixes.filter(phonePrefix => phonePrefix.text.toUpperCase().includes(input.toUpperCase()) || phonePrefix.phone.includes(input));
+			this.setModel(new JSONModel(filteredPhonePrefix), "filteredPhonePrefix");
+			customer.setProperty(`/address/telephoneCountryCodet${param}`, input);
+			if(input === "") {
+				customer.setProperty(`/address/telephoneCountryCode${param}`, "");
+			}
+		},
+
+		onSelectFaxPrefix: function (event, param) {
+			let selectedKey = event.getParameter("selectedItem").getKey();
+			// let selectedText = event.getParameter("selectedItem").getText();
+			let customer = this.getModel("customer");
+			customer.setProperty(`/address/faxCountryCode${param}`, selectedKey);
+			// customer.setProperty(`/address/faxCountryCode${param}`, selectedText);
+		},
+
+		onSelectPhonePrefix: function (event, param) {
+			let selectedKey = event.getParameter("selectedItem").getKey();
+			// let selectedText = event.getParameter("selectedItem").getText();
+			let customer = this.getModel("customer");
+			customer.setProperty(`/address/telephoneCountryCode${param}`, selectedKey);
+			// customer.setProperty(`/address/telephoneCountryCode${param}`, selectedText);
 		},
 
 		onToggleAddressFields: function (event) {
@@ -444,6 +571,7 @@ sap.ui.define([
 				"sales": [ "districtKey", "currency", "accountAssignmentGroup", "termsOfPayment", "pricingProcedure", "incoterm1" ],
 				"customerGroup": [ "0", "statisticsGroup" ],
 				"delivery": [ "shippingCondition" ],
+				"hierarchy": [ "a4Key" ]
 			};
 			let customerModel = this.getModel("customer");
 			let hasEmptyMandatoryFields = Object
@@ -567,21 +695,85 @@ sap.ui.define([
 			model.setProperty("/contactPersons", contacts);
 		},
 
-
-
-		onValidate: function (event) {
-			// TODO empty mandatory fields
+		onOpenErrorsDialog: function (event) {
+			this.errorsDialog.openBy(event.getSource());
 		},
+
+		// onOpenErrorsDialog2: function(event) {
+		// 	const oButton = event.getSource();
+		// 	const oMessagePopover = this.byId("messagePopover");
+
+		// 	if (!oMessagePopover.isOpen()) {
+		// 		oMessagePopover.openBy(oButton);
+		// 	} else {
+		// 		oMessagePopover.close();
+		// 	}
+		// },
 
 		onSubmit: function (event) {
 			// TODO empty mandatory fields
 			let customer = this.getModel("customer").getData();
 			let taxInformations = this.getModel("taxInformations").getData();
-			submit.postCustomerData(customer, taxInformations);
+			// submit.postCustomerData(customer, taxInformations);
 		},
-		validate: function () {
-			let oDataModel = this.getOwnerComponent().getModel("GWD_BPA_UI5")
-			validate.onValidate(oDataModel)
+
+		_getErrorFieldName: function(customer, value) {
+			return Object.keys(customer).reduce((result, section) => {
+				if (result) {
+					return result;
+				}
+				let errorfield = Object.keys(customer[section]).find(field => customer[section][field] === value);
+				if(errorfield) {
+					return errorfield;
+				}
+				return result;
+			}, null);
+		},
+
+		// _getErrorMessage: function(error, payload) {
+		// 	let model = this.getModel("customer");
+		// 	let customer = model.getData();
+		// 	let values = error.split("'");
+		// 	let value = values.at(-2);
+		// 	let errorFieldName = this._getErrorFieldName(customer, value);
+		// 	let lblFieldName = `lbl${errorFieldName.charAt(0).toUpperCase()}${errorFieldName.slice(1)}`;
+			
+		// 	if (!lblFieldName) {
+		// 		return this.getText("messageUnexpectedError", [error]);
+		// 	}
+		// 	let txtFieldName = this.getText(lblFieldName);
+		// 	return this.getText("messageError", [txtFieldName, value]);
+
+		// },
+
+		onValidate: function (event) {
+			let i18n = this.getView().getModel("i18n").getResourceBundle();
+			let oDataModel = this.getOwnerComponent().getModel(GWD_BPA_UI5, i18n);
+			let customer = this.getModel("customer").getData();
+			sap.ui.core.BusyIndicator.show(0);
+			let payload = validate.getStructure(customer);
+			validate.onValidate(oDataModel, payload)
+				.then(function(response) {
+					let result = response?.data?.HDRreturnSet?.results[0];
+					if (result?.Type === "S") {
+						this.getModel("view").setProperty("/enabled/submit", true);
+						this.setModel(new JSONModel([]), "errors");
+						MessageBox.success(result.Message);
+						return;
+					}
+					if (result?.Message) {
+						let errors = [{message: result.Message, propertyref: ""}];
+						this.setModel(new JSONModel(errors), "errors");
+						this.onOpenErrorsDialog(event);
+					}
+				}.bind(this))
+				.catch(function(error) {
+					let responseText = JSON.parse(error.responseText);
+					// let message = this._getErrorMessage(responseText.error.message.value, payload);
+					this.setModel(new JSONModel(responseText.error.innererror.errordetails), "errors");
+					this.onOpenErrorsDialog(event);
+				}.bind(this))
+				.finally(() => sap.ui.core.BusyIndicator.hide());
 		}
     });
 });

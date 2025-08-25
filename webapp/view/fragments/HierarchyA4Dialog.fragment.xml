@@ -1,0 +1,43 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<TableSelectDialog
+		noDataText="{i18n>}"
+		title="{i18n>dialogTitleHierarchy}"
+		search=".handleSearch"
+		confirm=".onHierarchyPress"
+		cancel=".handleClose"
+		items="{hierarchies>/}"
+		>
+		<ColumnListItem vAlign="Middle">
+			<cells>
+				<Text text="{hierarchies>Name1}"/>
+				<Text text="{hierarchies>Name2}"/>
+				<Text text="{hierarchies>Name3}"/>
+				<Text text="{hierarchies>Name4}"/>
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column>
+				<header>
+					<Text text="Hierarchy 1"/>
+				</header>
+			</Column>
+			<Column>
+				<header>
+					<Text text="Hierarchy 2"/>
+				</header>
+			</Column>
+			<Column>
+				<header>
+					<Text text="Hierarchy 3"/>
+				</header>
+			</Column>
+			<Column>
+				<header>
+					<Text text="Hierarchy 4"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

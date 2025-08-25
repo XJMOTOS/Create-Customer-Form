@@ -28,7 +28,7 @@
 				</core:Icon>
 				<Input
 					change="onToggleValidationButton"
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					maxLength="35"
 					value="{customer>/general/name1}"
 					valueState="{= ${customer>/general/name1} ? 'None' : 'Error' }">
@@ -62,7 +62,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					maxLength="35"
 					value="{customer>/general/name2}">
 					<layoutData>
@@ -95,7 +95,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					maxLength="35"
 					value="{customer>/general/name3}">
 					<layoutData>
@@ -128,7 +128,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					maxLength="35"
 					value="{customer>/general/name4}">
 					<layoutData>
@@ -161,7 +161,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					liveChange=".onLiveChangeCountry"
 					showSuggestion="true"
 					showValueHelp="false"
@@ -193,7 +193,8 @@
 				</core:Icon>
 				<Input
 					change="onToggleValidationButton"
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
+					maxLength="20"
 					value="{customer>/general/searchTerm}"
 					valueState="{= ${customer>/general/searchTerm} ? 'None' : 'Error' }">
 					<layoutData>
@@ -217,7 +218,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					change="onToggleValidationButton"
 					forceSelection="false"
 					items="{GWD_C_FORM_UI5>/ZFA1_SPRASSet}"
@@ -245,7 +246,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{customerClassifications>/}"
 					selectedKey="{customer>/general/classification}"
@@ -274,7 +275,7 @@
 				</core:Icon>
 				<Select
 					change="onToggleValidationButton"
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; ${view>/enabled/transportationZone} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{= ${view>/enabled/secondary} &amp;&amp; ${view>/enabled/transportationZone} }"
 					forceSelection="false"
 					items="{transportationZones>/}"
 					selectedKey="{customer>/general/transportationZone}"
@@ -303,7 +304,7 @@
 				</core:Icon>
 				<Select
 					change="onToggleValidationButton"
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/general/industryKey}"
 					items="{GWD_C_FORM_UI5>/ZFA1_IndustrySet}"
@@ -332,7 +333,7 @@
 				</core:Icon>
 				<Select
 					change="onToggleValidationButton"
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/general/timeZone}"
 					items="{timeZones>/}"

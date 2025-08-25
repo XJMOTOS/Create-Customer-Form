@@ -1,14 +1,10 @@
 [
-    {
-        "key": "",
-        "text": ""
-    },
-    {
-        "key": "01",
-        "text": "High"
-    },
-    {
-        "key": "02",
-        "text": "Normal Item"
-    }
+	{
+		"key": "01",
+		"text": "High"
+	},
+	{
+		"key": "02",
+		"text": "Normal Item"
+	}
 ]

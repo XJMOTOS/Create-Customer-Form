@@ -12,7 +12,7 @@
 			<Toolbar>
 				<ToolbarSpacer/>
 				<Button
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
 					icon="sap-icon://add"
 					press=".onAddContactPerson"/>
 			</Toolbar>
@@ -41,18 +41,18 @@
 			<ColumnListItem>
 				<cells>
 					<Select
-						enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+						enabled="{view>/enabled/secondary}"
 						selectedKey="{customer>contactType}"
 						forceSelection="false"
 						items="{ path: 'contactTypes>/', templateShareable: false }"
 						width="100%">
 						<core:Item key="{contactTypes>key}" text="{contactTypes>key}"/>
 					</Select>
-					<Input enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }" value="{customer>name}"/>
-					<Input enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }" value="{customer>surname}"/>
-					<Input enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }" value="{customer>phone}"/>
-					<Input enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }" value="{customer>fax}"/>
-					<Input enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }" value="{customer>email}"/>
+					<Input enabled="{view>/enabled/secondary}" value="{customer>name}"/>
+					<Input enabled="{view>/enabled/secondary}" value="{customer>surname}"/>
+					<Input enabled="{view>/enabled/secondary}" value="{customer>phone}"/>
+					<Input enabled="{view>/enabled/secondary}" value="{customer>fax}"/>
+					<Input enabled="{view>/enabled/secondary}" value="{customer>email}"/>
 				</cells>
 			</ColumnListItem>
 		</items>

@@ -32,7 +32,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
+					maxLength="11"
 					value="{customer>/taxDetails/vatNumber2}">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -55,7 +56,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
+					maxLength="11"
 					value="{customer>/taxDetails/warehouseExciseNumber}">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -78,7 +80,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
-					enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+					enabled="{view>/enabled/secondary}"
+					maxLength="11"
 					value="{customer>/taxDetails/vatNumber4}">
 					<layoutData>
 						<FlexItemData growFactor="1"/>

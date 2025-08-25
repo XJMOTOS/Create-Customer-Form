@@ -13,8 +13,8 @@ sap.ui.define([
 		},
 
 
-		getText: function (key) {
-			return this.getView().getModel("i18n").getResourceBundle().getText(key);
+		getText: function (key, params) {
+			return this.getView().getModel("i18n").getResourceBundle().getText(key, params);
 		},
 		
 		/**

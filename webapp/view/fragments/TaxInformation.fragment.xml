@@ -24,7 +24,7 @@
 					<Text text="{taxInformations>taxCountry}"/>
 					<Text text="{taxInformations>taxCategory}"/>
 					<Select
-						enabled="{= ${view>/enabled/secondary} &amp;&amp; !${view>/enabled/existing} }"
+						enabled="{view>/enabled/secondary}"
 						selectedKey="{taxInformations>taxClassification}"
 						items="{ path: 'taxClasifications>/', templateShareable: false }">
 						<core:Item key="{taxClasifications>key}" text="{taxClasifications>text}"/>
