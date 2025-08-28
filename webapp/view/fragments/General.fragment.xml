@@ -62,6 +62,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					maxLength="35"
 					value="{customer>/general/name2}">
@@ -95,6 +96,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					maxLength="35"
 					value="{customer>/general/name3}">
@@ -128,6 +130,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					maxLength="35"
 					value="{customer>/general/name4}">
@@ -161,6 +164,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					liveChange=".onLiveChangeCountry"
 					showSuggestion="true"
@@ -218,8 +222,8 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
-					enabled="{view>/enabled/secondary}"
 					change="onToggleValidationButton"
+					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{GWD_C_FORM_UI5>/ZFA1_SPRASSet}"
 					selectedKey="{customer>/general/language}"
@@ -246,6 +250,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{customerClassifications>/}"
@@ -345,7 +350,6 @@
 					</layoutData>
 				</Select>
 			</HBox>
-
 		</forms:content>
 	</forms:SimpleForm>
 </core:FragmentDefinition>

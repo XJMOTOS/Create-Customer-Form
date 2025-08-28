@@ -252,6 +252,7 @@ sap.ui.define([
 				view.setProperty("/enabled/secondary", false);
 				view.setProperty("/enabled/validate", false);
 				view.setProperty("/enabled/submit", false);
+				this.onDisableSubmitButton();
 				return;
 			}
 			await this._initializeODataModels(true, true);
@@ -263,7 +264,7 @@ sap.ui.define([
 			let enabledApp = this.getModel("view").getProperty("/enabled/secondary");
 			if (enabledApp) {
 				this._initializeODataModels(false, true);
-				this.onToggleValidationButton();
+				this.onDisableSubmitButton();
 
 				let customer = this.getModel("customer");
 				customer.setProperty("/sales/group", "");
@@ -280,10 +281,9 @@ sap.ui.define([
 				customer.setProperty("/hierarchy/a3Text", "");
 				customer.setProperty("/hierarchy/a4Key", "");
 				customer.setProperty("/hierarchy/a4Text", "");
-			} else {
-				this.onChangeMain(event);
+				return;
 			}
-			this.onToggleValidationButton();
+			this.onChangeMain(event);
 		},
 
 		_onCustomerExists: function() {
@@ -528,18 +528,14 @@ sap.ui.define([
 
 		onSelectFaxPrefix: function (event, param) {
 			let selectedKey = event.getParameter("selectedItem").getKey();
-			// let selectedText = event.getParameter("selectedItem").getText();
 			let customer = this.getModel("customer");
 			customer.setProperty(`/address/faxCountryCode${param}`, selectedKey);
-			// customer.setProperty(`/address/faxCountryCode${param}`, selectedText);
 		},
 
 		onSelectPhonePrefix: function (event, param) {
 			let selectedKey = event.getParameter("selectedItem").getKey();
-			// let selectedText = event.getParameter("selectedItem").getText();
 			let customer = this.getModel("customer");
 			customer.setProperty(`/address/telephoneCountryCode${param}`, selectedKey);
-			// customer.setProperty(`/address/telephoneCountryCode${param}`, selectedText);
 		},
 
 		onToggleAddressFields: function (event) {
@@ -589,7 +585,12 @@ sap.ui.define([
 
 		onToggleValidationButton: function () {
 			let disabled = this._hasEmptyMandatoryFields();
-			this.getModel("view").setProperty("/enabled/validate", !disabled);	
+			this.getModel("view").setProperty("/enabled/validate", !disabled);
+			this.onDisableSubmitButton();
+		},
+
+		onDisableSubmitButton: function() {
+			this.getModel("view").setProperty("/enabled/submit", false);
 		},
 
 		onShowName: function (event) {
@@ -684,6 +685,7 @@ sap.ui.define([
 				email: "",
 			});
 			model.setProperty("/contactPersons", contacts);
+			this.onDisableSubmitButton();
 		},
 
 		onRemoveContactPerson: function (event) {
@@ -711,10 +713,9 @@ sap.ui.define([
 		// },
 
 		onSubmit: function (event) {
-			// TODO empty mandatory fields
 			let customer = this.getModel("customer").getData();
 			let taxInformations = this.getModel("taxInformations").getData();
-			// submit.postCustomerData(customer, taxInformations);
+			submit.postCustomerData(customer, taxInformations);
 		},
 
 		_getErrorFieldName: function(customer, value) {
@@ -729,22 +730,6 @@ sap.ui.define([
 				return result;
 			}, null);
 		},
-
-		// _getErrorMessage: function(error, payload) {
-		// 	let model = this.getModel("customer");
-		// 	let customer = model.getData();
-		// 	let values = error.split("'");
-		// 	let value = values.at(-2);
-		// 	let errorFieldName = this._getErrorFieldName(customer, value);
-		// 	let lblFieldName = `lbl${errorFieldName.charAt(0).toUpperCase()}${errorFieldName.slice(1)}`;
-			
-		// 	if (!lblFieldName) {
-		// 		return this.getText("messageUnexpectedError", [error]);
-		// 	}
-		// 	let txtFieldName = this.getText(lblFieldName);
-		// 	return this.getText("messageError", [txtFieldName, value]);
-
-		// },
 
 		onValidate: function (event) {
 			let i18n = this.getView().getModel("i18n").getResourceBundle();
@@ -765,13 +750,14 @@ sap.ui.define([
 						let errors = [{message: result.Message, propertyref: ""}];
 						this.setModel(new JSONModel(errors), "errors");
 						this.onOpenErrorsDialog(event);
+						this.onDisableSubmitButton();
 					}
 				}.bind(this))
 				.catch(function(error) {
 					let responseText = JSON.parse(error.responseText);
-					// let message = this._getErrorMessage(responseText.error.message.value, payload);
 					this.setModel(new JSONModel(responseText.error.innererror.errordetails), "errors");
 					this.onOpenErrorsDialog(event);
+					this.onDisableSubmitButton();
 				}.bind(this))
 				.finally(() => sap.ui.core.BusyIndicator.hide());
 		}

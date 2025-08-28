@@ -55,6 +55,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/customerGroup/1}"
@@ -81,6 +82,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{customerGroups2>/}"
@@ -107,6 +109,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{customerGroups3>/}"
@@ -133,6 +136,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{customerGroups4>/}"
@@ -159,6 +163,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{GWD_C_FORM_UI5>/ZFA1_DPUBStatusSet}"
@@ -170,141 +175,6 @@
 					</layoutData>
 				</Select>
 			</HBox>
-
-			<!-- <Label
-				text="{i18n>lblCustomerGroup} 6"
-				class="sapUiTinyMarginTop"
-				visible="{view>/show/salesFields}"/>
-			<HBox visible="{view>/show/salesFields}">
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipCustomerGroup6}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					enabled="{view>/enabled/secondary}"
-					forceSelection="false"
-					selectedKey="{customer>/customerGroup/6}"
-					items="{customerGroups>/}"
-					width="100%">
-					<core:Item key="{customerGroups>key}" text="{customerGroups>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblCustomerGroup} 7"
-				class="sapUiTinyMarginTop"
-				visible="{view>/show/salesFields}"/>
-			<HBox visible="{view>/show/salesFields}">
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipCustomerGroup7}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					enabled="{view>/enabled/secondary}"
-					forceSelection="false"
-					selectedKey="{customer>/customerGroup/7}"
-					items="{customerGroups>/}"
-					width="100%">
-					<core:Item key="{customerGroups>key}" text="{customerGroups>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblCustomerGroup} 8"
-				class="sapUiTinyMarginTop"
-				visible="{view>/show/salesFields}"/>
-			<HBox visible="{view>/show/salesFields}">
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipCustomerGroup8}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					enabled="{view>/enabled/secondary}"
-					forceSelection="false"
-					selectedKey="{customer>/customerGroup/8}"
-					items="{customerGroups>/}"
-					width="100%">
-					<core:Item key="{customerGroups>key}" text="{customerGroups>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblCustomerGroup} 9"
-				class="sapUiTinyMarginTop"
-				visible="{view>/show/salesFields}"/>
-			<HBox visible="{view>/show/salesFields}">
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipCustomerGroup9}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					enabled="{view>/enabled/secondary}"
-					forceSelection="false"
-					selectedKey="{customer>/customerGroup/9}"
-					items="{customerGroups>/}"
-					width="100%">
-					<core:Item key="{customerGroups>key}" text="{customerGroups>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox>
-
-			<Label
-				text="{i18n>lblCustomerGroup} 10"
-				class="sapUiTinyMarginTop"
-				visible="{view>/show/salesFields}"/>
-			<HBox visible="{view>/show/salesFields}">
-				<core:Icon
-					src="sap-icon://hint"
-					decorative="false"
-					class="sapUiTinyMarginTop sapUiTinyMarginEnd"
-					tooltip="{i18n>tooltipCustomerGroup10}">
-					<core:layoutData>
-						<FlexItemData growFactor="0"/>
-					</core:layoutData>
-				</core:Icon>
-				<Select
-					enabled="{view>/enabled/secondary}"
-					forceSelection="false"
-					selectedKey="{customer>/customerGroup/10}"
-					items="{customerGroups>/}"
-					width="100%">
-					<core:Item key="{customerGroups>key}" text="{customerGroups>text}"/>
-					<layoutData>
-						<FlexItemData growFactor="1"/>
-					</layoutData>
-				</Select>
-			</HBox> -->
 
 			<Label
 				class="sapUiTinyMarginTop"
@@ -321,6 +191,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{customerGroups>/}"
@@ -348,6 +219,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{customerGroups>/}"
@@ -375,6 +247,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{customerGroups>/}"
@@ -402,6 +275,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{customerGroups>/}"
@@ -429,6 +303,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{customerGroups>/}"
@@ -456,6 +331,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{customerGroups>/}"
@@ -483,6 +359,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{customerGroups>/}"
@@ -510,6 +387,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{customerGroups>/}"
@@ -537,6 +415,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{customerGroups>/}"
@@ -564,6 +443,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{customerGroups>/}"
@@ -591,6 +471,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{GWD_C_FORM_UI5>/ZFA1_KONDASet}"
@@ -617,6 +498,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{GWD_C_FORM_UI5>/ZFA1_PLTYPSet}"
@@ -657,7 +539,6 @@
 					</layoutData>
 				</Select>
 			</HBox>
-
 		</forms:content>
 	</forms:SimpleForm>
 </core:FragmentDefinition>

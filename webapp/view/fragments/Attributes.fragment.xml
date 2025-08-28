@@ -27,6 +27,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/1}"
@@ -54,6 +55,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/2}"
@@ -81,6 +83,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/3}"
@@ -108,6 +111,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/4}"
@@ -135,6 +139,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/5}"
@@ -162,6 +167,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/6}"
@@ -189,6 +195,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/7}"
@@ -216,6 +223,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/8}"
@@ -243,6 +251,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/9}"
@@ -270,6 +279,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					selectedKey="{customer>/attributes/10}"

@@ -221,33 +221,10 @@ function () {
 			return structure;
 		},
 
-		// _onGetInfo: function(oDataModel, path) {
-		// 	path = "/HDRreturnSet";
-		// 	// let filters = [new Filter("Kunnr", "EQ", "1190919")];
-		// 	return new Promise((resolve, reject) => {
-		// 		oDataModel.read(path, {
-		// 			success: (data) => resolve(data),
-		// 			error: (error) => reject(error)
-		// 		});
-		// 	});
-		// },
-
 		onValidate: function (oDataModel, payload) {
 			return new Promise((resolve, reject) => {
 				oDataModel.create("/CustomersSet", payload, {
 					success: (data, result) => resolve(result),
-					// success: function(data, result) {
-					// 	if (result?.data?.HDRreturnSet?.results[0]?.Type === "S") {
-							
-					// 	}
-					// 	let uri = data.HDRreturnSet.__deferred.uri;
-					// 	let path = uri.split("ZGSP_CUST_CREATE_SRV")[1];
-					// 	this._onGetInfo(oDataModel, path)
-					// 		.then(response => resolve(response))
-					// 		.catch(error => reject(error));
-					// 	// oDataModel.read(data)
-					// 	// resolve(data)
-					// }.bind(this),
 					error: (error) => reject(error)
 				});
 			});

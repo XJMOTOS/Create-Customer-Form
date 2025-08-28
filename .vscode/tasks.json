@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"label": "deploy",
+			"script": "deploy"
+		},
+		{
+			"type": "build.mta",
+			"label": "Build MTA: beamsuntoryinc.createcustomerform/mta.yaml",
+			"taskType": "Build",
+			"projectPath": "/home/user/projects/Create-Customer-Form1756196389371",
+			"extensions": []
+		}
+	]
+}

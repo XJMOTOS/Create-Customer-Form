@@ -7,8 +7,7 @@
 		search=".handleSearch"
 		confirm=".onHierarchyPress"
 		cancel=".handleClose"
-		items="{hierarchies>/}"
-		>
+		items="{hierarchies>/}">
 		<ColumnListItem vAlign="Middle">
 			<cells>
 				<Text text="{hierarchies>Name1}"/>

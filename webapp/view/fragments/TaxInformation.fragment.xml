@@ -24,6 +24,7 @@
 					<Text text="{taxInformations>taxCountry}"/>
 					<Text text="{taxInformations>taxCategory}"/>
 					<Select
+						change=".onDisableSubmitButton"
 						enabled="{view>/enabled/secondary}"
 						selectedKey="{taxInformations>taxClassification}"
 						items="{ path: 'taxClasifications>/', templateShareable: false }">

@@ -27,6 +27,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					liveChange=".onLiveSalesDistrict"
 					showSuggestion="true"
@@ -58,6 +59,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{salesGroups>/}"
@@ -84,6 +86,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{salesOffices>/}"
@@ -111,6 +114,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{GWD_C_FORM_UI5>/ZFA1_BRCUSCURRDSet}"
@@ -278,6 +282,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					value="{customer>/sales/orderProbability}"
 					maxLength="3">
@@ -302,6 +307,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					value="{customer>/sales/customerClassification}"
 					maxLength="2">
@@ -326,6 +332,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					value="{customer>/sales/indicatorRebateRelevant}"
 					maxLength="2">
@@ -334,7 +341,6 @@
 					</layoutData>
 				</Input>
 			</HBox>
-
 		</forms:content>
 	</forms:SimpleForm>
 </core:FragmentDefinition>

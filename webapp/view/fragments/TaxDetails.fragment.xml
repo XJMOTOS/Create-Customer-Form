@@ -32,6 +32,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					maxLength="11"
 					value="{customer>/taxDetails/vatNumber2}">
@@ -56,6 +57,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					maxLength="11"
 					value="{customer>/taxDetails/warehouseExciseNumber}">
@@ -80,6 +82,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					maxLength="11"
 					value="{customer>/taxDetails/vatNumber4}">

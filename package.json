@@ -12,7 +12,7 @@
     "mbt": "^1.2.29"
   },
   "scripts": {
-    "start": "ui5 serve --port 8081 -o index.html",
+    "start": "ui5 serve --port 8080 -o index.html",
     "start-local": "fiori run --config ./ui5-local.yaml --open \"test/flp.html#app-preview\"",
     "build": "ui5 build --config=ui5.yaml --clean-dest --dest dist",
     "deploy": "fiori cfDeploy",

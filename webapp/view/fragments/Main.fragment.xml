@@ -12,7 +12,7 @@
 		adjustLabelSpan="false"
 		singleContainerFullSize="false">
 		<forms:content>
-			<!-- <Button text="read oData" press=".read"/> -->
+			<Button text="read oData" press=".read"/>
 			<Label
 				text="{i18n>lblAccountGroup}"
 				class="sapUiTinyMarginTop"
@@ -139,7 +139,6 @@
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
-					<!-- change=".onChangeDivision" -->
 				<Select
 					change=".onChangeMain"
 					forceSelection="false"
@@ -219,6 +218,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					value="{customer>/hierarchy/a4Text}"
 					showValueHelp="true"
@@ -230,7 +230,6 @@
 					</layoutData>
 				</Input>
 			</HBox>
-
 		</forms:content>
 	</forms:SimpleForm>
 </core:FragmentDefinition>

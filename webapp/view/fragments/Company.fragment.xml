@@ -86,6 +86,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					value="{customer>/company/authorizationGroup}">
 					<layoutData>
@@ -108,7 +109,6 @@
 						<FlexItemData growFactor="0"/>
 					</core:layoutData>
 				</core:Icon>
-				<!-- TODO Cash Managment Group entity does not exists -->
 				<Select
 					change="onToggleValidationButton"
 					enabled="{view>/enabled/secondary}"
@@ -138,6 +138,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{toleranceGroups>/}"
@@ -194,6 +195,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					value="{customer>/company/houseBank}">
 					<layoutData>
@@ -217,6 +219,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					value="{customer>/company/accountingClerkAbbreviation}">
 					<layoutData>
@@ -224,7 +227,6 @@
 					</layoutData>
 				</Input>
 			</HBox>
-
 		</forms:content>
 	</forms:SimpleForm>
 </core:FragmentDefinition>

@@ -48,7 +48,6 @@ function () {
 					error: (xhr, status, err) => reject({ xhr: xhr, status: status, err: err})
 				});
 			});
-			
 		},
 
 		postCustomerData: async function (data, taxInformations) {
@@ -118,8 +117,8 @@ function () {
 							"Kvgr3": data.customerGroup["3"],
 							"Kvgr4": data.customerGroup["4"],
 							"Kvgr5": data.customerGroup["5"],
-							"Bzirk": data.sales.district,
-							"Vkbur": sales.office,
+							"Bzirk": data.sales.districtKey,
+							"Vkbur": data.sales.office,
 							"Zzcgrp1": data.customerGroup["11"],
 							"Zzcgrp2": data.customerGroup["12"],
 							"Zzcgrp3": data.customerGroup["13"],
@@ -321,7 +320,8 @@ function () {
 
 			sap.ui.core.BusyIndicator.show(0);
 			$.ajax({
-				url: "https://spa-api-gateway-bpi-us-prod.cfapps.us30.hana.ondemand.com/workflow/rest/v1/workflow-instances",
+				// url: "https://spa-api-gateway-bpi-us-prod.cfapps.us30.hana.ondemand.com/workflow/rest/v1/workflow-instances",
+				url: "/sbpa_process/workflow-instances",
 				method: "POST",
 				headers: {
 					"Authorization": "Bearer " + token

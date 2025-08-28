@@ -56,6 +56,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					value="{customer>/delivery/deliveryBlock}"
 					maxLength="2">
@@ -80,6 +81,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					value="{customer>/delivery/completeDelivery}"
 					maxLength="1">
@@ -104,6 +106,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					liveChange=".onChangeMaxNumberOfPartialDeliveries"
 					enabled="{view>/enabled/secondary}"
 					maxLength="1"
@@ -129,6 +132,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Input
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					value="{customer>/delivery/partialDelivery}"
 					maxLength="1">
@@ -153,6 +157,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<CheckBox
+					select=".onOrderCombinationSelect"
 					selected="{customer>/delivery/orderCombinationIndicator}">
 					<layoutData>
 						<FlexItemData growFactor="1"/>
@@ -175,6 +180,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{deliveryPriorities>/}"
@@ -202,6 +208,7 @@
 					</core:layoutData>
 				</core:Icon>
 				<Select
+					change=".onDisableSubmitButton"
 					enabled="{view>/enabled/secondary}"
 					forceSelection="false"
 					items="{deliveringPlants>/}"
@@ -213,7 +220,6 @@
 					</layoutData>
 				</Select>
 			</HBox>
-			
 		</forms:content>
 	</forms:SimpleForm>
 </core:FragmentDefinition>
