@@ -130,5 +130,9 @@
 				}
 			}
 		}
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "beamsuntoryinc.createcustomerform"
   }
 }
